@@ -12,8 +12,8 @@
     <div class="wrapper">
         <header>
             <ul>
-                <li><a href="main.php">Back</a></li>
-                <li><a href="memo.php?showhelp=true">Help</a></li>
+                <li><a href="developmentMain.php">Back</a></li>
+                <li><a href="developmentMemo.php?showhelp=true">Help</a></li>
             </ul>
         </header>
         <div class="memo">

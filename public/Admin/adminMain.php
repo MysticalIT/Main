@@ -32,11 +32,11 @@
 
 <container class="main-content">
     <ol>
-    <div class="clients">
+    <div class="adminClients">
         <a href="adminClients.php">Activate Clients</a>
     </div>
 
-    <div class="memos">
+    <div class="adminMemos">
         <a href="adminMemo.php">Memo's</a>
     </div>
 

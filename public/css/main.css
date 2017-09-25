@@ -24,6 +24,10 @@ body {
     margin-top: 50px;
 }
 
+.headerButtons{
+
+}
+
 
 /*==========================================================
     Main Content styles
@@ -35,11 +39,50 @@ body {
     Admin styles
 ==========================================================*/
 
+/*========
+Admin - Main
+ ========*/
+.adminClients{
 
+}
+
+.adminMemos{
+
+}
+
+/*========
+Admin - Clients
+ ========*/
+.activationPrompt{
+
+}
+
+.inactiveUsers{
+
+}
+
+.client-list{
+
+}
+
+
+/*========
+Admin - Memo
+ ========*/
+.memo{
+
+}
 
 /*==========================================================
     Button styles
 ==========================================================*/
+.logout-btn{
+
+}
+
+.go-back{
+
+}
 
 
 

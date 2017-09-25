@@ -21,6 +21,12 @@
         <div class="logo">
             <h1>Barroc IT</h1>
         </div>
+        <div class="headerButtons">
+            <ul>
+                <li><a href="main.php">Back</a></li>
+                <li><a href="memo.php?showhelp=true">Help</a></li>
+            </ul>
+        </div>
     </div>
 </div>
 
@@ -30,7 +36,14 @@
 
  <container class="main-content">
 
-
+     <div class="wrapper">
+         <div class="memo">
+             <form action="../../app/memoUpdate.php" method="get">
+                 <textarea name="memo" id="memo" cols="30" rows="10"></textarea>
+                 <input type="submit" value="Save Memo">
+             </form>
+         </div>
+     </div>
 
  </container>
 
