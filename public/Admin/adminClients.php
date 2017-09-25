@@ -24,14 +24,35 @@
     </div>
 </div>
 
-<container class="help">
+<container class="btn-help">
 
 </container>
 
 <container class="main-content">
 
+    <h2>User List</h2>
+    <table class="user-list">
+        <tr>
+            <th>Username</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <?php // foreach ($usernames as $username): ?>
+            <tr>
+                <td>
+                    <?php// echo ($username['username']); ?>
+                </td>
+            </tr>
+        <?php// endforeach; ?>
+    </table>
+
+
+    <div class="go-back">
+        <a href="<?php// echo BASE_URL?>/public/Admin/adminMain.php">Back</a>
+    </div>
 
 
 </container>
+
 </body>
 </html>
