@@ -9,28 +9,35 @@
 </head>
 <body>
 <div class="container">
-    <div class="wrapper">
-        <header>
+    <header>
+        <div class="wrapper">
             <ul>
-                <li><a href="developmentProjects.php?loadprojects=true">Show Projects</a></li>
+                <li></li>
                 <li><a href="developmentMain.php">Back</a></li>
                 <li><a href="developmentProjects.php?showhelp=true">Help</a></li>
             </ul>
-        </header>
-        <div class="listprojects">
-            <ul>
-                <li>
-                    <p>Project</p>
-                </li>
-                <li>
-                    <p>Project</p>
-                </li>
-                <li>
-                    <p>Project</p>
-                </li>
-            </ul>
         </div>
-        <div class="details">
+    </header>
+    <div class="listprojects">
+        <div class="wrapper">
+            <a href="developmentProjects.php?loadprojects=true">Show Projects</a>
+            <div class="list">
+                <ul>
+                    <li>
+                        <p>Project</p>
+                    </li>
+                    <li>
+                        <p>Project</p>
+                    </li>
+                    <li>
+                        <p>Project</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="details">
+        <div class="wrapper">
             <ul>
                 <li>
                     <p>Name:</p>
