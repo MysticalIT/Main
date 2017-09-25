@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: Cyri
  * Date: 25-9-2017
- * Time: 09:50
+ * Time: 10:10
  */?>
 
 <!doctype html>
@@ -13,7 +13,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin Main</title>
+    <title>Admin Memo</title>
 </head>
 <body>
 <div class="header">
@@ -24,28 +24,14 @@
     </div>
 </div>
 
-
 <container class="help">
 
 </container>
 
+ <container class="main-content">
 
-<container class="main-content">
-    <ol>
-    <div class="clients">
-        <a href="">Activate Clients</a>
-    </div>
 
-    <div class="memos">
-        <a href="">Memo's</a>
-    </div>
 
-    <div class="logout-btn">
-        <button class="logout" value="logout">
-            <a href="">Logout</a>
-        </button>
-    </div>
-    </ol>
-</container>
+ </container>
 </body>
 </html>
