@@ -30,22 +30,28 @@
 
 <container class="main-content">
 
-    <h2>User List</h2>
-    <table class="user-list">
-        <tr>
-            <th>Username</th>
-            <th></th>
-            <th></th>
-        </tr>
-        <?php // foreach ($usernames as $username): ?>
-            <tr>
-                <td>
-                    <?php// echo ($username['username']); ?>
-                </td>
-            </tr>
-        <?php// endforeach; ?>
-    </table>
 
+    <div class="activationPrompt">
+        <h2>Do you want to activate the selected client?</h2>
+        <input type="submit" class="btn-activate" value="Yes">
+        <input type="submit" class="btn-activate" value="No">
+    </div>
+
+    <div class="inactiveUsers">
+        <h2>Inactive Client List</h2>
+        <table class="client-list">
+            <tr>
+                <th>Client Name</th>
+            </tr>
+            <?php // foreach ($usernames as $username): ?>
+                <tr>
+                    <td>
+                        <?php// echo ($username['username']); ?>
+                    </td>
+                </tr>
+            <?php// endforeach; ?>
+        </table>
+    </div>
 
     <div class="go-back">
         <a href="<?php// echo BASE_URL?>/public/Admin/adminMain.php">Back</a>
