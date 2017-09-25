@@ -26,11 +26,19 @@
 
     ?>
 </ul>
-    <a href="../../app/sales/add_client.php">Add Client here</a>
-    <a href="../sales/call_client_list.php">Help</a>
-    <a href="../sales/add_project.php">Help</a>
-    <a href="../../app/sales/edit_client.php">Show Clients</a>
-    <a href="../memo.php?showSalesMemo=true">Show sales memos</a>
+    <ul>
+        <li><a href="../../app/sales/add_client.php">Add Client here</a></li>
+        <li><a href="../sales/call_client_list.php">Call list for clients</a></li>
+        <li><a href="../../app/sales/add_project.php">Add Project</a></li>
+        <li><a href="../../app/sales/edit_client.php">Show Clients</a></li>
+        <li><a href="memo_sales.php">Show sales memos</a></li>
+
+    </ul>
+
+
+
+
+
 
 </body>
 </html>
