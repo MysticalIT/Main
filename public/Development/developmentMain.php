@@ -12,8 +12,8 @@
     <div class="wrapper">
         <div class="mainpage">
             <ul>
-                <li><a href="projects.php">Projects</a></li>
-                <li><a href="memo.php">Memo's</a></li>
+                <li><a href="developmentProjects.php">Projects</a></li>
+                <li><a href="developmentMemo.php">Memo's</a></li>
                 <li><a href="Logout.php">Logout</a></li>
             </ul>
         </div>

@@ -12,9 +12,9 @@
     <div class="wrapper">
         <header>
             <ul>
-                <li><a href="projects.php?loadprojects=true">Show Projects</a></li>
-                <li><a href="main.php">Back</a></li>
-                <li><a href="projects.php?showhelp=true">Help</a></li>
+                <li><a href="developmentProjects.php?loadprojects=true">Show Projects</a></li>
+                <li><a href="developmentMain.php">Back</a></li>
+                <li><a href="developmentProjects.php?showhelp=true">Help</a></li>
             </ul>
         </header>
         <div class="listprojects">
