@@ -9,8 +9,11 @@
 </head>
 <body>
 <div class="container">
-    <div class="wrapper">
-        <div class="mainpage">
+    <div class="tophelp">
+        <a href="">Help</a>
+    </div>
+    <div class="mainpage">
+        <div class="wrapper">
             <ul>
                 <li><a href="developmentProjects.php">Projects</a></li>
                 <li><a href="developmentMemo.php">Memo's</a></li>
