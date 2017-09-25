@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Sales</title>
 </head>
 <body>
     <a href="../index.php">Logout</a>
@@ -30,7 +30,7 @@
     <a href="../sales/call_client_list.php">Help</a>
     <a href="../sales/add_project.php">Help</a>
     <a href="../../app/sales/edit_client.php">Show Clients</a>
-    <a href="../../app/sales/edit_client.php">Show Clients</a>
+    <a href="../memo.php?showSalesMemo=true">Show sales memos</a>
 
 </body>
 </html>
