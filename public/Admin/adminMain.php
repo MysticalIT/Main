@@ -25,7 +25,7 @@
 </div>
 
 
-<container class="help">
+<container class="btn-help">
 
 </container>
 
@@ -33,16 +33,16 @@
 <container class="main-content">
     <ol>
     <div class="clients">
-        <a href="">Activate Clients</a>
+        <a href="adminClients.php">Activate Clients</a>
     </div>
 
     <div class="memos">
-        <a href="">Memo's</a>
+        <a href="adminMemo.php">Memo's</a>
     </div>
 
     <div class="logout-btn">
         <button class="logout" value="logout">
-            <a href="">Logout</a>
+            <a href="../index.php">Logout</a>
         </button>
     </div>
     </ol>

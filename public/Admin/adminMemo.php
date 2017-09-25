@@ -24,7 +24,7 @@
     </div>
 </div>
 
-<container class="help">
+<container class="btn-help">
 
 </container>
 
@@ -33,5 +33,9 @@
 
 
  </container>
+
+<div class="go-back">
+    <a href="<?php// echo BASE_URL?>/public/Admin/adminMain.php">Back</a>
+</div>
 </body>
 </html>
