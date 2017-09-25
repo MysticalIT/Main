@@ -16,10 +16,12 @@
                 <li><a href="memo.php?showhelp=true">Help</a></li>
             </ul>
         </header>
-        <form action="../../app/memoUpdate.php" method="get">
-            <textarea name="memo" id="memo" cols="30" rows="10"></textarea>
-            <input type="submit" value="Save Memo">
-        </form>
+        <div class="memo">
+            <form action="../../app/memoUpdate.php" method="get">
+                <textarea name="memo" id="memo" cols="30" rows="10"></textarea>
+                <input type="submit" value="Save Memo">
+            </form>
+        </div>
     </div>
 </div>
 </body>

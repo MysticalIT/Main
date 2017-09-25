@@ -10,11 +10,13 @@
 <body>
 <div class="container">
     <div class="wrapper">
-        <ul>
-            <li><a href="projects.php">Projects</a></li>
-            <li><a href="memo.php">Memo's</a></li>
-            <li><a href="Logout.php">Logout</a></li>
-        </ul>
+        <div class="mainpage">
+            <ul>
+                <li><a href="projects.php">Projects</a></li>
+                <li><a href="memo.php">Memo's</a></li>
+                <li><a href="Logout.php">Logout</a></li>
+            </ul>
+        </div>
     </div>
 </div>
 </body>
