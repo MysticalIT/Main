@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container">
-    <div class="clients">
+    <div class="clientsFinance">
         <div class="wrapper">
             <a href="">Get clients that needs the check</a>
             <div class="list">
@@ -29,9 +29,9 @@
             </ul>
         </div>
     </div>
-    <div class="details">
+    <div class="detailsFinance">
         <div class="wrapper">
-            <div class="client">
+            <div class="clientDetailsFinance">
                 <ul>
                     <li>
                         <p>Name</p>
@@ -50,7 +50,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="check">
+            <div class="bkrCheck">
                 <form action="" method="post">
                     <label for="bkr-checked">BKR Checked?</label>
                     <input type="checkbox" name="checked" id="bkr-checked">

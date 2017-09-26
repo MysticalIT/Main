@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container">
-    <div class="clients">
+    <div class="clientsFinance">
         <div class="wrapper">
             <div class="list">
                 <ul>

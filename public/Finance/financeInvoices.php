@@ -17,7 +17,7 @@
             </ul>
         </div>
     </div>
-    <div class="clients">
+    <div class="clientsFinance">
         <div class="wrapper">
             <a href="">All clients with invoice or project</a>
             <div class="list">

@@ -17,7 +17,7 @@
             </ul>
         </div>
     </div>
-    <div class="invoiceform">
+    <div class="invoiceForm">
         <div class="wrapper">
             <form action="" method="post">
                 <label for="invoiceSubject">Subject:</label>
