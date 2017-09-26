@@ -31,15 +31,15 @@
 <div class="main-content">
 
     <div class="container">
-        <form class="login-form" action="">
+        <form class="login-form" action="../app/login.php" method="post">
             <h4>Please enter your credentials</h4>
             <div class="form-group">
                 <label for="department">Department</label>
-                <input type="text" name="department" id="">
+                <input type="text" name="department" id="department">
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="">
+                <input type="password" name="password" id="password">
             </div>
             <div class="form-group">
                 <input type="submit" name="type" value="Login" class="login-button">
