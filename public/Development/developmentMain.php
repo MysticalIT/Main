@@ -12,7 +12,7 @@
     <div class="tophelp">
         <a href="">Help</a>
     </div>
-    <div class="mainpage">
+    <div class="main-content">
         <div class="wrapper">
             <ul>
                 <li><a href="developmentProjects.php">Projects</a></li>

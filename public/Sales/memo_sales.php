@@ -11,5 +11,21 @@
 <?php
 require ("../../404_page.php")
 ?>
+<div class="container">
+    <div class="wrapper">
+        <header>
+            <ul>
+                <li><a href="salesMain.php">Back</a></li>
+                <li><a href="memo_sales.php?showhelp=true">Help</a></li>
+            </ul>
+        </header>
+        <div class="memo">
+            <form action="../../app/memoUpdate.php" method="get">
+                <textarea name="memo" id="memo" cols="30" rows="10"></textarea>
+                <input type="submit" value="Save Memo">
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>

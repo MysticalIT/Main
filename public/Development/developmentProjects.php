@@ -18,7 +18,7 @@
             </ul>
         </div>
     </header>
-    <div class="listprojects">
+    <div class="listProjects">
         <div class="wrapper">
             <a href="developmentProjects.php?loadprojects=true">Show Projects</a>
             <div class="list">
@@ -36,7 +36,7 @@
             </div>
         </div>
     </div>
-    <div class="details">
+    <div class="projectDetails">
         <div class="wrapper">
             <ul>
                 <li>
