@@ -30,8 +30,6 @@ if ($username != '')
                 echo "HAAAAI C:";
                 header("location:../public/$username/".$username."Main.php?$message");
 
-                $message = "Please fill in a valid password b-baka!";
-                header("location:../public/index.php?$message");
             }
             else
             {
@@ -39,7 +37,7 @@ if ($username != '')
                 header("location:../public/index.php?$message");
             }
         }
-    
+
     }
     else{
         $message = "Please fill in a password b-baka!";
