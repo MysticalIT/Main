@@ -14,29 +14,44 @@ if ($username != '')
     $fetchType = PDO::FETCH_ASSOC;
     $count = $sth->rowCount();
     $results = $sth->fetchall($fetchType);
-
-
-    if($count > 0)
+    if($password = '')
     {
-        $sql = "SELECT Password FROM tbl_users WHERE password = '$password'";
-        $sth = $database->prepare($sql);
-        $sth->execute();
-        $fetchType = PDO::FETCH_ASSOC;
-        $count = $sth->rowCount();
-        $results = $sth->fetchall($fetchType);
-        if ($count > 0)
+
+        if($count > 0)
         {
-            echo "HAAAAI C:";
-            header("location:../public/$username/'$username'Main.php");
+            $sql = "SELECT Password FROM tbl_users WHERE password = '$password'";
+            $sth = $database->prepare($sql);
+            $sth->execute();
+            $fetchType = PDO::FETCH_ASSOC;
+            $count = $sth->rowCount();
+            $results = $sth->fetchall($fetchType);
+            if ($count > 0)
+            {
+                echo "HAAAAI C:";
+                header("location:../public/$username/".$username."Main.php?$message");
+
+                $message = "Please fill in a valid password b-baka!";
+                header("location:../public/index.php?$message");
+            }
+            else
+            {
+                $message = "Please fill in a valid username b-baka!";
+                header("location:../public/index.php?$message");
+            }
         }
+    
     }
-    else
-    {
-        echo "Please fill in a valid username b-baka!";
+    else{
+        $message = "Please fill in a password b-baka!";
+        header("location:../public/index.php?$message");
     }
 }
+
+
 else{
-    echo "Please fill in a username b-baka!";
+    $message = "Please fill in a username b-baka!";
+    header("location:../public/index.php?$message");
+
 }
 
 
