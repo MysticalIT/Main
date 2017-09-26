@@ -29,9 +29,9 @@
     <div class="links">
         <div class="wrapper">
             <ul>
-                <li><a href="">BKR Check</a></li>
-                <li><a href="">Invoices</a></li>
-                <li><a href="">Memo's</a></li>
+                <li><a href="financeBkrcheck.php">BKR Check</a></li>
+                <li><a href="financeInvoices.php">Invoices</a></li>
+                <li><a href="../memo.php">Memo's</a></li>
                 <li><a href="">Logout</a></li>
             </ul>
         </div>

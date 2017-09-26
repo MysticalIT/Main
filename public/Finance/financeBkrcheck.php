@@ -51,7 +51,7 @@
                 </ul>
             </div>
             <div class="check">
-                <form action="">
+                <form action="" method="post">
                     <label for="bkr-checked">BKR Checked?</label>
                     <input type="checkbox" name="checked" id="bkr-checked">
                     <label for="bkr-approved">BKR Approved?</label>
