@@ -1,0 +1,59 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Cyri
+ * Date: 18/09/2017
+ * Time: 09:53
+ */?>
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <title>Barroc-IT</title>
+</head>
+<body>
+<div class="header">
+    <div class="container">
+        <div class="logo">
+            <h1>Barroc IT</h1>
+        </div>
+    </div>
+</div>
+
+
+<div class="main-content">
+
+    <div class="container">
+        <form class="login-form" action="../app/login.php" method="post">
+            <h4>Please enter your credentials</h4>
+            <div class="form-group">
+                <label for="department">Department</label>
+                <input type="text" name="department" id="department">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+            </div>
+            <div class="form-group">
+                <input type="submit" name="type" value="Login" class="login-button">
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
+<div class="footer">
+ <div class="btn-help">
+     <input type="button" name="help" value="Help" class="help-button">
+ </div>
+</div>
+</body>
+</html>
