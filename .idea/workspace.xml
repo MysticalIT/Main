@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="230ef7d5-6d58-4baa-bf6f-1589f929ce70" name="Default" comment="" />
+    <list default="true" id="6a11d3c6-f17d-416a-9bc5-c7281aded635" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,9 +15,9 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="developmentProjects.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/development/developmentProjects.php">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="588">
               <caret line="28" column="24" lean-forward="false" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
@@ -24,8 +26,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_client.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/sales/add_client.php">
+      <file leaf-file-name="financeMain.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/Finance/financeMain.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="819">
               <caret line="39" column="7" lean-forward="false" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
@@ -34,8 +36,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="call_client_list.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/sales/call_client_list.php">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="588">
               <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
@@ -74,6 +76,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="84">
               <caret line="4" column="2" lean-forward="false" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="financeCreateInvoice.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/Finance/financeCreateInvoice.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="48" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -220,7 +232,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="230ef7d5-6d58-4baa-bf6f-1589f929ce70" name="Default" comment="" />
+      <changelist id="6a11d3c6-f17d-416a-9bc5-c7281aded635" name="Default" comment="" />
       <created>1506333607075</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -406,6 +418,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/Finance/financeCreateInvoice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="48" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/Finance/financeInvoices.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="40" lean-forward="false" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/Finance/financeBkrcheck.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="53" column="44" lean-forward="false" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/Development/developmentProjects.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" column="10" lean-forward="false" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/finance/main.php" />
+    <entry file="file://$PROJECT_DIR$/public/finance/main.php" />
+    <entry file="file://$PROJECT_DIR$/public/Development/memo.php" />
+    <entry file="file://$PROJECT_DIR$/public/Development/projects.php" />
+    <entry file="file://$PROJECT_DIR$/public/Development/main.php" />
+    <entry file="file://$PROJECT_DIR$/public/Development/memo.php" />
+    <entry file="file://$PROJECT_DIR$/public/Development/projects.php" />
+    <entry file="file://$PROJECT_DIR$/public/Development/main.php" />
+    <entry file="file://$PROJECT_DIR$/public/finance/main.php" />
+    <entry file="file://$PROJECT_DIR$/../../../../Leerjaar 1/Periode 4/HTMLNieuweSite/app/database.php" />
     <entry file="file://$PROJECT_DIR$/app/database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -421,7 +474,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/sales/call_client_list.php">
+    <entry file="file://$PROJECT_DIR$/public/Sales/call_client_list.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="588">
           <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
@@ -429,7 +482,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/development/developmentProjects.php">
+    <entry file="file://$PROJECT_DIR$/public/Development/developmentProjects.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="588">
           <caret line="28" column="24" lean-forward="false" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
@@ -445,7 +498,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../Leerjaar 1/Periode 4/HTMLNieuweSite/app/loginChecker.php">
+    <entry file="file://$PROJECT_DIR$/../../../../Leerjaar 1/Periode 4/HTMLNieuweSite/app/loginChecker.php" />
+    <entry file="file://$PROJECT_DIR$/app/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
           <caret line="19" column="40" lean-forward="true" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
