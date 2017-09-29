@@ -10,6 +10,14 @@ body {
     position: relative;
     width: 100%;
     align-items: center;
+
+    margin-top: 0px;
+    background: url('http://barroc.it/img/jumbotron.jpg') no-repeat;
+    background-size: 128%;
+
+    height: 100%;
+    max-width: 100%;
+    margin-bottom: 0px;
 }
 
 .logo{
@@ -24,6 +32,10 @@ body {
 
 }
 
+.logo.text-center{
+    margin-top: 160px;
+}
+
 
 /*==========================================================
     Header Login Page styles
@@ -33,17 +45,25 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     background: rgba(0,0,0,0.4);
     margin-top: 50px;
     max-width: 100%;
+    color: #CFC1B5;
+    margin-bottom: 20px;
+
 
 
 }
-
-.headerButtons{
-
+input.form-control, textarea.form-control {
+    border-radius: 1px;
+    border-color: #CFC1B5;
+    box-shadow:  1px 1px 2px black;
+    padding: 2px 1px;
+    width:105%;
 }
+
+
 
 
 /*==========================================================
@@ -108,10 +128,18 @@ Admin - Memo
 
 }
 
-.go-back{
 
+.btn-primary {
+    background: #CFC1B5;
+    border: 0px;
+    border-radius: 0px;
 }
 
+.btn-help{
+
+    border: 0px;
+    border-radius: 0px;
+}
 
 
 /*==========================================================
