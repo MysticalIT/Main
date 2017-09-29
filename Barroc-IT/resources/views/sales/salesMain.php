@@ -16,10 +16,8 @@
         <div class="wrapper">
             <ul class="headerButtons">
                <li><a href="salesMain.php?showHelp=true">Help</a></li>
-                <a href="../index.php">Logout</a>
+                <a href="/logout">Logout</a>
             </ul>
-    <a href="/logout">Logout</a>
-
         <div>
             <a href="salesMain.php?showHelp=true">Help</a>
         </div>
@@ -29,17 +27,7 @@
     <container class="main-content">
 
 <div class="client-list">
-        <ul>
-            <?php
-            $clients;
-
-
-            foreach ( $clients as $client)
-            {
-                echo "<li>'$client'</li>";
-            }
-
-        ?>
+    <ul>
     </ul>
 </div>
 

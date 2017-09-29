@@ -24,11 +24,11 @@ Route::post('/', function (\Illuminate\Http\Request $request){
         return redirect("/$dep");
     }
     else if($loginResult === "password"){
-        session(["errorMessage" => "Password invalid!"]);
+        session(["message" => "Password invalid!"]);
         return redirect("/");
     }
     else if($loginResult === "username"){
-        session(["errorMessage" => "Department does not exist!"]);
+        session(["message" => "Department does not exist!"]);
         return redirect("/");
     }
     else{
@@ -36,7 +36,9 @@ Route::post('/', function (\Illuminate\Http\Request $request){
     }
 });
 
-Route::get('/', function () {
+Route::get('/logout', function () {
+    session()->flush();
+    session(["message" => "You have been logged out\nWhy the hell nod!"]);
     return view('index');
 });
 
