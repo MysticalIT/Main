@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset("css/main.css") }}">
-    <title>Development - Memo's</title>
+    <title>Sales - Memo's</title>
 </head>
 <body>
 
@@ -16,7 +16,7 @@
 <header>
     <div class="wrapper">
         <ul class="headerButtons">
-            <li><a href="/development">Back</a></li>
+            <li><a href="/sales">Back</a></li>
             <li><a href="developmentMemo.blade.php?showhelp=true">Help</a></li>
         </ul>
     </div>
