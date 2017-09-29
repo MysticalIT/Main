@@ -51,7 +51,7 @@ Route::get('/sales', function () {
         }
         return redirect("/".session()->get("department"));
     }
-    session(["message" => "You don't have access. Please login."]);
+    session(["message" => "You do not have access. Please login."]);
     return redirect("/");
 });
 
@@ -64,7 +64,7 @@ Route::get('/addclient' , function(){
         }
         return redirect("/".session()->get("department"));
     }
-    session(["message" => "You don't have access. Please login."]);
+    session(["message" => "You do not have access. Please login."]);
     return redirect("/");
 });
 Route::get('/callclient' , function(){
@@ -76,7 +76,7 @@ Route::get('/callclient' , function(){
         }
         return redirect("/".session()->get("department"));
     }
-    session(["message" => "You don't have access. Please login."]);
+    session(["message" => "You do not have access. Please login."]);
     return redirect("/");
 });
 Route::get('/addproject' , function(){
@@ -88,7 +88,7 @@ Route::get('/addproject' , function(){
         }
         return redirect("/".session()->get("department"));
     }
-    session(["message" => "You don't have access. Please login."]);
+    session(["message" => "You do not have access. Please login."]);
     return redirect("/");
 });
 //===================development files===================
@@ -101,7 +101,7 @@ Route::get('/development', function () {
         }
         return redirect("/".session()->get("department"));
     }
-    session(["message" => "You don't have access. Please login."]);
+    session(["message" => "You do not have access. Please login."]);
     return redirect("/");
 });
 //===================finace files===================
@@ -114,7 +114,7 @@ Route::get('/finance', function () {
         }
         return redirect("/".session()->get("department"));
     }
-    session(["message" => "You don't have access. Please login."]);
+    session(["message" => "You do not have access. Please login."]);
     return redirect("/");
 });
 //===================admin files===================
@@ -127,7 +127,7 @@ Route::get('/admin', function () {
         }
         return redirect("/".session()->get("department"));
     }
-    session(["message" => "You don't have access. Please login."]);
+    session(["message" => "You do not have access. Please login."]);
     return redirect("/");
 });
 //===================GENERAL FILES==================
@@ -147,6 +147,6 @@ Route::get('/memo' , function(){
         }
         return redirect("/".session()->get("department"));
     }
-    session(["message" => "You don't have access. Please login."]);
+    session(["message" => "You do not have access. Please login."]);
     return redirect("/");
 });

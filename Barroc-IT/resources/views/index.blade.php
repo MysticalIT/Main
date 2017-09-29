@@ -64,7 +64,7 @@
 if(session()->has("message")){
     $msg = session()->get("message");
     echo "<script> window.alert('$msg'); </script>";
-    session()->flash("message");
+    session()->remove("message");
 }
 ?>
 </body>
