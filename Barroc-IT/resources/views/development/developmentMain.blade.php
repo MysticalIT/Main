@@ -19,9 +19,9 @@
     <container class="main-content">
         <div class="wrapper">
             <ul>
-                <li><a href="developmentProjects.blade.php">Projects</a></li>
-                <li><a href="developmentMemo.blade.php">Memo's</a></li>
-                <li><a href="Logout.php">Logout</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="/memo">Memo's</a></li>
+                <li><a href="/logout">Logout</a></li>
             </ul>
         </div>
     </container>
