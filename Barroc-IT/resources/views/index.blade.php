@@ -56,8 +56,8 @@
  </div>
 </div>
 <?php
-if(session()->has("errorMessage")){
-    $msg = session()->get("errorMessage");
+if(session()->has("message")){
+    $msg = session()->get("message");
     echo "<script> window.alert('$msg'); </script>";
 }
 ?>
