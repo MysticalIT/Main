@@ -21,7 +21,7 @@ Route::post('/', function (\Illuminate\Http\Request $request){
     if($loginResult === true){
         $dep = $request["department"];
         session(["department" => "$dep"]);
-        return redirect("/$dep");
+        return redirect()->to("/$dep");
     }
     else if($loginResult === "password"){
         session(["message" => "Password invalid!"]);
@@ -37,12 +37,60 @@ Route::post('/', function (\Illuminate\Http\Request $request){
 });
 
 Route::get('/logout', function () {
-    session()->flush();
-    session(["message" => "You have been logged out\nWhy the hell nod!"]);
-    return view('index');
+    session()->flush("department");
+    session(["message" => "You have been logged out"]);
+    return redirect("/");
 });
 
 Route::get('/sales', function () {
-    return view('sales/salesMain');
+    if(session()->has("department"))
+    {
+        if(session()->get("department") === "sales")
+        {
+            return view('sales/salesMain');
+        }
+        return redirect("/".session()->get("department"));
+    }
+    session(["message" => "You don't have access. Please login."]);
+    return redirect("/");
+});
+
+Route::get('/development', function () {
+    if(session()->has("department"))
+    {
+        if(session()->get("department") === "development")
+        {
+            return view('development/developmentMain');
+        }
+        return redirect("/".session()->get("department"));
+    }
+    session(["message" => "You don't have access. Please login."]);
+    return redirect("/");
+});
+
+Route::get('/finance', function () {
+    if(session()->has("department"))
+    {
+        if(session()->get("department") === "finance")
+        {
+            return view('finance/financeMain');
+        }
+        return redirect("/".session()->get("department"));
+    }
+    session(["message" => "You don't have access. Please login."]);
+    return redirect("/");
+});
+
+Route::get('/admin', function () {
+    if(session()->has("department"))
+    {
+        if(session()->get("department") === "admin")
+        {
+            return view('admin/adminMain');
+        }
+        return redirect("/".session()->get("department"));
+    }
+    session(["message" => "You don't have access. Please login."]);
+    return redirect("/");
 });
 
