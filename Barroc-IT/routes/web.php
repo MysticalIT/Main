@@ -56,13 +56,40 @@ Route::get('/sales', function () {
 });
 
 Route::get('/addclient' , function(){
-    return view('sales/salesEditClients');
+    if(session()->has("department"))
+    {
+        if(session()->get("department") === "sales")
+        {
+            return view('sales/salesEditClients');
+        }
+        return redirect("/".session()->get("department"));
+    }
+    session(["message" => "You don't have access. Please login."]);
+    return redirect("/");
 });
 Route::get('/callclient' , function(){
-    return view('sales/salesCallClientsList');
+    if(session()->has("department"))
+    {
+        if(session()->get("department") === "sales")
+        {
+            return view('sales/salesCallClientsList');
+        }
+        return redirect("/".session()->get("department"));
+    }
+    session(["message" => "You don't have access. Please login."]);
+    return redirect("/");
 });
 Route::get('/addproject' , function(){
-    return view('sales/salesAddProject');
+    if(session()->has("department"))
+    {
+        if(session()->get("department") === "sales")
+        {
+            return view('sales/salesAddProject');
+        }
+        return redirect("/".session()->get("department"));
+    }
+    session(["message" => "You don't have access. Please login."]);
+    return redirect("/");
 });
 //===================development files===================
 Route::get('/development', function () {
@@ -103,4 +130,23 @@ Route::get('/admin', function () {
     session(["message" => "You don't have access. Please login."]);
     return redirect("/");
 });
-
+//===================GENERAL FILES==================
+Route::get('/memo' , function(){
+    if(session()->has("department"))
+    {
+        $dep = session()->get("department");
+        if($dep === "sales")
+        {
+            return view('sales/salesMemo');
+        }
+        elseif ($dep === "development"){
+            return view('development/developmentMemo');
+        }
+        elseif ($dep === "finance"){
+            return view('finance/financeMemo');
+        }
+        return redirect("/".session()->get("department"));
+    }
+    session(["message" => "You don't have access. Please login."]);
+    return redirect("/");
+});
