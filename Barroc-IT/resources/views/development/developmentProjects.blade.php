@@ -16,7 +16,7 @@
         <div class="wrapper">
             <ul>
                 <li></li>
-                <li><a href="developmentMain.blade.php">Back</a></li>
+                <li><a href="/development">Back</a></li>
                 <li><a href="developmentProjects.blade.php?showhelp=true">Help</a></li>
             </ul>
         </div>
