@@ -21,25 +21,25 @@ Route::post('/', function (\Illuminate\Http\Request $request){
     if($loginResult === true){
         $dep = $request["department"];
         session(["department" => "$dep"]);
-        return redirect("/$dep");
+        return redirect()->to("/$dep");
     }
     else if($loginResult === "password"){
         session(["message" => "Password invalid!"]);
-        return redirect("/");
+        return redirect()->to("/")->with('new_token', csrf_token());
     }
     else if($loginResult === "username"){
         session(["message" => "Department does not exist!"]);
-        return redirect("/");
+        return redirect()->to("/")->with('new_token', csrf_token());
     }
     else{
-        return redirect("/");
+        return redirect()->to("/")->with('new_token', csrf_token());
     }
 });
 
 Route::get('/logout', function () {
-    session()->flush();
-    session(["message" => "You have been logged out\nWhy the hell nod!"]);
-    return view('index');
+    session()->flush("department");
+    session(["message" => "You have been logged out"]);
+    return redirect()->to("/")->with('new_token', csrf_token    ());
 });
 
 Route::get('/sales', function () {
