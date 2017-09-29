@@ -27,11 +27,11 @@
     </div>
 </div>
 
-
 <div class="main-content">
 
     <div class="container">
-        <form class="login-form" action="../app/login.php" method="post">
+        <form class="login-form" action="" method="post">
+            {{csrf_field()}}
             <h4>Please enter your credentials</h4>
             <div class="form-group">
                 <label for="department">Department</label>
@@ -55,5 +55,11 @@
      <input type="button" name="help" value="Help" class="help-button">
  </div>
 </div>
+<?php
+if(session()->has("errorMessage")){
+    $msg = session()->get("errorMessage");
+    echo "<script> window.alert('$msg'); </script>";
+}
+?>
 </body>
 </html>

@@ -34,21 +34,21 @@ if ($username != '')
             else
             {
                 $message = "Please fill in a valid username b-baka!";
-                header("location:../public/index.php?$message");
+                header("location:../public/index.blade.php?$message");
             }
         }
 
     }
     else{
         $message = "Please fill in a password b-baka!";
-        header("location:../public/index.php?$message");
+        header("location:../public/index.blade.php?$message");
     }
 }
 
 
 else{
     $message = "Please fill in a username b-baka!";
-    header("location:../public/index.php?$message");
+    header("location:../public/index.blade.php?$message");
 
 }
 

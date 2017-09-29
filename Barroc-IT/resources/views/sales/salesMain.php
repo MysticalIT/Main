@@ -11,6 +11,7 @@
     <title>Sales</title>
 </head>
 <body>
+<<<<<<< HEAD
 <header>
     <div class="links">
         <div class="wrapper">
@@ -18,10 +19,17 @@
                <li><a href="salesMain.php?showHelp=true">Help</a></li>
                 <a href="../index.php">Logout</a>
             </ul>
+=======
+    <a href="">Logout</a>
+
+        <div>
+            <a href="salesMain.php?showHelp=true">Help</a>
+>>>>>>> master
         </div>
     </div>
 </header>
 
+<<<<<<< HEAD
 
     <container class="main-content">
 
@@ -43,6 +51,11 @@
 
 
     <div class="sales-nav"
+=======
+    <ul>
+
+    </ul>
+>>>>>>> master
     <ul>
         <li><a href="../../app/sales/add_client.php">Add Client here</a></li>
         <li><a href="../sales/call_client_list.php">Call list for clients</a></li>

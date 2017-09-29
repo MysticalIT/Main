@@ -1,0 +1,6 @@
+DB_CONNECTION=mysql
+DB_HOST=mysql-alwayzpatrick.alwaysdata.net
+DB_PORT=3306
+DB_DATABASE=alwayzpatrick_mystical-it
+DB_USERNAME=135722_mystical
+DB_PASSWORD=mystical-barroc
