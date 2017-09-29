@@ -19,23 +19,20 @@
     <title>Admin Memo</title>
 </head>
 <body>
-<div class="header">
-    <div class="container">
+<header>
+<div class="wrapper">
         <div class="logo">
             <h1>Barroc IT</h1>
         </div>
+
         <div class="headerButtons">
             <ul>
-                <li><a href="main.php">Back</a></li>
-                <li><a href="memo.php?showhelp=true">Help</a></li>
+                <li><a href="adminMain.php">Back</a></li>
+                <li><a href="adminMemo.php?showhelp=true">Help</a></li>
             </ul>
         </div>
-    </div>
 </div>
-
-<container class="btn-help">
-
-</container>
+</header>
 
  <container class="main-content">
 
@@ -50,8 +47,6 @@
 
  </container>
 
-<div class="go-back">
-    <a href="<?php// echo BASE_URL?>/public/Admin/adminMain.php">Back</a>
-</div>
+
 </body>
 </html>

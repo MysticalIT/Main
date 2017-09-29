@@ -11,11 +11,22 @@
     <title>Sales_call_client</title>
 </head>
 <body>
+<header>
+    <div class="links">
+        <div class="wrapper">
+            <ul class="headerButtons">
+                <a href="../../app/sales/edit_client.php?showClients=true">View clients</a>
+                <a href="../../public/sales/salesMain.php">Back</a>
+                <li><a href="">Logout</a></li>
+            </ul>
+        </div>
+    </div>
 
+</header>
 
-<a href="../../app/sales/edit_client.php?showClients=true">View clients</a>
-<a href="../../public/sales/salesMain.php">Back</a>
+<container class="main-content">
 
+    <div class="client-list">
 <?php
 
 $clients;
@@ -28,12 +39,12 @@ if ($_GET['showclients=true'])
     }
 }
 echo "<p>$details_client</p>"
-?>
+?></div>
 
 <a href="../../app/sales/edit_client.php?clientid=$id">Edit client</a>
 <a href="../../app/sales/edit_project.php"></a>
 
 
-
+</container>
 </body>
 </html>

@@ -14,14 +14,18 @@
 <?php
 require ("../../404_page.php")
 ?>
-<div class="container">
+
+<header>
+    <ul class="headerButtons">
+        <li><a href="salesMain.php">Back</a></li>
+        <li><a href="memo_sales.php?showhelp=true">Help</a></li>
+    </ul>
+</header>
+
+<container class="main-content">
+
     <div class="wrapper">
-        <header>
-            <ul>
-                <li><a href="salesMain.php">Back</a></li>
-                <li><a href="memo_sales.php?showhelp=true">Help</a></li>
-            </ul>
-        </header>
+
         <div class="memo">
             <form action="../../app/memoUpdate.php" method="get">
                 <textarea name="memo" id="memo" cols="30" rows="10"></textarea>
@@ -29,6 +33,7 @@ require ("../../404_page.php")
             </form>
         </div>
     </div>
-</div>
+
+</container>
 </body>
 </html>

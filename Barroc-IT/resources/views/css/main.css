@@ -50,6 +50,11 @@ Admin - Main
 
 }
 
+.adminMainNav{
+
+
+}
+
 /*========
 Admin - Clients
  ========*/
@@ -57,14 +62,20 @@ Admin - Clients
 
 }
 
-.inactiveUsers{
+
+.adminClientSidebar{
 
 }
+
 
 .client-list{
 
 }
 
+
+.inactiveUsers{
+
+}
 
 /*========
 Admin - Memo

@@ -11,7 +11,23 @@
     <title>Finance - Main</title>
 </head>
 <body>
-<div class="container">
+
+<header>
+    <div class="links">
+        <div class="wrapper">
+            <ul>
+                <li><a href="financeBkrcheck.php">BKR Check</a></li>
+                <li><a href="financeInvoices.php">Invoices</a></li>
+                <li><a href="../memo.php">Memo's</a></li>
+                <a href="">Help</a>
+                <li><a href="">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<container class="main-content">
+
     <div class="clientsFinance">
         <div class="wrapper">
             <div class="list">
@@ -29,21 +45,8 @@
             </div>
             <a href=""></a>Set Inactive</div>
     </div>
-    <div class="links">
-        <div class="wrapper">
-            <ul>
-                <li><a href="financeBkrcheck.php">BKR Check</a></li>
-                <li><a href="financeInvoices.php">Invoices</a></li>
-                <li><a href="../memo.php">Memo's</a></li>
-                <li><a href="">Logout</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="help">
-        <div class="wrapper">
-            <a href="">Help</a>
-        </div>
-    </div>
-</div>
+
+
+</container>
 </body>
 </html>

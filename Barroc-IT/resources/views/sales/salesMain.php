@@ -11,24 +11,38 @@
     <title>Sales</title>
 </head>
 <body>
-    <a href="../index.php">Logout</a>
-
-        <div>
-            <a href="salesMain.php?showHelp=true">Help</a>
+<header>
+    <div class="links">
+        <div class="wrapper">
+            <ul class="headerButtons">
+               <li><a href="salesMain.php?showHelp=true">Help</a></li>
+                <a href="../index.php">Logout</a>
+            </ul>
         </div>
-
-    <ul>
-        <?php
-        $clients;
+    </div>
+</header>
 
 
-        foreach ( $clients as $client)
-        {
-            echo "<li>'$client'</li>";
-        }
+    <container class="main-content">
 
-    ?>
-</ul>
+<div class="client-list">
+        <ul>
+            <?php
+            $clients;
+
+
+            foreach ( $clients as $client)
+            {
+                echo "<li>'$client'</li>";
+            }
+
+        ?>
+    </ul>
+</div>
+
+
+
+    <div class="sales-nav"
     <ul>
         <li><a href="../../app/sales/add_client.php">Add Client here</a></li>
         <li><a href="../sales/call_client_list.php">Call list for clients</a></li>
@@ -37,7 +51,8 @@
         <li><a href="memo_sales.php">Show sales memos</a></li>
 
     </ul>
-
+    </div>
+</container>
 
 
 

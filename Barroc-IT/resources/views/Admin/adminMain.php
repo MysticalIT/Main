@@ -28,27 +28,23 @@
 </div>
 
 
-<container class="btn-help">
 
-</container>
-
-
-<container class="main-content">
-    <ol>
-    <div class="adminClients">
+<div class="main-content">
+    <ol class="adminMainNav">
+    <li class="adminClients">
         <a href="adminClients.php">Activate Clients</a>
-    </div>
+    </li>
 
-    <div class="adminMemos">
+    <li class="adminMemos">
         <a href="adminMemo.php">Memo's</a>
-    </div>
+    </li>
 
-    <div class="logout-btn">
+    <li class="logout-btn">
         <button class="logout" value="logout">
             <a href="../index.php">Logout</a>
         </button>
-    </div>
+    </li>
     </ol>
-</container>
+</div>
 </body>
 </html>

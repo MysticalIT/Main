@@ -11,11 +11,12 @@
     <title>Development - Main</title>
 </head>
 <body>
-<div class="container">
+<header>
     <div class="tophelp">
         <a href="">Help</a>
     </div>
-    <div class="main-content">
+</header>
+    <container class="main-content">
         <div class="wrapper">
             <ul>
                 <li><a href="developmentProjects.php">Projects</a></li>
@@ -23,7 +24,7 @@
                 <li><a href="Logout.php">Logout</a></li>
             </ul>
         </div>
-    </div>
-</div>
+    </container>
+
 </body>
 </html>

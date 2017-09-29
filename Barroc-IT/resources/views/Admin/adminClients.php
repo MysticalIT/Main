@@ -24,14 +24,14 @@
         <div class="logo">
             <h1>Barroc IT</h1>
         </div>
+        <nav>
+
+        </nav>
     </div>
 </div>
 
-<container class="btn-help">
 
-</container>
-
-<container class="main-content">
+<div class="main-content">
 
 
     <div class="activationPrompt">
@@ -40,7 +40,11 @@
         <input type="submit" class="btn-activate" value="No">
     </div>
 
+
+
+
     <div class="inactiveUsers">
+        <aside class="adminClientSidebar">
         <h2>Inactive Client List</h2>
         <table class="client-list">
             <tr>
@@ -54,14 +58,11 @@
                 </tr>
             <?php// endforeach; ?>
         </table>
-    </div>
-
-    <div class="go-back">
-        <a href="<?php// echo BASE_URL?>/public/Admin/adminMain.php">Back</a>
+        </aside>
     </div>
 
 
-</container>
+</div>
 
 </body>
 </html>
