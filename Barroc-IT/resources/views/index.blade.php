@@ -30,18 +30,26 @@
 
 <div class="main-content">
 
-    <div class="container">
-        <form class="login-form" action="" method="post">
+    <div class="container-fluid">
+
+        <form class="login-form col-md-5 offset-md-1 text-md-center" action="" method="post">
             {{csrf_field()}}
             <h4>Please enter your credentials</h4>
+
             <div class="form-group">
-                <label for="department">Department</label>
-                <input type="text" name="department" id="department">
+                <label for="department" class="col-md-3">Department</label>
+                <input type="text" class="col-md-3" name="department" id="department">
             </div>
+
             <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password">
+                <label for="password" class="col-md-3">Password</label>
+                <input type="password" class="col-md-3" name="password" id="password">
             </div>
+
+            <div class="btn-help">
+                <input type="button" name="help" value="Help" class="help-button">
+            </div>
+
             <div class="form-group">
                 <input type="submit" name="type" value="Login" class="login-button">
             </div>
@@ -51,11 +59,6 @@
 </div>
 
 
-<div class="footer">
- <div class="btn-help">
-     <input type="button" name="help" value="Help" class="help-button">
- </div>
-</div>
 <?php
 if(session()->has("message")){
     $msg = session()->get("message");

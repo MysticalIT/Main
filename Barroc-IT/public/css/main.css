@@ -6,22 +6,39 @@ body {
     font-size: 14px;
     line-height: 1.42857143;
     color: #333;
-    background-color: #fff;}
+    background-color: #CFC1B5;
+    position: relative;
+    width: 100%;
+    align-items: center;
+}
 
 .logo{
-    position: relative;
     text-shadow: 2px 2px 3px black;
     color: gray;
     line-height: 0.8em;
+    vertical-align: baseline;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    display: flex;
+
 }
 
 
 /*==========================================================
     Header Login Page styles
 ==========================================================*/
-.login-form {
+.container-fluid{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
     background: rgba(0,0,0,0.4);
     margin-top: 50px;
+    max-width: 100%;
+
+
 }
 
 .headerButtons{
@@ -106,6 +123,3 @@ Admin - Memo
 /*==========================================================
     Footer styles
 ==========================================================*/
-.btn-help{
-    background-color: rgba(100,100,100,50);
-}
