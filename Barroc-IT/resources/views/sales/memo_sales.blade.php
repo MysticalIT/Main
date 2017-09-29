@@ -7,30 +7,33 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/main.css">
-    <title>Finance - Create Invoice</title>
+    <link rel="stylesheet" href="{{ asset("css/main.css") }}">
+    <title>Memo Sales</title>
 </head>
 <body>
-<div class="container">
-    <div class="links">
-        <div class="wrapper">
-            <ul>
-                <li><a href="financeInvoices.php">Back</a></li>
-                <li><a href="">Help</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="invoiceForm">
-        <div class="wrapper">
-            <form action="" method="post">
-                <label for="invoiceSubject">Subject:</label>
-                <input type="text" id="invoiceSubject" name="subject">
-                <label for="invoicePrice">Price:</label>
-                <input type="text" id="invoicePrice" name="price">
-                <input type="submit" value="Create Invoice">
+<?php
+require ("../../404_page.php")
+?>
+
+<header>
+    <ul class="headerButtons">
+        <li><a href="salesMain.blade.php">Back</a></li>
+        <li><a href="memo_sales.blade.php?showhelp=true">Help</a></li>
+    </ul>
+</header>
+
+<container class="main-content">
+
+    <div class="wrapper">
+
+        <div class="memo">
+            <form action="../../app/memoUpdate.php" method="get">
+                <textarea name="memo" id="memo" cols="30" rows="10"></textarea>
+                <input type="submit" value="Save Memo">
             </form>
         </div>
     </div>
-</div>
+
+</container>
 </body>
 </html>

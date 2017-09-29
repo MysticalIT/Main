@@ -7,50 +7,44 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/main.css">
-    <title>Sales</title>
+    <link rel="stylesheet" href="{{ asset("css/main.css") }}">
+    <title>Sales_call_client</title>
 </head>
 <body>
 <header>
     <div class="links">
         <div class="wrapper">
             <ul class="headerButtons">
-               <li><a href="salesMain.php?showHelp=true">Help</a></li>
-                <a href="/logout">Logout</a>
+                <a href="../../app/sales/edit_client.php?showClients=true">View clients</a>
+                <a href="../../public/sales/salesMain.php">Back</a>
+                <li><a href="">Logout</a></li>
             </ul>
-        <div>
-            <a href="salesMain.php?showHelp=true">Help</a>
         </div>
     </div>
+
 </header>
 
-    <container class="main-content">
+<container class="main-content">
 
-<div class="client-list">
-    <ul>
-    </ul>
-</div>
+    <div class="client-list">
+<?php
+
+$clients;
+
+if ($_GET['showclients=true'])
+{
+    foreach ($clients as $client)
+    {
+        echo"<li>$client</li> ";
+    }
+}
+echo "<p>$details_client</p>"
+?></div>
+
+<a href="../../app/sales/edit_client.php?clientid=$id">Edit client</a>
+<a href="../../app/sales/edit_project.php"></a>
 
 
-
-    <div class="sales-nav">
-    <ul>
-
-    </ul>
-    <ul>
-        <li><a href="../../app/sales/add_client.php">Add Client here</a></li>
-        <li><a href="../sales/call_client_list.php">Call list for clients</a></li>
-        <li><a href="../../app/sales/add_project.php">Add Project</a></li>
-        <li><a href="../../app/sales/edit_client.php">Show Clients</a></li>
-        <li><a href="memo_sales.php">Show sales memos</a></li>
-
-    </ul>
-    </div>
 </container>
-
-
-
-
-
 </body>
 </html>
