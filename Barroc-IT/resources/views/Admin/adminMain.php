@@ -45,7 +45,7 @@
 
     <div class="logout-btn">
         <button class="logout" value="logout">
-            <a href="../index.php">Logout</a>
+            <a href="../index.blade.php">Logout</a>
         </button>
     </div>
     </ol>

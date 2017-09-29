@@ -11,24 +11,15 @@
     <title>Sales</title>
 </head>
 <body>
-    <a href="../index.php">Logout</a>
+    <a href="">Logout</a>
 
         <div>
             <a href="salesMain.php?showHelp=true">Help</a>
         </div>
 
     <ul>
-        <?php
-        $clients;
 
-
-        foreach ( $clients as $client)
-        {
-            echo "<li>'$client'</li>";
-        }
-
-    ?>
-</ul>
+    </ul>
     <ul>
         <li><a href="../../app/sales/add_client.php">Add Client here</a></li>
         <li><a href="../sales/call_client_list.php">Call list for clients</a></li>
