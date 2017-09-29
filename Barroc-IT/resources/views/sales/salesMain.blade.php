@@ -38,11 +38,11 @@
 
     </ul>
     <ul>
-        <li><a href="../../app/sales/add_client.php">Add Client here</a></li>
-        <li><a href="call_client_list.blade.php">Call list for clients</a></li>
-        <li><a href="../../app/sales/add_project.php">Add Project</a></li>
-        <li><a href="../../app/sales/edit_client.php">Show Clients</a></li>
-        <li><a href="memo_sales.blade.php">Show sales memos</a></li>
+        <li><a href="/addclient">Add Client here</a></li>
+        <li><a href="/callclient">Call list for clients</a></li>
+        <li><a href="/addproject">Add Project</a></li>
+        <li><a href="?showclients=true">Show Clients</a></li>
+        <li><a href="/memo">Show sales memos</a></li>
 
     </ul>
     </div>

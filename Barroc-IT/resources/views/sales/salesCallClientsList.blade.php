@@ -17,7 +17,7 @@
             <ul class="headerButtons">
                 <a href="../../app/sales/edit_client.php?showClients=true">View clients</a>
                 <a href="../../public/sales/salesMain.php">Back</a>
-                <li><a href="">Logout</a></li>
+
             </ul>
         </div>
     </div>
@@ -27,19 +27,20 @@
 <container class="main-content">
 
     <div class="client-list">
-<?php
+{{--<?php--}}
 
-$clients;
+{{--$clients;--}}
 
-if ($_GET['showclients=true'])
-{
-    foreach ($clients as $client)
-    {
-        echo"<li>$client</li> ";
-    }
-}
-echo "<p>$details_client</p>"
-?></div>
+{{--if ($_GET['showclients=true'])--}}
+{{--{--}}
+    {{--foreach ($clients as $client)--}}
+    {{--{--}}
+        {{--echo"<li>$client</li> ";--}}
+    {{--}--}}
+{{--}--}}
+{{--echo "<p>$details_client</p>"--}}
+
+</div>
 
 <a href="../../app/sales/edit_client.php?clientid=$id">Edit client</a>
 <a href="../../app/sales/edit_project.php"></a>

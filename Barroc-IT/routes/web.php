@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//===================login files===================
 Route::get('/', function () {
     return view('index');
 });
@@ -41,7 +41,7 @@ Route::get('/logout', function () {
     session(["message" => "You have been logged out"]);
     return redirect("/");
 });
-
+//===================sales===================
 Route::get('/sales', function () {
     if(session()->has("department"))
     {
@@ -55,6 +55,16 @@ Route::get('/sales', function () {
     return redirect("/");
 });
 
+Route::get('/addclient' , function(){
+    return view('sales/salesEditClients');
+});
+Route::get('/callclient' , function(){
+    return view('sales/salesCallClientsList');
+});
+Route::get('/addproject' , function(){
+    return view('sales/salesAddProject');
+});
+//===================development files===================
 Route::get('/development', function () {
     if(session()->has("department"))
     {
@@ -67,7 +77,7 @@ Route::get('/development', function () {
     session(["message" => "You don't have access. Please login."]);
     return redirect("/");
 });
-
+//===================finace files===================
 Route::get('/finance', function () {
     if(session()->has("department"))
     {
@@ -80,7 +90,7 @@ Route::get('/finance', function () {
     session(["message" => "You don't have access. Please login."]);
     return redirect("/");
 });
-
+//===================admin files===================
 Route::get('/admin', function () {
     if(session()->has("department"))
     {
