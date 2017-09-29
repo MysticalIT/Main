@@ -11,7 +11,6 @@
     <title>Sales</title>
 </head>
 <body>
-<<<<<<< HEAD
 <header>
     <div class="links">
         <div class="wrapper">
@@ -19,7 +18,6 @@
                <li><a href="salesMain.php?showHelp=true">Help</a></li>
                 <a href="../index.php">Logout</a>
             </ul>
-=======
     <a href="">Logout</a>
 
         <div>

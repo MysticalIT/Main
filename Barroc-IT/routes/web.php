@@ -36,6 +36,9 @@ Route::post('/', function (\Illuminate\Http\Request $request){
     }
 });
 
+Route::get('/', function () {
+    return view('index');
+});
 
 Route::get('/sales', function () {
     return view('sales/salesMain');
