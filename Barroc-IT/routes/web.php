@@ -104,13 +104,61 @@ Route::get('/development', function () {
     session(["message" => "You do not have access. Please login."]);
     return redirect("/");
 });
-//===================finace files===================
+Route::get('/projects', function () {
+    if(session()->has("department"))
+    {
+        if(session()->get("department") === "development")
+        {
+            return view('development/developmentProjects');
+        }
+        return redirect("/".session()->get("department"));
+    }
+    session(["message" => "You do not have access. Please login."]);
+    return redirect("/");
+});
+//===================finance files===================
 Route::get('/finance', function () {
     if(session()->has("department"))
     {
         if(session()->get("department") === "finance")
         {
             return view('finance/financeMain');
+        }
+        return redirect("/".session()->get("department"));
+    }
+    session(["message" => "You do not have access. Please login."]);
+    return redirect("/");
+});
+Route::get('/invoices', function () {
+    if(session()->has("department"))
+    {
+        if(session()->get("department") === "finance")
+        {
+            return view('finance/financeInvoices');
+        }
+        return redirect("/".session()->get("department"));
+    }
+    session(["message" => "You do not have access. Please login."]);
+    return redirect("/");
+});
+Route::get('/bkrcheck', function () {
+    if(session()->has("department"))
+    {
+        if(session()->get("department") === "finance")
+        {
+            return view('finance/financeBkrcheck');
+        }
+        return redirect("/".session()->get("department"));
+    }
+    session(["message" => "You do not have access. Please login."]);
+    return redirect("/");
+});
+Route::get('/createInvoice', function () {
+    if(session()->has("department"))
+    {
+        if(session()->get("department") === "finance")
+        {
+            return view('finance/financeCreateInvoice');
         }
         return redirect("/".session()->get("department"));
     }

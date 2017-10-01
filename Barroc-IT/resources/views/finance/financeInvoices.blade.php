@@ -15,14 +15,14 @@
     <div class="links">
         <div class="wrapper">
             <ul>
-                <li><a href="financeMain.blade.php">Back</a></li>
-                <li><a href="">Help</a></li>
+                <li><a href="/finance">Back</a></li>
+                <li><a href="/invoices?showHelp=true">Help</a></li>
             </ul>
         </div>
     </div>
     <div class="clientsFinance">
         <div class="wrapper">
-            <a href="">All clients with invoice or project</a>
+            <a href="/invoices?showClients=true">All clients with invoice or project</a>
             <div class="list">
                 <ul>
                     <li><a href="">Ben</a></li>

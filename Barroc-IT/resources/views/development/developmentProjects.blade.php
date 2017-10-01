@@ -17,13 +17,13 @@
             <ul>
                 <li></li>
                 <li><a href="/development">Back</a></li>
-                <li><a href="developmentProjects.blade.php?showhelp=true">Help</a></li>
+                <li><a href="/projects?showhelp=true">Help</a></li>
             </ul>
         </div>
     </header>
     <div class="listProjects">
         <div class="wrapper">
-            <a href="developmentProjects.blade.php?loadprojects=true">Show Projects</a>
+            <a href="/projects?loadprojects=true">Show Projects</a>
             <div class="list">
                 <ul>
                     <li>

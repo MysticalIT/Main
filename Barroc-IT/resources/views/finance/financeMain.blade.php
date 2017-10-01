@@ -16,11 +16,11 @@
     <div class="links">
         <div class="wrapper">
             <ul>
-                <li><a href="financeBkrcheck.blade.php">BKR Check</a></li>
-                <li><a href="financeInvoices.blade.php">Invoices</a></li>
-                <li><a href="../memo.php">Memo's</a></li>
-                <a href="">Help</a>
-                <li><a href="">Logout</a></li>
+                <li><a href="/bkrcheck">BKR Check</a></li>
+                <li><a href="/invoices">Invoices</a></li>
+                <li><a href="/memo">Memo's</a></li>
+                <a href="/finance?showHelp=true">Help</a>
+                <li><a href="/logout">Logout</a></li>
             </ul>
         </div>
     </div>

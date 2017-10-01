@@ -14,7 +14,7 @@
 <div class="container">
     <div class="clientsFinance">
         <div class="wrapper">
-            <a href="">Get clients that needs the check</a>
+            <a href="/bkrcheck?showClients=true">Get clients that needs the check</a>
             <div class="list">
                 <ul>
                     <li><a href="">George</a></li>
@@ -27,7 +27,7 @@
     <div class="links">
         <div class="wrapper">
             <ul>
-                <li><a href="financeMain.blade.php">Back</a></li>
+                <li><a href="/finance">Back</a></li>
                 <li><a href="">Help</a></li>
             </ul>
         </div>

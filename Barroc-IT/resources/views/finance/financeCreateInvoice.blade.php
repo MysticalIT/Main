@@ -15,8 +15,8 @@
     <div class="links">
         <div class="wrapper">
             <ul>
-                <li><a href="financeInvoices.blade.php">Back</a></li>
-                <li><a href="">Help</a></li>
+                <li><a href="/finance">Back</a></li>
+                <li><a href="/createInvoices?showHelp=true">Help</a></li>
             </ul>
         </div>
     </div>
