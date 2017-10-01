@@ -60,6 +60,18 @@ Route::get('/addclient' , function(){
     {
         if(session()->get("department") === "sales")
         {
+            return view('sales/salesAddClients');
+        }
+        return redirect("/".session()->get("department"));
+    }
+    session(["message" => "You do not have access. Please login."]);
+    return redirect("/");
+});
+Route::get('/editclient' , function(){
+    if(session()->has("department"))
+    {
+        if(session()->get("department") === "sales")
+        {
             return view('sales/salesEditClients');
         }
         return redirect("/".session()->get("department"));
@@ -85,6 +97,18 @@ Route::get('/addproject' , function(){
         if(session()->get("department") === "sales")
         {
             return view('sales/salesAddProject');
+        }
+        return redirect("/".session()->get("department"));
+    }
+    session(["message" => "You do not have access. Please login."]);
+    return redirect("/");
+});
+Route::get('/editproject' , function(){
+    if(session()->has("department"))
+    {
+        if(session()->get("department") === "sales")
+        {
+            return view('sales/salesEditProject');
         }
         return redirect("/".session()->get("department"));
     }
@@ -197,4 +221,7 @@ Route::get('/memo' , function(){
     }
     session(["message" => "You do not have access. Please login."]);
     return redirect("/");
+});
+Route::get('/404' , function(){
+    return view("   404_page");
 });
