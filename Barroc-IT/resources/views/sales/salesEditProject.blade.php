@@ -28,9 +28,8 @@
     <input type="text" id="clientphonenumber">
     <input type="text" id="projectname">
     <textarea id="projectDetails"></textarea>
-
-    <a href="/createInvoice?projectId=">Set invoice limit</a>
-
+    <label>Set invoice limit</label>
+    <input type="text" id="setinvoice">
 
 </form>
 
