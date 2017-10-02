@@ -8,10 +8,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset("css/main.css") }}">
-    <title>Development - Memo's</title>
+    <title>Memo's</title>
 </head>
 <body>
-
 
 <header>
     <div class="wrapper">
@@ -29,12 +28,16 @@
         <div class="memo">
             <div class="listprojects">
                 <ul>
-                    <li><a href="">Project</a></li>
-                    <li><a href="">Project</a></li>
+                    <?php
+                        foreach($projects as $project)
+                        {
+                            echo "<li><a href='/editproject?projectid=$project->id'>$project->id</a></li>";
+                        }
+                    ?>
                 </ul>
             </div>
             <div class="editmemo">
-                <form action="../../app/memoUpdate.php" method="post">
+                <form action="/memoUpdate" method="post">
                     <textarea name="memo" id="memo" cols="30" rows="10"></textarea>
                     <input type="submit" value="Save Memo">
                 </form>
