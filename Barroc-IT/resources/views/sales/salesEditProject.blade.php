@@ -9,10 +9,27 @@
 </head>
 <body>
 <?php
-        $clientid= $_GET["clientId"];
-
+        $clientId= $_GET["clientId"];
+        $projectId= $_GET["projectId"];
 
 
         ?>
+
+<form action="" method="post">
+
+    <label for="clientname">Client name</label>
+    <label for="clientphonenumber">Client phonenumber</label>
+    <label for="projectname">Project name</label>
+    <label for="projectDetails">Project details</label>
+    <input type="text" id="clientname">
+    <input type="text" id="clientphonenumber">
+    <input type="text" id="projectname">
+    <textarea id="projectDetails"></textarea>
+
+    <a href="/createInvoice?projectId=">Set invoice limit</a>
+
+
+</form>
+
 </body>
 </html>

@@ -18,7 +18,7 @@
                <li><a href="salesMain.blade.php?showHelp=true">Help</a></li>
                 <a href="/logout">Logout</a>
             </ul>
-            <a href="salesMain.blade.php?showHelp=true">Help</a>
+            <a href="/sales?showHelp=true">Help</a>
         </div>
     </div>
 </header>

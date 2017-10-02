@@ -13,5 +13,26 @@
 
 
         ?>
+
+
+<form method="post" action="">
+    <label for="companyName">Client company name:</label>
+    <label for="adres">Client adress:</label>
+    <label for="zipcode">Client zipcode</label>
+    <label for="clientName">Client name</label>
+    <label for="phonenumber">Client phonenumber</label>
+    <label for="lastcontactPerson">Last contacted person</label>
+    <label for="lastcontactDate">Last contacted date</label>
+
+    <input type="text" name="companyName" id="companyName">
+    <input type="text" name="adres" id="adres">
+    <input type="text" name="zipcode" id="zipcode">
+    <input type="text" name="clientName" id="clientName">
+    <input type="text" name="phonenumber" id="phonenumber">
+    <input type="text" name="lastcontactPerson" id="lastcontactPerson">
+    <textarea name="lastcontactDate" id="lastcontactDate"></textarea>
+
+    <input type="submit" value="Add client">
+</form>
 </body>
 </html>
