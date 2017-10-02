@@ -17,34 +17,65 @@
             <a href="/sales">Back</a>
         </ul>
     </div>
+</div>
 <?php
         $clientid = session()->get("clientId");
+        $client = DB::table("tbl_clients")->where("id", $clientid)->get();
+
+        if (count($client) > 0)
+        {
+            $firstName = $client[0]->firstname;
+            $lastName = $client[0]->lastname;
+            $street = $client[0]->street;
+            $houseNumber = $client[0]->house_number;
+            $zipCode = $client[0]->zip_code;
+            $city = $client[0]->city;
+            $email = $client[0]->email;
+            $companyName = $client[0]->company_name;
+            $phoneNumber = $client[0]->phonenumber;
+        }
+        else
+            header("location: /sales");
+
 
         echo "
-    <form method='post' action=''>
-        <label for='companyName'>Client company name:</label>
-        <label for='adres'>Client adress:</label>
-        <label for='zipcode'>Client zipcode</label>
-        <label for='clientName'>Client name</label>
-        <label for='phonenumber'>Client phonenumber</label>
-        <label for='lastcontactPerson'>Last contacted person</label>
-        <label for='lastcontactDate'>Last contacted date</label>
-        
-        <input type='text' name='companyName' id='companyName' value=''>
-        <input type='text' name='adres' id='adres'>
-        <input type='text' name='zipcode' id='zipcode'>
-        <input type='text' name='clientName' id='clientName'>
-        <input type='text' name='phonenumber' id='phonenumber'>
-        <input type='text' name='lastcontactPerson' id='lastcontactPerson'>
-        <textarea name='lastcontactDate' id='lastcontactDate'></textarea>
-        
-        <input type='submit' value='Add client'>
+    <form method='post' action=''>";
+    ?>
+        {{csrf_field()}}
+    <?php
+    echo "
+    <input type='hidden' value='$clientid'>
+
+    <label for='companyName'>Client company name:</label>
+    <input type='text' name='companyName' id='companyName' value='$companyName'>
+
+    <label for='street'>Client street:</label>
+    <input type='text' name='street' id='street' value='$street'>
+
+    <label for='house-number'>Client house number:</label>
+    <input type='text' name='house-number' id='house-number' value='$houseNumber'>
+
+    <label for='city'>Client city:</label>
+    <input type='text' name='city' id='city' value='$city'>
+
+    <label for='zip-code'>Client zip-code</label>
+    <input type='text' name='zip-code' id='zip-code' value='$zipCode'>
+
+    <label for='clientFirstName'>Client first name</label>
+    <input type='text' name='clientFirstName' id='clientFirstName' value='$firstName'>
+
+    <label for='clientLastName'>Client last name</label>
+    <input type='text' name='clientLastName' id='clientLastName' value='$lastName'>
+
+    <label for='phoneNumber'>Client phone number</label>
+    <input type='text' name='phoneNumber' id='phoneNumber' value='$phoneNumber'>
+
+    <label for='email'>Client email:</label>
+    <input type='text' name='email' id='email' value='$email'>
+
+    <input type='submit' value='Edit client'>
     </form>
-        "
-        
-        
-        
-        
+        ";
         ?>
 
 
