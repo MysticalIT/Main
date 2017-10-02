@@ -48,7 +48,7 @@
             </div>
 
             <div class="btn-help">
-                <input type="submit" name="help" value="Help" class="help-button btn btn-help">
+                <a href="/index?showhelp=true">Help</a>
             </div>
 
             <div class="form-group">
