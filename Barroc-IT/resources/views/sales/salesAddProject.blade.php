@@ -26,10 +26,11 @@
     <label for="projectDetails">Project details</label>
     <textarea id="projectDetails"></textarea>
 
+    <label>Set invoice limit</label>
+    <input type="text" id="setinvoice">
 
 
 </form>
-<a href="/createInvoice?projectId=">Set invoice limit</a>
 
 
 </body>

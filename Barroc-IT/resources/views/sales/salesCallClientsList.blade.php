@@ -25,21 +25,42 @@
 </header>
 
 <container class="main-content">
-
-    <div class="client-list">
-<?php
+    <?php
+    echo"<div class='client-list'>";
         error_reporting(0);
+    echo "<ul>";
         $showclient = $_GET["showClients"];
         if ($showclient)
             {
-                echo "<a href='/callclient?clientId=$clientid'>BALLZ :3</a>";
+                $users = DB::table('tbl_clients')->get();
+                foreach ($users as $user)
+                {
+                    $clientid = $user->id;
+
+                    echo"<li><a href='/callclient?clientId=$clientid'>$user->firstname $user->lastname</a></li>";
+                }
             }
-        ?>
+    echo "</ul>";
 
-</div>
+echo"</div>";
 
-<a href="/editproject?projectId=$projectid">Edit project</a> <!-- moet in if statement (PHP) dus idk je kan stylen -->
 
+
+    if (isset($_GET["clientId"]))
+        {
+            echo "<ul>";
+            $projects = DB::table("tbl_projects")->where("client_id", $_GET["clientId"])->get();
+            foreach ($projects as $project)
+                {
+                    echo "<li><a href='/editproject?projectId=$project->id'>$project->name</a></li>";
+
+                }
+            echo "</ul>";
+        }
+
+
+
+?>
 
 </container>
 </body>

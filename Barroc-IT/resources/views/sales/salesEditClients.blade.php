@@ -11,6 +11,12 @@
     <title>Edit client</title>
 </head>
 <body>
+<div class="links">
+    <div class="wrapper">
+        <ul class="headerButtons">
+            <a href="/sales">Back</a>
+        </ul>
+    </div>
 <?php
         $clientid = session()->get("clientId");
 

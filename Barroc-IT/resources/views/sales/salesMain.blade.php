@@ -1,8 +1,13 @@
 <?php
     if (isset($_GET["clientId"]))
+    {
         session(["clientId" => $_GET["clientId"]]);
+    }
     elseif(session()->has("clientId"))
+    {
         session()->remove("clientId");
+    }
+$users = DB::table('tbl_clients')->get();
 ?>
 <!doctype html>
 <html lang="en">
@@ -21,10 +26,10 @@
     <div class="links">
         <div class="wrapper">
             <ul class="mainNav">
-               <li><a href="salesMain.blade.php?showHelp=true">Help</a></li>
+               <li> <a href="/sales?showHelp=true">Help</a></li>
                 <a href="/logout">Logout</a>
             </ul>
-            <a href="/sales?showHelp=true">Help</a>
+
         </div>
     </div>
 </header>
@@ -40,12 +45,18 @@
     <ul>
         <?php
         if (isset($_GET["clientId"]))
-            echo "<li><a href='/editclient'>Edit Client here</a></li>";
-        else
+            {
+                $clientid = $_GET["clientId"];
+                echo "<li><a href='/editclient?clientId=$clientid'>Edit Client here</a></li>";
+                echo "<li><a href='/editproject?clientId=$clientid'>Edit Project</a></li>";
+                echo "<li><a href='/addproject?clientId=$clientid'>Add Project</a></li>";
+            }
+        else{
             echo "<li><a href='/addclient'>Add Client here</a></li>";
+        }
         ?>
+
         <li><a href="/callclient">Call list for clients</a></li>
-        <li><a href="/addproject">Add Project</a></li>
         <li><a href="/memo">Show memo's</a></li>
         <li><a href="?showclients=true">Show Clients</a></li>
 
@@ -60,7 +71,7 @@ $showclient = $_GET["showclients"];
 
 if ($showclient === "true")
 {
-    $users = DB::table('tbl_clients')->get();
+
     echo "<div class='client-list'>";
         echo"<ul>";
         foreach ($users as $user)

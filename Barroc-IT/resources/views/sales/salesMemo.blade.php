@@ -41,10 +41,15 @@ $projects= DB::table('tbl_projects')->get();
                 </ul>
             </div>
             <div class="editmemo">
-                <form action="" method="post">
-                    <textarea name="memo" id="memo" cols="30" rows="10"></textarea>
-                    <input type="submit" value="Save Memo">
-                </form>
+                <?php
+
+
+                echo"<form action='' method='post'>
+                    <textarea name='memo' id='memo' cols='30' rows='10'></textarea>
+                    <input type='submit' value='Save Memo'>
+                </form>"
+
+                ?>
             </div>
         </div>
     </div>
