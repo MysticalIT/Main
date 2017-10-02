@@ -202,6 +202,18 @@ Route::get('/admin', function () {
     session(["message" => "You do not have access. Please login."]);
     return redirect("/");
 });
+Route::get('/activateClients', function () {
+    if(session()->has("department"))
+    {
+        if(session()->get("department") === "admin")
+        {
+            return view('admin/adminClients');
+        }
+        return redirect("/".session()->get("department"));
+    }
+    session(["message" => "You do not have access. Please login."]);
+    return redirect("/");
+});
 //===================GENERAL FILES==================
 Route::get('/memo' , function(){
     if(session()->has("department"))
@@ -216,6 +228,9 @@ Route::get('/memo' , function(){
         }
         elseif ($dep === "finance"){
             return view('finance/financeMemo');
+        }
+        elseif ($dep === "admin"){
+            return view('admin/adminMemo');
         }
         return redirect("/".session()->get("department"));
     }

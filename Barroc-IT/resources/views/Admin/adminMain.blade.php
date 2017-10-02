@@ -32,17 +32,15 @@
 <div class="main-content">
     <ol class="adminMainNav">
     <li class="adminClients">
-        <a href="adminClients.blade.php">Activate Clients</a>
+        <a href="/activateClients">Activate Clients</a>
     </li>
 
     <li class="adminMemos">
-        <a href="adminMemo.blade.php">Memo's</a>
+        <a href="/memo">Memo's</a>
     </li>
 
     <li class="logout-btn">
-        <button class="logout" value="logout">
-            <a href="../index.blade.php">Logout</a>
-        </button>
+        <a href="/logout">Logout</a>
     </li>
     </ol>
 </div>
