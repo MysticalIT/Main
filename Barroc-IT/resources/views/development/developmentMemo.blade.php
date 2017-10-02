@@ -18,8 +18,8 @@
         <nav class="navigation">
             <ul>
                 <li></li>
-                <li><a href="developmentMain.blade.php">Back</a></li>
-                <li><a href="developmentMemo.blade.php?showhelp=true">Help</a></li>
+                <li><a href="/development">Back</a></li>
+                <li><a href="/memo?showhelp=true">Help</a></li>
             </ul>
         </nav>
     </div>
