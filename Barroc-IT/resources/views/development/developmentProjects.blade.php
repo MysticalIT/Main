@@ -41,17 +41,26 @@
 
 
             <div class="projectList">
-                <ul>
-                    <li>
-                        <p>Project</p>
-                    </li>
-                    <li>
-                        <p>Project</p>
-                    </li>
-                    <li>
-                        <p>Project</p>
-                    </li>
-                </ul>
+                <table>
+
+                    <tr>
+                        <th>Project</th>
+                        <th>Name:</th>
+                        <th>Description:</th>
+                    </tr>
+
+                    <tr>
+                        <th>Project</th>
+                        <th>Name:</th>
+                        <th>Description:</th>
+                    </tr>
+
+                    <tr>
+                        <th>Project</th>
+                        <th>Name:</th>
+                        <th>Description:</th>
+                    </tr>
+                </table>
             </div>
         </div>
 
@@ -59,18 +68,6 @@
 
 
 
-    <div class="projectDetails">
-        <div class="wrapper">
-            <ul>
-                <li>
-                    <p>Name:</p>
-                </li>
-                <li>
-                    <p>Description:</p>
-                </li>
-            </ul>
-        </div>
-    </div>
 </div>
 
 </body>
