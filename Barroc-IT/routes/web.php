@@ -93,6 +93,20 @@ Route::get('/editclient' , function(){
     session(["message" => "You do not have access. Please login."]);
     return redirect("/");
 });
+Route::post('/editclient' , function(\Illuminate\Http\Request $request){
+    if(session()->has("department"))
+    {
+        if(session()->get("department") === "sales")
+        {
+            require("../app/clientControl.php");
+            editClient($request);
+            return redirect("/".session()->get("department"));
+        }
+        return redirect("/".session()->get("department"));
+    }
+    session(["message" => "You do not have access. Please login."]);
+    return redirect("/");
+});
 Route::get('/callclient' , function(){
     if(session()->has("department"))
     {
