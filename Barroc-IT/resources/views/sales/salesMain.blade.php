@@ -1,3 +1,9 @@
+<?php
+    if (isset($_GET["clientId"]))
+        session(["clientId" => $_GET["clientId"]]);
+    elseif(session()->has("clientId"))
+        session()->remove("clientId");
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -32,11 +38,16 @@
 
     </ul>
     <ul>
-        <li><a href="/addclient">Add Client here</a></li>
-        <li><a href="/callclient">Call list for clients</a>
-        <li><a href="/addproject?">Add Project</a></li>
-        <li><a href="/memo">Show sales memos</a></li>
-        <li><a href="/sales?showclients=true">Show Clients</a></li>
+        <?php
+        if (isset($_GET["clientId"]))
+            echo "<li><a href='/editclient'>Edit Client here</a></li>";
+        else
+            echo "<li><a href='/addclient'>Add Client here</a></li>";
+        ?>
+        <li><a href="/callclient">Call list for clients</a></li>
+        <li><a href="/addproject">Add Project</a></li>
+        <li><a href="/memo">Show memo's</a></li>
+        <li><a href="?showclients=true">Show Clients</a></li>
 
     </ul>
     </div>
@@ -63,11 +74,14 @@ if ($showclient === "true")
 }
 
 
+echo"</ul>";
+echo"</div>";
 
-    //$users = DB::table('users')->get();
-
-    //return view('/sales', ['users' => $users]);
-
+if(session()->has("message")){
+    $msg = session()->get("message");
+    echo "<script> window.alert('$msg'); </script>";
+    session()->remove("message");
+}
 ?>
 
 

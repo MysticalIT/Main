@@ -12,7 +12,7 @@
 </head>
 <body>
 <?php
-        $clientid = $_GET['clientId'];
+        $clientid = session()->get("clientId");
 
         echo "
     <form method='post' action=''>

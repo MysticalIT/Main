@@ -12,6 +12,9 @@
 </head>
 <body>
 
+<?php
+$projects= DB::table('tbl_projects')->get();
+?>
 
 <header>
     <div class="wrapper">
@@ -29,8 +32,12 @@
         <div class="memo">
             <div class="listprojects">
                 <ul>
-                    <li><a href="">Project</a></li>
-                    <li><a href="">Project</a></li>
+                    <?php
+                    foreach($projects as $project)
+                    {
+                        echo "<li><a href='/editproject?projectid=$project->id'>$project->name</a></li>";
+                    }
+                    ?>
                 </ul>
             </div>
             <div class="editmemo">

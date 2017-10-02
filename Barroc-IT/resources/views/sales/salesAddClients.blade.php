@@ -12,24 +12,35 @@
 </head>
 <body>
 <a href="/sales">Back</a>
-
-
 <form method="post" action="">
-    <label for="companyName">Client company name:</label>
-    <label for="adres">Client adress:</label>
-    <label for="zipcode">Client zipcode</label>
-    <label for="clientName">Client name</label>
-    <label for="phonenumber">Client phonenumber</label>
-    <label for="lastcontactPerson">Last contacted person</label>
-    <label for="lastcontactDate">Last contacted date</label>
+    {{csrf_field()}}
 
+    <label for="companyName">Client company name:</label>
     <input type="text" name="companyName" id="companyName">
-    <input type="text" name="adres" id="adres">
-    <input type="text" name="zipcode" id="zipcode">
-    <input type="text" name="clientName" id="clientName">
-    <input type="text" name="phonenumber" id="phonenumber">
-    <input type="text" name="lastcontactPerson" id="lastcontactPerson">
-    <textarea name="lastcontactDate" id="lastcontactDate"></textarea>
+
+    <label for="street">Client street:</label>
+    <input type="text" name="street" id="street">
+
+    <label for="house-number">Client house number:</label>
+    <input type="text" name="house-number" id="house-number">
+
+    <label for="city">Client city:</label>
+    <input type="text" name="city" id="city">
+
+    <label for="zip-code">Client zip-code</label>
+    <input type="text" name="zip-code" id="zip-code">
+
+    <label for="clientFirstName">Client first name</label>
+    <input type="text" name="clientFirstName" id="clientFirstName">
+
+    <label for="clientLastName">Client last name</label>
+    <input type="text" name="clientLastName" id="clientLastName">
+
+    <label for="phoneNumber">Client phone number</label>
+    <input type="text" name="phoneNumber" id="phoneNumber">
+
+    <label for="email">Client email:</label>
+    <input type="text" name="email" id="email">
 
     <input type="submit" value="Add client">
 </form>

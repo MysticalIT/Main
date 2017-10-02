@@ -67,6 +67,20 @@ Route::get('/addclient' , function(){
     session(["message" => "You do not have access. Please login."]);
     return redirect("/");
 });
+Route::post('/addclient' , function(\Illuminate\Http\Request $request){
+    if(session()->has("department"))
+    {
+        if(session()->get("department") === "sales")
+        {
+            require("../app/clientControl.php");
+            addClient($request);
+            return redirect("/".session()->get("department"));
+        }
+        return redirect("/".session()->get("department"));
+    }
+    session(["message" => "You do not have access. Please login."]);
+    return redirect("/");
+});
 Route::get('/editclient' , function(){
     if(session()->has("department"))
     {
