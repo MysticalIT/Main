@@ -36,6 +36,10 @@ body {
     margin-top: 160px;
 }
 
+h4{
+ color: #E5D6C9;
+
+}
 
 /*==========================================================
     Header Login Page styles
@@ -75,12 +79,13 @@ input.form-control, textarea.form-control {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    align-self: center;
     background: rgba(0,0,0,0.4);
     margin-top: 50px;
-    max-width: 100%;
+    max-width: 15%;
     color: #CFC1B5;
-    margin-bottom: 20px;
+
 
 
 }
@@ -126,6 +131,17 @@ a{
     border-bottom: 1px solid #333333;
     border-left: 1px solid #CFC1B5;
 
+}
+input{
+    font: bold 11px Arial;
+    text-decoration: none;
+    background-color: #CFC1B5;
+    color: #444;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CFC1B5;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CFC1B5;
 }
 
 ol, ul{
@@ -202,20 +218,25 @@ admin - Clients
 
 }
 
-/*========
-admin - Memo
- ========*/
+/*==========================================================
+    Memo styles
+==========================================================*/
 .memo{
-
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-self: center;
 }
+
+.memo textarea {
+    width: 100%;
+}
+
 
 /*==========================================================
     Button styles
 ==========================================================*/
-.logout-btn{
-
-}
-
 
 .btn-primary {
     background: #CFC1B5;
@@ -223,11 +244,6 @@ admin - Memo
     border-radius: 0px;
 }
 
-.btn-help{
-
-    border: 0px;
-    border-radius: 0px;
-}
 
 
 /*==========================================================

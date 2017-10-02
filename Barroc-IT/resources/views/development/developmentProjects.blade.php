@@ -37,7 +37,7 @@
 
 
         <div class="wrapper">
-            <a href="/projects?loadprojects=true">Show Projects</a>
+            <a href="/project?loadprojects=true">Show Projects</a>
 
 
             <div class="projectList">

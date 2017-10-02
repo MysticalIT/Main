@@ -12,28 +12,31 @@
 </head>
 <body>
 
-
+<div class="container">
 <header>
     <div class="wrapper">
-        <ul class="headerButtons">
-            <li><a href="/development">Back</a></li>
-            <li><a href="/memo?showhelp=true">Help</a></li>
-        </ul>
+        <nav class="navigation">
+            <ul>
+                <li></li>
+                <li><a href="developmentMain.blade.php">Back</a></li>
+                <li><a href="developmentMemo.blade.php?showhelp=true">Help</a></li>
+            </ul>
+        </nav>
     </div>
 </header>
 
-<container class="main-content">
+<div class="main-content">
 
     <div class="wrapper">
 
         <div class="memo">
-            <div class="listprojects">
+            <div class="listProjects">
                 <ul>
                     <li><a href="">Project</a></li>
                     <li><a href="">Project</a></li>
                 </ul>
             </div>
-            <div class="editmemo">
+            <div class="editMemo">
                 <form action="" method="post">
                     <textarea name="memo" id="memo" cols="30" rows="10"></textarea>
                     <input type="submit" value="Save Memo">
@@ -41,8 +44,8 @@
             </div>
         </div>
     </div>
-</container>
-
+</div>
+</div>
 
 
 </body>
