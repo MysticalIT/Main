@@ -32,8 +32,5 @@
 <a href="/createInvoice?projectId=">Set invoice limit</a>
 
 
-        ?>
-
-
 </body>
 </html>
