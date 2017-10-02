@@ -33,10 +33,10 @@
     </ul>
     <ul>
         <li><a href="/addclient">Add Client here</a></li>
-        <li><a href="/callclient">Call list for clients</a></li>
-        <li><a href="/addproject">Add Project</a></li>
+        <li><a href="/callclient">Call list for clients</a>
+        <li><a href="/addproject?">Add Project</a></li>
         <li><a href="/memo">Show sales memos</a></li>
-        <li><a href="?showclients=true">Show Clients</a></li>
+        <li><a href="/sales?showclients=true">Show Clients</a></li>
 
     </ul>
     </div>
@@ -44,23 +44,30 @@
 
 <?php
 error_reporting(0);
+
 $showclient = $_GET["showclients"];
 
-if ($showclient)
+if ($showclient === "true")
+{
+    $users = DB::table('tbl_clients')->get();
     echo "<div class='client-list'>";
-echo"<ul>";
+        echo"<ul>";
+        foreach ($users as $user)
+            {
+                $clientid = $user->id;
+                echo"<li><a href='/sales?clientId=$clientid'>$user->firstname $user->lastname</a></li>";
+            }
+        echo"</ul>";
+    echo"</div>";
 
-    echo"<li><a href='?clientId=$clientid'>Client</a></li>";
-    echo"<li><a href='?clientId=$clientid'>Client</a></li>";
-    echo"<li><a href='?clientId=$clientid'>Client</a></li>";
-    echo"<li><a href='?clientId=$clientid'>Client</a></li>";
-    echo"<li><a href='?clientId=$clientid'>Client</a></li>";
-    echo"<li><a href='?clientId=$clientid'>Client</a></li>";
-    echo"<li><a href='?clientId=$clientid'>Client</a></li>";
+}
 
 
-echo"</ul>";
-echo"</div>";
+
+    //$users = DB::table('users')->get();
+
+    //return view('/sales', ['users' => $users]);
+
 ?>
 
 
