@@ -31,16 +31,18 @@
                     <?php
                         foreach($projects as $project)
                         {
-                            echo "<li><a href='/editproject?projectid=$project->id'>$project->id</a></li>";
+                            echo "<li><a href='/memo?projectid=$project->id'>$project->id</a></li>";
                         }
                     ?>
                 </ul>
             </div>
             <div class="editmemo">
-                <form action="/memoUpdate" method="post">
-                    <textarea name="memo" id="memo" cols="30" rows="10"></textarea>
-                    <input type="submit" value="Save Memo">
-                </form>
+                <?php
+                echo"<form action='/memoUpdate' method='post'>
+                    <textarea name='memo' id='memo' cols='30' rows='10'></textarea>
+                    <input type='submit' value='Save Memo'>
+                </form>"               ?>
+
             </div>
         </div>
     </div>
