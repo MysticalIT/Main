@@ -12,19 +12,24 @@
 <form action="" method="post">
 
     <label for="clientname">Client name</label>
-    <label for="clientphonenumber">Client phonenumber</label>
-    <label for="projectname">Project name</label>
-    <label for="projectDetails">Project details</label>
     <input type="text" id="clientname">
+
+    <label for="clientphonenumber">Client phonenumber</label>
     <input type="text" id="clientphonenumber">
+
+    <label for="projectname">Project name</label>
     <input type="text" id="projectname">
+
+    <label for="projectDetails">Project details</label>
     <textarea id="projectDetails"></textarea>
 
-    <a href="/createInvoice?projectId=">Set invoice limit</a>
 
 
 </form>
+<a href="/createInvoice?projectId=">Set invoice limit</a>
+
 <?php
+
     $clientid= $_POST["clientid"];
 
 
