@@ -30,7 +30,7 @@
 
 
 <div class="main-content">
-    <ol class="adminMainNav">
+    <ol class="mainNav">
     <li class="adminClients">
         <a href="/activateClients">Activate Clients</a>
     </li>

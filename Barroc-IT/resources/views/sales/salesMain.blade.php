@@ -14,7 +14,7 @@
 <header>
     <div class="links">
         <div class="wrapper">
-            <ul class="headerButtons">
+            <ul class="mainNav">
                <li><a href="salesMain.blade.php?showHelp=true">Help</a></li>
                 <a href="/logout">Logout</a>
             </ul>
