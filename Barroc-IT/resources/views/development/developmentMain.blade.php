@@ -18,7 +18,7 @@
 </header>
     <container class="main-content">
         <div class="wrapper">
-            <ul>
+            <ul class="tempnav">
                 <li><a href="/projects">Projects</a></li>
                 <li><a href="/memo">Memo's</a></li>
                 <li><a href="/logout">Logout</a></li>

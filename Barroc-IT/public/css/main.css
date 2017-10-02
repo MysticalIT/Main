@@ -12,7 +12,7 @@ body {
     align-items: center;
 
     margin-top: 0px;
-    background: url('http://barroc.it/img/jumbotron.jpg') no-repeat;
+    background: url('https://i.imgur.com/66gUmQQ.jpg') no-repeat;
     background-size: 128%;
 
     height: 100%;
@@ -69,6 +69,54 @@ input.form-control, textarea.form-control {
 /*==========================================================
     Main Content styles
 ==========================================================*/
+.navigation{
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    background: rgba(0,0,0,0.4);
+    margin-top: 50px;
+    max-width: 100%;
+    color: #CFC1B5;
+    margin-bottom: 20px;
+
+
+}
+/*==========================================================
+    Development styles
+==========================================================*/
+.tempnav{
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    background: rgba(0,0,0,0.4);
+    margin-top: 50px;
+    max-width: 100%;
+    color: #CFC1B5;
+    margin-bottom: 20px;
+}
+.listProjects{
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    background: rgba(0,0,0,0.4);
+    margin-top: 50px;
+    max-width: 100%;
+    color: #CFC1B5;
+    margin-bottom: 20px;
+}
+
+
+
+
 
 
 

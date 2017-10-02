@@ -25,12 +25,12 @@
             <h1>Barroc IT</h1>
         </div>
 
-        <div class="headerButtons">
+        <nav class="navigation">
             <ul>
                 <li><a href="adminMain.blade.php">Back</a></li>
                 <li><a href="adminMemo.blade.php?showhelp=true">Help</a></li>
             </ul>
-        </div>
+        </nav>
 </div>
 </header>
 

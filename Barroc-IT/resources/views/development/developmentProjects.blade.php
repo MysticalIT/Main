@@ -11,20 +11,36 @@
     <title>Development - Projects</title>
 </head>
 <body>
+
+
+
+
 <div class="container">
     <header>
+
+
         <div class="wrapper">
-            <ul>
-                <li></li>
-                <li><a href="/development">Back</a></li>
-                <li><a href="/projects?showhelp=true">Help</a></li>
-            </ul>
+            <nav class="navigation">
+                <ul>
+                    <li></li>
+                    <li><a href="developmentMain.blade.php">Back</a></li>
+                    <li><a href="developmentProjects.blade.php?showhelp=true">Help</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
+
+
+
+
     <div class="listProjects">
+
+
         <div class="wrapper">
             <a href="/projects?loadprojects=true">Show Projects</a>
-            <div class="list">
+
+
+            <div class="projectList">
                 <ul>
                     <li>
                         <p>Project</p>
@@ -38,7 +54,11 @@
                 </ul>
             </div>
         </div>
+
     </div>
+
+
+
     <div class="projectDetails">
         <div class="wrapper">
             <ul>
