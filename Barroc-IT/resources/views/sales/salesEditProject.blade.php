@@ -15,6 +15,7 @@
         $clientId= session()->get("clientId");
         $projectId= session()->get("projectId");
 
+        $project = DB::table("tbl_projects")->where("id", $projectId)->get();
 
         ?>
 

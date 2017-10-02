@@ -11,7 +11,9 @@
     <title>Add project</title>
 </head>
 <body>
+<?php
 
+        ?>
 <form action="" method="post">
 
     <label for="clientname">Client name</label>
