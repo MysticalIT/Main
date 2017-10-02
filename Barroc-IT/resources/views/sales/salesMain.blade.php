@@ -35,7 +35,7 @@
         <li><a href="/addclient">Add Client here</a></li>
         <li><a href="/callclient">Call list for clients</a></li>
         <li><a href="/addproject">Add Project</a></li>
-        <li><a href="/memo">Show sales memos</a></li>
+        <li><a href="/memo">Show memo's</a></li>
         <li><a href="?showclients=true">Show Clients</a></li>
 
     </ul>
@@ -61,6 +61,12 @@ echo"<ul>";
 
 echo"</ul>";
 echo"</div>";
+
+if(session()->has("message")){
+    $msg = session()->get("message");
+    echo "<script> window.alert('$msg'); </script>";
+    session()->remove("message");
+}
 ?>
 
 
