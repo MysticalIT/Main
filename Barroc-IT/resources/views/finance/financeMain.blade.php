@@ -13,7 +13,7 @@
 <body>
 
 <header>
-    <div class="links">
+    <div class="mainNav">
         <div class="wrapper">
             <ul>
                 <li><a href="/bkrcheck">BKR Check</a></li>

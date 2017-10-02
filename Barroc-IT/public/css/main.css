@@ -72,10 +72,10 @@ input.form-control, textarea.form-control {
 .navigation{
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     background: rgba(0,0,0,0.4);
     margin-top: 50px;
     max-width: 100%;
@@ -84,10 +84,13 @@ input.form-control, textarea.form-control {
 
 
 }
-/*==========================================================
-    Development styles
-==========================================================*/
-.tempnav{
+
+.navigation ul li{
+    display: inline;
+    justify-content: space-between;
+}
+
+.mainNav{
 
     display: flex;
     flex-direction: column;
@@ -100,13 +103,47 @@ input.form-control, textarea.form-control {
     color: #CFC1B5;
     margin-bottom: 20px;
 }
+
+table, td, th {
+    width: 100%;
+    border: 1.5px solid black;
+}
+
+.wrapper a{
+    align-items: center;
+    align-content: center;
+}
+
+a{
+
+    font: bold 11px Arial;
+    text-decoration: none;
+    background-color: #CFC1B5;
+    color: #444;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CFC1B5;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CFC1B5;
+
+}
+
+ol, ul{
+    list-style: none;
+}
+
+
+/*==========================================================
+    Development styles
+==========================================================*/
+
 .listProjects{
 
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     background: rgba(0,0,0,0.4);
     margin-top: 50px;
     max-width: 100%;
@@ -115,7 +152,10 @@ input.form-control, textarea.form-control {
 }
 
 
+.projectList{
 
+    display: flex;
+}
 
 
 

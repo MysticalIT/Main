@@ -14,7 +14,7 @@
 <header>
     <div class="links">
         <div class="wrapper">
-            <ul class="headerButtons">
+            <ul class="mainNav">
                <li><a href="salesMain.blade.php?showHelp=true">Help</a></li>
                 <a href="/logout">Logout</a>
             </ul>
@@ -44,19 +44,23 @@
 
 <?php
 error_reporting(0);
+
 $showclient = $_GET["showclients"];
 
-if ($showclient)
+if ($showclient === "true")
+{
+    $users = DB::table('tbl_clients')->get();
     echo "<div class='client-list'>";
-echo"<ul>";
+        echo"<ul>";
+        foreach ($users as $user)
+            {
+                $clientid = $user->id;
+                echo"<li><a href='/sales?clientId=$clientid'>$user->firstname $user->lastname</a></li>";
+            }
+        echo"</ul>";
+    echo"</div>";
 
-    echo"<li><a href='?clientId=$clientid'>Client</a></li>";
-    echo"<li><a href='?clientId=$clientid'>Client</a></li>";
-    echo"<li><a href='?clientId=$clientid'>Client</a></li>";
-    echo"<li><a href='?clientId=$clientid'>Client</a></li>";
-    echo"<li><a href='?clientId=$clientid'>Client</a></li>";
-    echo"<li><a href='?clientId=$clientid'>Client</a></li>";
-    echo"<li><a href='?clientId=$clientid'>Client</a></li>";
+}
 
 
 echo"</ul>";

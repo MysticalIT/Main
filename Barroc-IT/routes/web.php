@@ -251,6 +251,29 @@ Route::get('/memo' , function(){
     session(["message" => "You do not have access. Please login."]);
     return redirect("/");
 });
+Route::post('/memoUpdate', function ()
+{
+    if(session()->has("department"))
+    {
+        $dep = session()->get("department");
+        if($dep === "sales")
+        {
+            return view('../../app/memoUpdate.php');
+        }
+        elseif ($dep === "development"){
+            return view('../../app/memoUpdate.php');
+        }
+        elseif ($dep === "finance"){
+            return view('../../app/memoUpdate.phpfinance/financeMemo');
+        }
+        elseif ($dep === "admin"){
+            return view('../../app/memoUpdate.php');
+        }
+        return redirect("/".session()->get("department"));
+    }
+    session(["message" => "You do not have access. Please login."]);
+    return redirect("/");
+});
 Route::get('/404' , function(){
     return view("   404_page");
 });
