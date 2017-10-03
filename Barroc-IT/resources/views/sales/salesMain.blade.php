@@ -1,4 +1,5 @@
 <?php
+    require_once ("../../../app/clientControl.php");
     if (isset($_GET["clientId"]))
     {
         session(["clientId" => $_GET["clientId"]]);
@@ -46,10 +47,15 @@ $users = DB::table('tbl_clients')->get();
         <?php
         if (isset($_GET["clientId"]))
             {
+                $request = $clientid;
+
+                if ()
+                    {
+                        echo "<li><a href='/addproject?clientId=$clientid'>Add Project</a></li>";
+                        echo "<li><a href='/editproject?clientId=$clientid'>Edit Project</a></li>";
+                    }
                 $clientid = $_GET["clientId"];
                 echo "<li><a href='/editclient?clientId=$clientid'>Edit Client here</a></li>";
-                echo "<li><a href='/editproject?clientId=$clientid'>Edit Project</a></li>";
-                echo "<li><a href='/addproject?clientId=$clientid'>Add Project</a></li>";
 
             }
         else{

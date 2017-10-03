@@ -23,7 +23,7 @@
 
 
     <label for="clientname">Client name</label>
-    <input type="text" id="clientname">
+    <input type="text" id="clientname" value="">
 
     <label for="clientphonenumber">Client phonenumber</label>
     <input type="text" id="clientphonenumber">

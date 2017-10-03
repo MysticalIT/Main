@@ -112,7 +112,7 @@ Route::get('/callclient' , function(){
     {
         if(session()->get("department") === "sales")
         {
-            return view('sales/salesCallClientsList');
+            return view('sales/salesContactClientsList');
         }
         return redirect("/".session()->get("department"));
     }

@@ -11,24 +11,42 @@
     <title>Add project</title>
 </head>
 <body>
+<div class="links">
+    <a href="/sales">Back</a>
+</div>
+
 <?php
 
-        ?>
+                    if (isset($_POST["projectname"]))
+                        {
+                            $projectName = $_POST["projectname"];
+
+                            if (isset($_POST["projectdetails"]));
+                            {
+                                $projectDetails = $_POST["projectdetails"];
+
+                                if (isset($_POST["setinvoice"]))
+                                    {
+                                        $invoice = $_POST["setinvoice"];
+
+                                    }
+                            }
+
+                        }
+
+?>
 <form action="" method="post">
 
-    <label for="clientname">Client name</label>
-    <input type="text" id="clientname">
 
-    <label for="clientphonenumber">Client phonenumber</label>
-    <input type="text" id="clientphonenumber">
+
 
     <label for="projectname">Project name</label>
     <input type="text" id="projectname">
 
-    <label for="projectDetails">Project details</label>
-    <textarea id="projectDetails"></textarea>
+    <label for="projectdetails">Project details</label>
+    <textarea id="projectdetails"></textarea>
 
-    <label>Set invoice limit</label>
+    <label for="setinvoice">Set invoice limit</label>
     <input type="text" id="setinvoice">
 
 
