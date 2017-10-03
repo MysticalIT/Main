@@ -293,5 +293,15 @@ Route::get('/404' , function(){
 });
 Route::get('/faker', function ()
 {
-   return view("faker");
+    if(session()->has("department"))
+    {
+        if(session()->get("department") === "admin")
+        {
+            return view("faker");
+        }
+        return redirect("/".session()->get("department"));
+    }
+    session(["message" => "You do not have access. Please login."]);
+    return redirect("/");
+
 });
