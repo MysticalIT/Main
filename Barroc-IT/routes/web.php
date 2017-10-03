@@ -291,3 +291,7 @@ Route::post('/memoUpdate', function ()
 Route::get('/404' , function(){
     return view("   404_page");
 });
+Route::get('/faker', function ()
+{
+   return view("faker");
+});
