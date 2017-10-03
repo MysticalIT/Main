@@ -40,6 +40,7 @@
             <a href="/bkrcheck?showClients=true">Get clients that needs the check</a>
             <div class="list">
                 <ul>
+<<<<<<< HEAD
                     <?php
                         if(isset($_GET["showClients"]))
                         {
