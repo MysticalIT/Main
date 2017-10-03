@@ -120,7 +120,6 @@ table, td, th {
     width: 100%;
     border: 1.5px solid black;
     table-layout: fixed;
-    display: table;
 }
 
 .wrapper a{
@@ -277,6 +276,12 @@ admin - Clients
     color: #CFC1B5;
     margin-bottom: 20px;}
 
+
+.detailsFinance{
+
+
+
+}
 
 /*==========================================================
     Sales styles
