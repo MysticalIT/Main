@@ -13,7 +13,7 @@ body {
 
     margin-top: 0px;
     background: url('https://i.imgur.com/66gUmQQ.jpg');
-    background-repeat: repeat-y;
+    background-repeat: no-repeat;
     background-size: 128%;
     background-position: 50% 0;
     height: 100%;
@@ -42,6 +42,11 @@ h4{
 
 }
 
+input[type=checkbox]{
+    display          : inline-block;
+
+
+}
 /*==========================================================
     Header Login Page styles
 ==========================================================*/
@@ -255,7 +260,26 @@ admin - Clients
 
 
 /*==========================================================
-    Add User styles
+    Finance styles
+==========================================================*/
+.columnLeft{ float: left; width: 50%; }
+
+.columnRight{float: right; width: 50%; }
+
+.clientsFinance{    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    background: rgba(0,0,0,0.4);
+    margin-top: 50px;
+    max-width: 100%;
+    color: #CFC1B5;
+    margin-bottom: 20px;}
+
+
+/*==========================================================
+    Sales styles
 ==========================================================*/
 
 
