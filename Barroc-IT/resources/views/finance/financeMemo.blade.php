@@ -22,27 +22,23 @@
     </div>
 </header>
 
-<container class="main-content">
+<div class="main-content">
 
-    <div class="wrapper">
+            <div class="main-content">
 
-        <div class="memo">
-            <div class="listprojects">
-                <ul>
-                    <li><a href="">Project</a></li>
-                    <li><a href="">Project</a></li>
-                </ul>
-            </div>
-            <div class="editmemo">
-                <form action="" method="post">
-                    <textarea name="memo" id="memo" cols="30" rows="10"></textarea>
-                    <input type="submit" value="Save Memo">
-                </form>
+                <div class="wrapper">
+
+                    <div class="memo">
+                        <div class="editMemo">
+                            <form action="" method="post">
+                                <textarea name="memo" id="memo" cols="30" rows="10"></textarea>
+                                <input type="submit" value="Save Memo">
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</container>
-
 
 
 </body>

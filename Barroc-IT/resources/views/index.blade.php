@@ -47,14 +47,16 @@
                 <input type="password" class="form-control  col-md-3" name="password" id="password">
             </div>
 
-            <div class="btn-help">
-                <a href="/index?showhelp=true">Help</a>
-            </div>
+
 
             <div class="form-group">
                 <input type="submit" name="type" value="Login" class="login-button btn btn-primary">
             </div>
         </form>
+
+        <div class="btn-help">
+            <a href="/index?showhelp=true">Help</a>
+        </div>
     </div>
 
 </div>

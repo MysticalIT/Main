@@ -12,9 +12,10 @@ body {
     align-items: center;
 
     margin-top: 0px;
-    background: url('https://i.imgur.com/66gUmQQ.jpg') no-repeat;
+    background: url('https://i.imgur.com/66gUmQQ.jpg');
+    background-repeat: repeat-y;
     background-size: 128%;
-
+    background-position: 50% 0;
     height: 100%;
     max-width: 100%;
     margin-bottom: 0px;

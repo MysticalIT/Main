@@ -30,12 +30,6 @@
     <div class="wrapper">
 
         <div class="memo">
-            <div class="listProjects">
-                <ul>
-                    <li><a href="">Project</a></li>
-                    <li><a href="">Project</a></li>
-                </ul>
-            </div>
             <div class="editMemo">
                 <form action="" method="post">
                     <textarea name="memo" id="memo" cols="30" rows="10"></textarea>
