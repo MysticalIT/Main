@@ -34,7 +34,7 @@
                 <ul>
                     <li><a href="">George</a></li>
                     <li><a href="">Fleur</a></li>
-                    <li><a href="">Ben</a></li>
+                    <li><a href="">Ben does not exist</a></li>
                 </ul>
             </div>
         </div>
@@ -45,23 +45,30 @@
     <div class="detailsFinance">
         <div class="wrapper">
             <div class="clientDetailsFinance">
-                <ul>
-                    <li>
-                        <p>Name</p>
-                    </li>
-                    <li>
-                        <p>Phone-number</p>
-                    </li>
-                    <li>
-                        <p>Street</p>
-                    </li>
-                    <li>
-                        <p>City</p>
-                    </li>
-                    <li>
-                        <p>Zip-code</p>
-                    </li>
-                </ul>
+
+                <table style="width:100%">
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone Number</th>
+                        <th>Street</th>
+                        <th>City</th>
+                        <th>Zip-Code</th>
+                    </tr>
+                    <tr>
+                        <td>TK-1140</td>
+                        <td>06-2281723</td>
+                        <td>607th bunks</td>
+                        <td>Death Star</td>
+                        <td>1828-DS</td>
+                    </tr>
+                    <tr>
+                        <td>Darth Vader</td>
+                        <td>92-1283-491</td>
+                        <td>Meditation sphere</td>
+                        <td>Death Star</td>
+                        <td>1929-DS</td>
+                    </tr>
+                </table>
             </div>
             <div class="bkrCheck">
                 <form action="" method="post">
