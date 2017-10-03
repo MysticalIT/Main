@@ -33,7 +33,9 @@
     <ol class="mainNav">
     <li class="adminClients">
         <a href="/activateClients">Activate Clients</a>
-    </li>
+        <a href='/faker'> pattt </a>;
+
+        </li>
 
     <li class="adminMemos">
         <a href="/memo">Memo's</a>

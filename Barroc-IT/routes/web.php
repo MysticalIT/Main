@@ -291,3 +291,17 @@ Route::post('/memoUpdate', function ()
 Route::get('/404' , function(){
     return view("   404_page");
 });
+Route::get('/faker', function ()
+{
+    if(session()->has("department"))
+    {
+        if(session()->get("department") === "admin")
+        {
+            return view("faker");
+        }
+        return redirect("/".session()->get("department"));
+    }
+    session(["message" => "You do not have access. Please login."]);
+    return redirect("/");
+
+});
