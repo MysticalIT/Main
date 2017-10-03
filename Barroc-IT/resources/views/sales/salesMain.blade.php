@@ -49,11 +49,6 @@ $users = DB::table('tbl_clients')->get();
             {
                 $request = $clientid;
 
-                if ()
-                    {
-                        echo "<li><a href='/addproject?clientId=$clientid'>Add Project</a></li>";
-                        echo "<li><a href='/editproject?clientId=$clientid'>Edit Project</a></li>";
-                    }
                 $clientid = $_GET["clientId"];
                 echo "<li><a href='/editclient?clientId=$clientid'>Edit Client here</a></li>";
 
