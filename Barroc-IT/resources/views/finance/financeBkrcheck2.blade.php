@@ -32,22 +32,15 @@
             <a href="/bkrcheck?showClients=true">Get clients that needs the check</a>
             <div class="list">
                 <ul>
-                    <?php
-                        if(isset($_GET["showClients"]))
-                        {
-                            $showclient = $_GET["showClients"];
-                            if ($showclient)
-                            {
-                                $users = DB::table('tbl_clients')->where("bkrchecked", false)->get();
-                                foreach ($users as $user)
-                                {
-                                    $clientid = $user->id;
-
-                                    echo"<li><a href='/bkrcheck?clientId=$clientid'>$user->firstname $user->lastname</a></li>";
-                                }
-                            }
-                        }
-                    ?>
+                    @if(isset($_GET["showClients"]))
+                        @php($showclient = $_GET["showClients"])
+                        @if($showclient)
+                            @php($users = DB::table('tbl_clients')->where("bkrchecked", false)->get())
+                            @foreach($users as $user)
+                                <li><a href='/bkrcheck?clientId={{$user->id}}'>{{$user->firstname}} {{$user->lastname}}</a></li>
+                            @endforeach
+                        @endif
+                    @endif
                 </ul>
             </div>
         </div>
@@ -59,66 +52,50 @@
         <div class="wrapper">
             <div class="clientDetailsFinance">
                 <table class="table table-striped">
-                    <?php
-                    if(isset($_GET["clientId"]))
-                    {
-                        $clientId = $_GET["clientId"];
-                        $users = DB::table('tbl_clients')->where("id", $clientId)->get();
-                        foreach ($users as $user)
-                        {
-                            echo"
-
+                    @if(isset($_GET["clientId"]))
+                        @php($clientId = $_GET["clientId"])
+                        @php($users = DB::table('tbl_clients')->where("id", $clientId)->get())
+                        @foreach($users as $user)
                             <tr>
                                 <th>Name:</th>
-                                <td>$user->firstname $user->lastname</td>
+                                <td>{{$user->firstname}} {{$user->lastname}}</td>
                             </tr>
                             <tr>
                                 <th>Phone-number:</th>
-                                <td>$user->phonenumber</td>
+                                <td>{{$user->phonenumber}}</td>
                             </tr>
                             <tr>
                                 <th>Company name:</th>
-                                <td>$user->company_name</td>
+                                <td>{{$user->company_name}}</td>
                             </tr>
                             <tr>
                                 <th>Street:</th>
-                                <td>$user->street</td>
+                                <td>{{$user->street}}</td>
                             </tr>
                             <tr>
                                 <th>City:</th>
-                                <td>$user->city</td>
+                                <td>{{$user->city}}</td>
                             </tr>
                             <tr>
                                 <th>Zip-code:</th>
-                                <td>$user->zip_code</td>
+                                <td>{{$user->zip_code}}</td>
                             </tr>
-                            ";
-                        }
-                    }
-                    ?>
+                        @endforeach
+                    @endif
                 </table>
             </div>
             <div class="bkrCheck">
-                <?php
-                if(isset($clientId))
-                {
-                    echo "
+                @if(isset($clientId))
                     <form action='' method='post'>
-                    ";
-                    ?>
-                    {{csrf_field()}}
-                    <?php
-                    echo "
+                        {{csrf_field()}}
                         <label for='bkr-checked'>BKR Checked?</label>
                         <input type='checkbox' name='checked' id='bkr-checked'>
                         <label for='bkr-approved'>BKR Approved?</label>
                         <input type='checkbox' name='approved' id='bkr-approved'>
                         <input type='submit' value='Send/Done'>
                     </form>
-                    ";
-                    session(["clientId" => $clientId]);
-                }
-                ?>
+                    @php(session(["clientId" => $clientId]))
+                @endif
             </div>
         </div>
     </div>

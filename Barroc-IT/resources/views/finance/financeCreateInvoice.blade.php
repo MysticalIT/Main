@@ -32,7 +32,7 @@
             <form action="" method="post">
                 <label for="invoiceSubject">Subject:</label>
                 <input type="text" id="invoiceSubject" name="subject">
-                <label for="invoicePrice">Price:</label>
+                <label for="invoicePrice">Charge:</label>
                 <input type="text" id="invoicePrice" name="price">
                 <input type="submit" value="Create Invoice">
             </form>
