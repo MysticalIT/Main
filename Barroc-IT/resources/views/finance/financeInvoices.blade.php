@@ -11,39 +11,46 @@
     <title>Finance - Invoices</title>
 </head>
 <body>
-<div class="container">
+
+<header>
     <div class="links">
         <div class="wrapper">
-            <ul>
+            <ul class="mainNav">
                 <li><a href="/finance">Back</a></li>
                 <li><a href="/invoices?showHelp=true">Help</a></li>
             </ul>
         </div>
     </div>
-    <div class="clientsFinance">
+
+</header>
+<div class="container">
+
+    <div class="clientsFinance col-md-4">
         <div class="wrapper">
             <a href="/invoices?showClients=true">All clients with invoice or project</a>
             <div class="list">
                 <ul>
-                    <li><a href="">Ben</a></li>
-                    <li><a href="">Ben</a></li>
-                    <li><a href="">Ben</a></li>
+                    <li><a href=""> ♥ </a></li>
+                    <li><a href=""> ♥ </a></li>
+                    <li><a href=""> ♥ </a></li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="invoices">
+    <div class="invoices col-md-4">
         <div class="wrapper">
             <ul>
                 <li><a href="">100</a></li>
                 <li><a href="">200</a></li>
                 <li><a href="">300</a></li>
             </ul>
-            <form action="" method="post">
-                <label for="hasPaid">Client paid?</label>
-                <input type="checkbox" id="hasPaid" name="hasPaid">
-                <input type="submit" value="Submit">
-            </form>
+            <div class="invoiceCheck col-md-4">
+                <form action="" method="post">
+                    <label for="hasPaid">Client paid?</label>
+                    <input type="checkbox" id="hasPaid" name="hasPaid">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
             <a href="">Create invoice</a>
         </div>
     </div>

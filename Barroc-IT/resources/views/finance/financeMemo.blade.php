@@ -15,16 +15,17 @@
 
 <header>
     <div class="wrapper">
-        <ul class="headerButtons">
+        <nav class="navigation">
+        <ul class="">
             <li><a href="/finance">Back</a></li>
             <li><a href="/memo?showhelp=true">Help</a></li>
         </ul>
+        </nav>
     </div>
 </header>
 
-<div class="main-content">
 
-            <div class="main-content">
+<div class="main-content">
 
                 <div class="wrapper">
 
@@ -37,8 +38,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+</div>
+
 
 
 </body>

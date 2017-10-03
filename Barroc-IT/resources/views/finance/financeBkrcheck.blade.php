@@ -11,6 +11,21 @@
     <title>Finance - BKR Check</title>
 </head>
 <body>
+
+
+<header>
+
+    <div class="links">
+        <div class="wrapper">
+            <ul class="mainNav">
+                <li><a href="/finance">Back</a></li>
+                <li><a href="">Help</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+
 <div class="container">
     <div class="clientsFinance">
         <div class="wrapper">
@@ -24,14 +39,9 @@
             </div>
         </div>
     </div>
-    <div class="links">
-        <div class="wrapper">
-            <ul>
-                <li><a href="/finance">Back</a></li>
-                <li><a href="">Help</a></li>
-            </ul>
-        </div>
-    </div>
+
+
+
     <div class="detailsFinance">
         <div class="wrapper">
             <div class="clientDetailsFinance">
