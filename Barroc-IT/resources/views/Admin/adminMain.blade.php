@@ -33,9 +33,11 @@
     <ol class="mainNav">
     <li class="adminClients">
         <a href="/activateClients">Activate Clients</a>
-        <a href='/faker'> pattt </a>;
+    </li>
 
-        </li>
+    <li class="adminFaker">
+        <a href='/faker'>Add clients by faker</a>
+    </li>
 
     <li class="adminMemos">
         <a href="/memo">Memo's</a>
@@ -48,3 +50,11 @@
 </div>
 </body>
 </html>
+
+<?php
+if(session()->has("message")){
+    $msg = session()->get("message");
+    echo "<script> window.alert('$msg'); </script>";
+    session()->remove("message");
+}
+?>

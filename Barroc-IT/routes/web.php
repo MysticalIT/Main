@@ -12,6 +12,10 @@
 */
 //===================login files===================
 Route::get('/', function () {
+    if(session()->has("department"))
+    {
+        return redirect("/".session()->get("department"));
+    }
     return view('index');
 });
 
@@ -205,6 +209,10 @@ Route::get('/bkrcheck', function () {
     session(["message" => "You do not have access. Please login."]);
     return redirect("/");
 });
+Route::post('/bkrcheck', function (\Illuminate\Http\Request $request) {
+    require ("../app/financeFunctions.php");
+    updateBkr($request);
+});
 Route::get('/createInvoice', function () {
     if(session()->has("department"))
     {
@@ -297,7 +305,7 @@ Route::get('/faker', function ()
     {
         if(session()->get("department") === "admin")
         {
-            return view("faker");
+            return view("admin/adminFaker");
         }
         return redirect("/".session()->get("department"));
     }

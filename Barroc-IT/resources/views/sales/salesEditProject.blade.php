@@ -12,6 +12,10 @@
 </head>
 <body>
 <?php
+
+        //SELECT PROJECT WITH CLIENT ID
+        //SHOW PROJECTS IN LIST A TAG WITH GET PROJECT ID
+        //SHOW FORM WITH INFO
         $clientId= session()->get("clientId");
         $projectId= session()->get("projectId");
 
