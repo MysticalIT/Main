@@ -32,7 +32,7 @@
         $showclient = $_GET["showClients"];
         if ($showclient)
             {
-                $users = DB::table('tbl_clients')->get();
+                $users = DB::table('tbl_clients')->where("bkrapproved", true)->get();
                 foreach ($users as $user)
                 {
                     $clientid = $user->id;
@@ -52,7 +52,7 @@ echo"</div>";
             $projects = DB::table("tbl_projects")->where("client_id", $_GET["clientId"])->get();
             foreach ($projects as $project)
                 {
-                    echo "<li><a href='/editproject?projectId=$project->id'>$project->name</a></li>";
+                    echo "<li><a href='/editproject?projectId=$project->id&clientId={$_GET["clientId"]}'>$project->name</a></li>";
 
                 }
             echo "</ul>";

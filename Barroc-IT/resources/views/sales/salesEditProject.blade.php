@@ -12,10 +12,7 @@
 </head>
 <body>
 <?php
-        $clientId= session()->get("clientId");
-        $projectId= session()->get("projectId");
 
-        $project = DB::table("tbl_projects")->where("id", $projectId)->get();
 
         ?>
 
@@ -38,6 +35,40 @@
     <input type="text" id="setinvoice">
 
 </form>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Client</th>
+        <th>Details</th>
+        <th>Limit</th>
+    </tr>
+<?php
+    echo "<li><a href='/addproject?clientId=$clientid'>Add Project</a></li>";
+
+    error_reporting(0);
+$clientId= $_GET["clientId"];
+$projectId= $_GET["projectId"];
+
+$projects = DB::table("tbl_projects")->where("client_id", $clientId)->get();
+    if ($projects > 0)
+        {
+            foreach ($projects as $project)
+            {
+                echo "
+
+                    <tr>
+                    <td><a href='salesEditProject.blade.php'>$project->name</a></td>
+                    <td>$project->firstname $project->lastname</td>
+                    <td>$project->limit</td>
+                    </tr>
+
+";
+            }
+        }
+
+        ?>
+</table>
+
 
 </body>
 </html>
