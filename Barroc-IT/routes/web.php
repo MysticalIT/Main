@@ -135,6 +135,19 @@ Route::get('/addproject' , function(){
     session(["message" => "You do not have access. Please login."]);
     return redirect("/");
 });
+Route::post('/addproject' , function(){
+    if(session()->has("department"))
+    {
+        if(session()->get("department") === "sales")
+        {
+            echo "ADDED";
+            dd();
+        }
+        return redirect("/".session()->get("department"));
+    }
+    session(["message" => "You do not have access. Please login."]);
+    return redirect("/");
+});
 Route::get('/editproject' , function(){
     if(session()->has("department"))
     {

@@ -1,5 +1,4 @@
 <?php
-    require_once ("../../../app/clientControl.php");
     if (isset($_GET["clientId"]))
     {
         session(["clientId" => $_GET["clientId"]]);

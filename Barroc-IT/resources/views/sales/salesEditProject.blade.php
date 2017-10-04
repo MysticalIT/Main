@@ -19,8 +19,7 @@
 <form action="" method="post">
 
 
-    <label for="clientname">Client name</label>
-    <input type="text" id="clientname" value="">
+
 
     <label for="clientphonenumber">Client phonenumber</label>
     <input type="text" id="clientphonenumber">
@@ -43,7 +42,7 @@
         <th>Limit</th>
     </tr>
     <?php
-    echo "<li><a href='/addproject?clientId=$clientid'>Add Project</a></li>";
+
 
     error_reporting(0);
     $clientId= $_GET["clientId"];
@@ -59,6 +58,7 @@
                     <tr>
                     <td><a href='salesEditProject.blade.php'>$project->name</a></td>
                     <td>$project->firstname $project->lastname</td>
+                    <td></td>
                     <td>$project->limit</td>
                     </tr>
 
