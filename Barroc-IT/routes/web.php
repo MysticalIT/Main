@@ -225,7 +225,7 @@ Route::get('/bkrcheck', function () {
 Route::post('/bkrcheck', function (\Illuminate\Http\Request $request) {
     require ("../app/financeFunctions.php");
     updateBkr($request);
-    return redirect("/finance");
+    return redirect("/bkrcheck");
 });
 Route::get('/createInvoice', function () {
     if(session()->has("department"))
