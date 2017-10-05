@@ -28,19 +28,27 @@
                 @if (isset($_GET["clientId"]))
                     @php(session(["clientId" => $_GET["clientId"]]))
                     @php($clientid = $_GET["clientId"])
-                    <li><a href='/editclient?clientId={{$clientid}}'>Edit Client here</a></li>
+                    <li><a href="/callclient">Call list for clients</a></li>
+                    <li><a href="/memo">Show memo's</a></li>
+                    @if(isset($_GET["showclients"]))
+                        <li><a href="/sales">Hide Clients</a></li>
+                    @else
+                        <li><a href="/sales?showclients=true">Show Clients</a></li>
+                    @endif
+                    <div class="spacer" style="margin-bottom: 20px"></div>
+                    <li><a href='/client/{{$clientid}}/edit'>Edit {{$clients->find($clientid)->firstname}} {{$clients->find($clientid)->lastname}}'s info</a></li>
                 @else
                     @if(session()->has("clientId"))
                         @php(session()->remove("clientId"))
                     @endif
                     <li><a href='/client/create'>Add Client here</a></li>
-                @endif
-                <li><a href="/callclient">Call list for clients</a></li>
-                <li><a href="/memo">Show memo's</a></li>
-                @if(isset($_GET["showclients"]))
-                    <li><a href="/sales">Hide Clients</a></li>
-                @else
-                    <li><a href="/sales?showclients=true">Show Clients</a></li>
+                    <li><a href="/callclient">Call list for clients</a></li>
+                    <li><a href="/memo">Show memo's</a></li>
+                    @if(isset($_GET["showclients"]))
+                        <li><a href="/sales">Hide Clients</a></li>
+                    @else
+                        <li><a href="/sales?showclients=true">Show Clients</a></li>
+                    @endif
                 @endif
             </ul>
         </div>

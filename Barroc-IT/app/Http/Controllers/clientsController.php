@@ -13,7 +13,6 @@ class clientsController extends Controller
      */
     public function index()
     {
-        return view("/sales/salesMai    n");
     }
 
     /**
@@ -82,7 +81,8 @@ class clientsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $client = \App\Client::find($id);
+        return view("/sales/salesEditClients")->with("client", $client);
     }
 
     /**

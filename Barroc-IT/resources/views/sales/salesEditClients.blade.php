@@ -18,67 +18,49 @@
         </ul>
     </div>
 </div>
-<?php
-        $clientid = session()->get("clientId");
-        $client = DB::table("tbl_clients")->where("id", $clientid)->get();
-
-        if (count($client) > 0)
-        {
-            $firstName = $client[0]->firstname;
-            $lastName = $client[0]->lastname;
-            $street = $client[0]->street;
-            $houseNumber = $client[0]->house_number;
-            $zipCode = $client[0]->zip_code;
-            $city = $client[0]->city;
-            $email = $client[0]->email;
-            $companyName = $client[0]->company_name;
-            $phoneNumber = $client[0]->phonenumber;
-        }
-        else
-            header("location: /sales");
-
-
-        echo "
-    <form method='post' action=''>";
-    ?>
+@php
+    $firstName = $client->firstname;
+    $lastName = $client->lastname;
+    $street = $client->street;
+    $houseNumber = $client->house_number;
+    $zipCode = $client->zip_code;
+    $city = $client->city;
+    $email = $client->email;
+    $companyName = $client->company_name;
+    $phoneNumber = $client->phonenumber;
+@endphp
+    <form method="post" action="">
         {{csrf_field()}}
-    <?php
-    echo "
-    <input type='hidden' value='$clientid'>
+        <input type="hidden" value="$clientid">
 
-    <label for='companyName'>Client company name:</label>
-    <input type='text' name='companyName' id='companyName' value='$companyName'>
+        <label for="companyName">Client company name:</label>
+        <input type="text" name="companyName" id="companyName" value="{{$companyName}}">
 
-    <label for='street'>Client street:</label>
-    <input type='text' name='street' id='street' value='$street'>
+        <label for="street">Client street:</label>
+        <input type="text" name="street" id="street" value="{{$street}}">
 
-    <label for='house-number'>Client house number:</label>
-    <input type='text' name='house_number' id='house-number' value='$houseNumber'>
+        <label for="house-number">Client house number:</label>
+        <input type="text" name="house_number" id="house-number" value="{{$houseNumber}}">
 
-    <label for='city'>Client city:</label>
-    <input type='text' name='city' id='city' value='$city'>
+        <label for="city">Client city:</label>
+        <input type="text" name="city" id="city" value="{{$city}}">
 
-    <label for='zip-code'>Client zip-code</label>
-    <input type='text' name='zip_code' id='zip-code' value='$zipCode'>
+        <label for="zip-code">Client zip-code</label>
+        <input type="text" name="zip_code" id="zip-code" value="{{$zipCode}}">
 
-    <label for='clientFirstName'>Client first name</label>
-    <input type='text' name='clientFirstName' id='clientFirstName' value='$firstName'>
+        <label for="clientFirstName">Client first name</label>
+        <input type="text" name="clientFirstName" id="clientFirstName" value="{{$firstName}}">
 
-    <label for='clientLastName'>Client last name</label>
-    <input type='text' name='clientLastName' id='clientLastName' value='$lastName'>
+        <label for="clientLastName">Client last name</label>
+        <input type="text" name="clientLastName" id="clientLastName" value="{{$lastName}}">
 
-    <label for='phoneNumber'>Client phone number</label>
-    <input type='text' name='phoneNumber' id='phoneNumber' value='$phoneNumber'>
+        <label for="phoneNumber">Client phone number</label>
+        <input type="text" name="phoneNumber" id="phoneNumber" value="{{$phoneNumber}}">
 
-    <label for='email'>Client email:</label>
-    <input type='text' name='email' id='email' value='$email'>
+        <label for="email">Client email:</label>
+        <input type="text" name="email" id="email" value="{{$email}}">
 
-    <input type='submit' value='Edit client'>
+        <input type="submit" value="Edit {{$client->firstname}} {{$client->lastname}}'s info">
     </form>
-        ";
-        ?>
-
-
-
 </body>
 </html>
