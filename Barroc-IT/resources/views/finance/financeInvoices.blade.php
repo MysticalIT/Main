@@ -30,6 +30,10 @@
             <a href="/invoices?showClients=true">All clients with invoice or project</a>
             <div class="list">
                 <ul>
+                    <?php
+                        //$testjoin = DB::table("tbl_clients")->leftJoin("tbl_projects", "tbl_clients.id", "=", "tbl_projects.client_id")->get();
+                        //dd($testjoin);
+                    ?>
                     <li><a href=""> ♥ </a></li>
                     <li><a href=""> ♥ </a></li>
                     <li><a href=""> ♥ </a></li>
