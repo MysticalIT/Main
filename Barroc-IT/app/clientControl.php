@@ -70,7 +70,3 @@ function editClient($request)
     session(["message" => "Client edited!"]);
     return;
 }
-function getBkrInfo($request)
-{
-
-}

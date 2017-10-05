@@ -37,7 +37,7 @@
 ?>
 <form action="" method="post">
 
-
+{{csrf_field()}}
 
 
     <label for="projectname">Project name</label>
@@ -48,6 +48,8 @@
 
     <label for="setinvoice">Set invoice limit</label>
     <input type="text" id="setinvoice">
+
+    <input type="submit" value="add project">
 
 
 </form>

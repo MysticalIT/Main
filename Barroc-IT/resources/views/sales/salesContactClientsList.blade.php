@@ -25,42 +25,77 @@
 </header>
 
 <container class="main-content">
-    <?php
-    echo"<div class='client-list'>";
-        error_reporting(0);
-    echo "<ul>";
-        $showclient = $_GET["showClients"];
-        if ($showclient)
+        <table class="table table-striped">
+            <?php
+            if(isset($_GET["clientId"]))
             {
-                $users = DB::table('tbl_clients')->where("bkrapproved", true)->get();
+                $clientId = $_GET["clientId"];
+                $users = DB::table('tbl_clients')->where("id", $clientId)->get();
                 foreach ($users as $user)
                 {
-                    $clientid = $user->id;
+                    echo"
 
-                    echo"<li><a href='/callclient?clientId=$clientid'>$user->firstname $user->lastname</a></li>";
+                            <tr>
+                                <th>Name:</th>
+                                <td>$user->firstname $user->lastname</td>
+                            </tr>
+                            <tr>
+                                <th>Phone-number:</th>
+                                <td>$user->phonenumber</td>
+                            </tr>
+                            <tr>
+                                <th>Company name:</th>
+                                <td>$user->company_name</td>
+                            </tr>
+                            <tr>
+                                <th>Street:</th>
+                                <td>$user->street</td>
+                            </tr>
+                            <tr>
+                                <th>City:</th>
+                                <td>$user->city</td>
+                            </tr>
+                            <tr>
+                                <th>Zip-code:</th>
+                                <td>$user->zip_code</td>
+                            </tr>
+                            ";
                 }
             }
+            ?>
+        </table>
+    <?php
+    echo"<div class='client-list'>";
+    error_reporting(0);
+    echo "<ul>";
+    $showclient = $_GET["showClients"];
+    if ($showclient)
+    {
+        $users = DB::table('tbl_clients')->where("bkrapproved", true)->get();
+        foreach ($users as $user)
+        {
+            $clientid = $user->id;
+
+            echo"<li><a href='/callclient?clientId=$clientid'>$user->firstname $user->lastname</a></li>";
+        }
+    }
     echo "</ul>";
 
-echo"</div>";
-
-
-
+    echo"</div>";
     if (isset($_GET["clientId"]))
+    {
+        echo "<ul>";
+        $projects = DB::table("tbl_projects")->where("client_id", $_GET["clientId"])->get();
+        echo "<li><a href='/addproject?clientId=$clientid'>Add Project</a></li>";
+        foreach ($projects as $project)
         {
-            echo "<ul>";
-            $projects = DB::table("tbl_projects")->where("client_id", $_GET["clientId"])->get();
-            foreach ($projects as $project)
-                {
-                    echo "<li><a href='/editproject?projectId=$project->id&clientId={$_GET["clientId"]}'>$project->name</a></li>";
+            echo "<li><a href='/editproject?projectId=$project->id&clientId={$_GET["clientId"]}'>Edit: $project->name</a></li>";
 
-                }
-            echo "</ul>";
+
         }
-
-
-
-?>
+        echo "</ul>";
+    }
+    ?>
 
 </container>
 </body>
