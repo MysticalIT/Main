@@ -334,3 +334,7 @@ Route::get("/", function (){
 
 Route::resource("/sales", "salesController");
 Route::resource("/client", "clientsController");
+Route::resource("/project", "projectsController");
+Route::resource("/memo", "memosController");
+Route::resource("/user", "usersController");
+Route::resource("/invoice", "invoiceController");
