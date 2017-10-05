@@ -12,9 +12,6 @@
 </head>
 <body>
 
-<?php
-$projects= DB::table('tbl_projects')->get();
-?>
 
 <header>
     <div class="wrapper">
@@ -26,30 +23,25 @@ $projects= DB::table('tbl_projects')->get();
 </header>
 
 <container class="main-content">
-
     <div class="wrapper">
 
         <div class="memo">
             <div class="listprojects">
                 <ul>
-                    <?php
-                    foreach($projects as $project)
-                    {
-                        echo "<li><a href='/project/$project->id/edit'>$project->name</a></li>";
-                    }
-                    ?>
+                    @foreach($projects as $project)
+
+                        <li><a href='/memo?$project->id'>{{$project->name}}</a></li>
+
+                    @endforeach
                 </ul>
             </div>
             <div class="editmemo">
-                <?php
+                <form action='' method='post'>
+                    <label for="memo">Memo:</label>
+                    <textarea name='memo' id='memo' cols='30' rows='10'>{{$memos->where('project_id', $_GET["$projects->id"])->memo}}</textarea>
+                    <input type='submit' value='Update Memo'>
 
-
-                echo"<form action='' method='post'>
-                    <textarea name='memo' id='memo' cols='30' rows='10'></textarea>
-                    <input type='submit' value='Save Memo'>
                 </form>"
-
-                ?>
             </div>
         </div>
     </div>

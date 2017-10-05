@@ -19,7 +19,7 @@
         <label for="projectDetails">Project details</label>
         <textarea name="projectDetails" id="projectDetails" value="{{$project->description}}"></textarea>
 
-        <label>Set invoice limit</label>
+        <label for="setInvoice">Set invoice limit</label>
         <input type="text" name="limit" id="setInvoice" value="{{$project->limit}}">
     </form>
 </body>
