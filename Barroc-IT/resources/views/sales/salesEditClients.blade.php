@@ -53,13 +53,13 @@
     <input type='text' name='street' id='street' value='$street'>
 
     <label for='house-number'>Client house number:</label>
-    <input type='text' name='house-number' id='house-number' value='$houseNumber'>
+    <input type='text' name='house_number' id='house-number' value='$houseNumber'>
 
     <label for='city'>Client city:</label>
     <input type='text' name='city' id='city' value='$city'>
 
     <label for='zip-code'>Client zip-code</label>
-    <input type='text' name='zip-code' id='zip-code' value='$zipCode'>
+    <input type='text' name='zip_code' id='zip-code' value='$zipCode'>
 
     <label for='clientFirstName'>Client first name</label>
     <input type='text' name='clientFirstName' id='clientFirstName' value='$firstName'>
