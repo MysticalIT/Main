@@ -327,3 +327,10 @@
 //    return redirect("/");
 //
 //});
+Route::get("/", function (){
+    return view("index");
+});
+
+
+Route::resource("/sales", "salesController");
+Route::resource("/client", "clientsController");

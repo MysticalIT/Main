@@ -1,14 +1,3 @@
-<?php
-    if (isset($_GET["clientId"]))
-    {
-        session(["clientId" => $_GET["clientId"]]);
-    }
-    elseif(session()->has("clientId"))
-    {
-        session()->remove("clientId");
-    }
-$users = DB::table('tbl_clients')->get();
-?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -33,70 +22,47 @@ $users = DB::table('tbl_clients')->get();
         </div>
     </div>
 </header>
-
     <container class="main-content">
-
-
-
-    <div class="sales-nav">
-    <ul>
-
-    </ul>
-    <ul>
-        <?php
-        if (isset($_GET["clientId"]))
-            {
-                $request = $clientid;
-
-                $clientid = $_GET["clientId"];
-                echo "<li><a href='/editclient?clientId=$clientid'>Edit Client here</a></li>";
-
-            }
-        else{
-            echo "<li><a href='/addclient'>Add Client here</a></li>";
-        }
-        ?>
-
-        <li><a href="/callclient">Call list for clients</a></li>
-        <li><a href="/memo">Show memo's</a></li>
-        <li><a href="?showclients=true">Show Clients</a></li>
-
-    </ul>
-    </div>
+        <div class="sales-nav">
+            <ul>
+                @if (isset($_GET["clientId"]))
+                    @php(session(["clientId" => $_GET["clientId"]]))
+                    @php($clientid = $_GET["clientId"])
+                    <li><a href='/editclient?clientId={{$clientid}}'>Edit Client here</a></li>
+                @else
+                    @if(session()->has("clientId"))
+                        @php(session()->remove("clientId"))
+                    @endif
+                    <li><a href='/client/create'>Add Client here</a></li>
+                @endif
+                <li><a href="/callclient">Call list for clients</a></li>
+                <li><a href="/memo">Show memo's</a></li>
+                @if(isset($_GET["showclients"]))
+                    <li><a href="/sales">Hide Clients</a></li>
+                @else
+                    <li><a href="/sales?showclients=true">Show Clients</a></li>
+                @endif
+            </ul>
+        </div>
 </container>
 
-<?php
-error_reporting(0);
+@if(isset($_GET["showclients"]))
+    @php($showclient = $_GET["showclients"])
+    @if ($showclient === "true")
+        <div class='client-list'>
+            <ul>
+                @foreach ($clients as $client)
+                    <li><a href='/sales?clientId={{$client->id}}'>{{$client->firstname}} {{$client->lastname}}</a></li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+@endif
 
-$showclient = $_GET["showclients"];
-
-if ($showclient === "true")
-{
-
-    echo "<div class='client-list'>";
-        echo"<ul>";
-        foreach ($users as $user)
-            {
-                $clientid = $user->id;
-                echo"<li><a href='/sales?clientId=$clientid'>$user->firstname $user->lastname</a></li>";
-            }
-        echo"</ul>";
-    echo"</div>";
-
-}
-
-
-echo"</ul>";
-echo"</div>";
-
-if(session()->has("message")){
-    $msg = session()->get("message");
-    echo "<script> window.alert('$msg'); </script>";
-    session()->remove("message");
-}
-?>
-
-
-
+@if(session()->has("message"))
+    @php($msg = session()->get("message"))
+    <script> window.alert('$msg'); </script>
+    @php(session()->remove("message"))
+@endif
 </body>
 </html>

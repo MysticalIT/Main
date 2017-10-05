@@ -12,7 +12,7 @@
 </head>
 <body>
 <a href="/sales">Back</a>
-<form method="post" action="">
+<form method="post" action="/clients/create">
     {{csrf_field()}}
 
     <label for="companyName">Client company name:</label>
@@ -22,13 +22,13 @@
     <input type="text" name="street" id="street">
 
     <label for="house-number">Client house number:</label>
-    <input type="text" name="house-number" id="house-number">
+    <input type="text" name="house_number" id="house-number">
 
     <label for="city">Client city:</label>
     <input type="text" name="city" id="city">
 
     <label for="zip-code">Client zip-code</label>
-    <input type="text" name="zip-code" id="zip-code">
+    <input type="text" name="zip_code" id="zip-code">
 
     <label for="clientFirstName">Client first name</label>
     <input type="text" name="clientFirstName" id="clientFirstName">

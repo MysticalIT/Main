@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class clientsController extends Controller
+class salesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,8 @@ class clientsController extends Controller
      */
     public function index()
     {
-        return view("/sales/salesMai    n");
+        $clients = \App\Client::all();
+        return view("/sales/salesMain")->with("clients", $clients);
     }
 
     /**
@@ -23,7 +24,7 @@ class clientsController extends Controller
      */
     public function create()
     {
-        return view("/sales/salesAddClients");
+        //
     }
 
     /**
@@ -34,33 +35,7 @@ class clientsController extends Controller
      */
     public function store(Request $request)
     {
-        //$val = new validator();
-        $this->validate($request, [
-            "clientFirstName" => "required|string|filled",
-            "clientLastName" => "required|string|filled",
-            "street" => "required|string|filled",
-            "house_number" => "required|string|filled",
-            "zip_code" => "required|string|filled",
-            "city" => "required|string|filled",
-            "email" => "required|string|filled|email|unique:tbl_clients,email",
-            "companyName" => "required|string|filled",
-            "phoneNumber" => "required|string|filled",
-        ]);
-
-        $client = new \App\Client();
-        $client->firstname = $request->clientFirstName;
-        $client->lastname = $request->clientLastName;
-        $client->street = $request->street;
-        $client->house_number = $request->house_number;
-        $client->zip_code = $request->zip_code;
-        $client->city = $request->city;
-        $client->email = $request->email;
-        $client->companyName = $request->companyName;
-        $client->phonenumber = $request->phoneNumber;
-        $client->save();
-
-        session(["message" => "Client added!"]);
-        return redirect("/sales");
+        //
     }
 
     /**
