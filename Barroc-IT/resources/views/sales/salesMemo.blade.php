@@ -35,7 +35,7 @@ $projects= DB::table('tbl_projects')->get();
                     <?php
                     foreach($projects as $project)
                     {
-                        echo "<li><a href='/editproject?projectid=$project->id'>$project->name</a></li>";
+                        echo "<li><a href='/project/$project->id/edit'>$project->name</a></li>";
                     }
                     ?>
                 </ul>

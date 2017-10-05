@@ -15,26 +15,12 @@
     <a href="/sales">Back</a>
 </div>
 
-<?php
+@foreach($projectname as $item)
+        <a></a>
 
-                    if (isset($_POST["projectname"]))
-                        {
-                            $projectName = $_POST["projectname"];
+@endforeach
 
-                            if (isset($_POST["projectdetails"]));
-                            {
-                                $projectDetails = $_POST["projectdetails"];
 
-                                if (isset($_POST["setinvoice"]))
-                                    {
-                                        $invoice = $_POST["setinvoice"];
-
-                                    }
-                            }
-
-                        }
-
-?>
 <form action="" method="post">
 
 {{csrf_field()}}

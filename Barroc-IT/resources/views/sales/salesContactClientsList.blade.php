@@ -15,7 +15,7 @@
     <div class="links">
         <div class="wrapper">
             <ul class="headerButtons">
-                <a href="/callclient?showClients=true">View clients</a>
+                <a href="/contact?showClients=true">View clients</a>
                 <a href="/sales">Back</a>
 
             </ul>
@@ -86,10 +86,10 @@
     {
         echo "<ul>";
         $projects = DB::table("tbl_projects")->where("client_id", $_GET["clientId"])->get();
-        echo "<li><a href='/addproject?clientId=$clientid'>Add Project</a></li>";
+        echo "<li><a href='/project/create?clientId=$clientid'>Add Project</a></li>";
         foreach ($projects as $project)
         {
-            echo "<li><a href='/editproject?projectId=$project->id&clientId={$_GET["clientId"]}'>Edit: $project->name</a></li>";
+            echo "<li><a href='/project/$project->id/edit'>Edit: $project->name</a></li>";
 
 
         }

@@ -11,64 +11,16 @@
     <title>Edit Project</title>
 </head>
 <body>
-<?php
 
+    <form action="" method="post">
+        <label for="projectName">Project name</label>
+        <input type="text" name="projectName" id="projectName" value="{{$project->name}}">
 
-?>
+        <label for="projectDetails">Project details</label>
+        <textarea name="projectDetails" id="projectDetails" value="{{$project->description}}"></textarea>
 
-<form action="" method="post">
-
-
-
-
-    <label for="clientphonenumber">Client phonenumber</label>
-    <input type="text" id="clientphonenumber">
-
-    <label for="projectname">Project name</label>
-    <input type="text" id="projectname">
-
-    <label for="projectDetails">Project details</label>
-    <textarea id="projectDetails"></textarea>
-
-    <label>Set invoice limit</label>
-    <input type="text" id="setinvoice">
-
-</form>
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Client</th>
-        <th>Details</th>
-        <th>Limit</th>
-    </tr>
-    <?php
-
-
-    error_reporting(0);
-    $clientId= $_GET["clientId"];
-    $projectId= $_GET["projectId"];
-
-    $projects = DB::table("tbl_projects")->where("client_id", $clientId)->get();
-    if ($projects > 0)
-    {
-        foreach ($projects as $project)
-        {
-            echo "
-
-                    <tr>
-                    <td><a href='salesEditProject.blade.php'>$project->name</a></td>
-                    <td>$project->firstname $project->lastname</td>
-                    <td></td>
-                    <td>$project->limit</td>
-                    </tr>
-
-";
-        }
-    }
-
-    ?>
-</table>
-
-
+        <label>Set invoice limit</label>
+        <input type="text" name="limit" id="setInvoice" value="{{$project->limit}}">
+    </form>
 </body>
 </html>
