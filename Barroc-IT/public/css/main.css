@@ -299,6 +299,14 @@ admin - Clients
     margin-bottom: 20px
 }
 
+.client-list {
+    height: 200px;
+    /* overflow: auto; */
+    overflow-x: hidden;
+    max-width: 200px;
+    overflow-y: scroll;
+}
+
 
 /*==========================================================
     Footer styles
