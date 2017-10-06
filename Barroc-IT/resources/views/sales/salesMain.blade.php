@@ -28,7 +28,7 @@
                 @if (isset($_GET["clientId"]))
                     @php(session(["clientId" => $_GET["clientId"]]))
                     @php($clientid = $_GET["clientId"])
-                    <li><a href="/callclient">Call list for clients</a></li>
+                    <li><a href="/contact">Call list for clients</a></li>
                     <li><a href="/memo">Show memo's</a></li>
                     @if(isset($_GET["showclients"]))
                         <li><a href="/sales">Hide Clients</a></li>
@@ -42,7 +42,7 @@
                         @php(session()->remove("clientId"))
                     @endif
                     <li><a href='/client/create'>Add Client here</a></li>
-                    <li><a href="/callclient">Call list for clients</a></li>
+                    <li><a href="/contact">Call list for clients</a></li>
                     <li><a href="/memo">Show memo's</a></li>
                     @if(isset($_GET["showclients"]))
                         <li><a href="/sales">Hide Clients</a></li>
