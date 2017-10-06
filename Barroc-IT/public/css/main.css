@@ -43,7 +43,7 @@ h4{
 }
 
 input[type=checkbox]{
-    display          : inline-block;
+    display : inline-block;
 
 
 }
@@ -71,6 +71,7 @@ input.form-control, textarea.form-control {
     box-shadow:  1px 1px 2px black;
     padding: 2px 1px;
     width:105%;
+
 }
 
 
@@ -249,12 +250,20 @@ admin - Clients
     background: #CFC1B5;
     border: 0px;
     border-radius: 0px;
+    color: #444;
+
 }
 
-.login-button{
-    background-color: #CFC1B5;
+
+
+.help-btn{
+    display: flex;
+    justify-content: space-between;
     color: #444;
+
 }
+
+
 
 
 
@@ -286,7 +295,9 @@ admin - Clients
 /*==========================================================
     Sales styles
 ==========================================================*/
-
+.spacer{
+    margin-bottom: 20px
+}
 
 
 /*==========================================================

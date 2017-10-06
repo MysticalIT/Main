@@ -35,7 +35,7 @@
                     @else
                         <li><a href="/sales?showclients=true">Show Clients</a></li>
                     @endif
-                    <div class="spacer" style="margin-bottom: 20px"></div>
+                    <div class="spacer"></div>
                     <li><a href='/client/{{$clientid}}/edit'>Edit {{$clients->find($clientid)->firstname}} {{$clients->find($clientid)->lastname}}'s info</a></li>
                 @else
                     @if(session()->has("clientId"))
