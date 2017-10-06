@@ -34,7 +34,25 @@ class projectsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            "" => "required|string|filled",
+            "clientLastName" => "required|string|filled",
+            "street" => "required|string|filled",
+            "house_number" => "required|string|filled",
+            "zip_code" => "required|string|filled",
+            "city" => "required|string|filled",
+            "email" => "required|string|filled|email|unique:tbl_clients,email",
+            "companyName" => "required|string|filled",
+            "phoneNumber" => "required|string|filled",
+        ]);
+
+        $project = new \App\Project();
+        $project->projectName = $request->projectName;
+        $project->projectDetails = $request->projectDetails;
+        $project->save();
+
+        session(["message" => "Client added!"]);
+        return redirect("/sales");
     }
 
     /**

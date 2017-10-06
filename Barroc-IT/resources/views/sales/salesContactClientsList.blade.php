@@ -15,8 +15,8 @@
     <div class="links">
         <div class="wrapper">
             <ul class="headerButtons">
-                <a href="/contact?showClients=true">View clients</a>
-                <a href="/sales">Back</a>
+                <li><a href="/contact?showClients=true">View clients</a></li>
+                <li><a href="/sales">Back</a></li>
 
             </ul>
         </div>
@@ -24,7 +24,7 @@
 
 </header>
 
-<container class="main-content">
+<div class="main-content">
         <table class="table table-striped">
             <?php
             if(isset($_GET["clientId"]))
@@ -97,6 +97,6 @@
     }
     ?>
 
-</container>
+</div>
 </body>
 </html>

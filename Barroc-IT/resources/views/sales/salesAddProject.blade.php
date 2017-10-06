@@ -15,25 +15,25 @@
     <a href="/sales">Back</a>
 </div>
 
-@foreach($projectname as $item)
-        <a></a>
+@foreach($projectName as $item)
+        <a href="project/{{$item->id}}/edit">{{$item->name}}</a>
 
 @endforeach
 
 
-<form action="" method="post">
+<form action="/projects/create" method="post">
 
 {{csrf_field()}}
 
 
-    <label for="projectname">Project name</label>
-    <input type="text" id="projectname">
+    <label for="projectName">Project name</label>
+    <input type="text" id="projectName" name="projectName">
 
-    <label for="projectdetails">Project details</label>
-    <textarea id="projectdetails"></textarea>
+    <label for="projectDetails">Project details</label>
+    <textarea id="projectDetails" name="projectDetails"></textarea>
 
-    <label for="setinvoice">Set invoice limit</label>
-    <input type="text" id="setinvoice">
+    <label for="setInvoice">Set invoice limit</label>
+    <input type="text" id="setInvoice" name="setInvoice">
 
     <input type="submit" value="add project">
 
