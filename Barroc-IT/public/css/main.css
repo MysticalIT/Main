@@ -154,6 +154,7 @@ input{
 
 ol, ul{
     list-style: none;
+
 }
 
 
@@ -252,6 +253,15 @@ admin - Clients
     border-radius: 0px;
     color: #444;
 
+
+    font: bold 11px Arial;
+    text-decoration: none;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CFC1B5;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CFC1B5;
+
 }
 
 
@@ -305,7 +315,26 @@ admin - Clients
     overflow-x: hidden;
     max-width: 200px;
     overflow-y: scroll;
+    direction: rtl;
 }
+
+.client-list::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+ .client-list::-webkit-scrollbar-thumb {
+     background: rgba(0,0,0,0.4);
+     border-radius: 6px;
+ }
+.client-list::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.4)
+}
+.client-list ul {
+    direction: ltr;
+    padding-left: 28px;
+}
+
+
 
 
 /*==========================================================
