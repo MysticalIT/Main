@@ -24,8 +24,6 @@
 <form action="/projects/create" method="post">
 
 {{csrf_field()}}
-
-
     <label for="projectName">Project name</label>
     <input type="text" id="projectName" name="projectName">
 
@@ -35,7 +33,7 @@
     <label for="setInvoice">Set invoice limit</label>
     <input type="text" id="setInvoice" name="setInvoice">
 
-    <input type="submit" value="add project">
+    <input type="submit" class="btn-primary" value="add project">
 
 
 </form>

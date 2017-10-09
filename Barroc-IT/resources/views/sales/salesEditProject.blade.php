@@ -21,6 +21,8 @@
 
         <label for="setInvoice">Set invoice limit</label>
         <input type="text" name="limit" id="setInvoice" value="{{$project->limit}}">
+
+        <input type="submit" class="btn-primary" value="Edit Project">
     </form>
 </body>
 </html>
