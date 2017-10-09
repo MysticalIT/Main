@@ -337,6 +337,7 @@ Route::get("/sales", "salesController@index");
 Route::resource("/client", "clientsController");
 Route::get("/contact", "salesController@contact");
 Route::resource("/project", "projectsController");
+Route::post("/updateClient/{id}", "clientsController@update");
 
 //Finance
 Route::resource("/invoice", "invoicesController");

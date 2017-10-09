@@ -113,15 +113,15 @@ class clientsController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+        
         $this->validate($request, [
             "clientFirstName" => "required|string|filled",
             "clientLastName" => "required|string|filled",
             "street" => "required|string|filled",
-            "house_number" => "required|string|filled",
+            "house_number" => "required|filled",
             "zip_code" => "required|string|filled",
             "city" => "required|string|filled",
-            "email" => "required|string|filled|email|unique:tbl_clients,email",
+            "email" => "required|string|filled|email",
             "companyName" => "required|string|filled",
             "phoneNumber" => "required|string|filled",
         ]);
