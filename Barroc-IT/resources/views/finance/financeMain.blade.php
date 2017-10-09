@@ -28,44 +28,19 @@
 
 <div class="main-content">
 
-    <div class="clientsFinance">
-        <div class="wrapper">
-            <div class="">
-
-                    <form action="">
-                        <div class="form-group">
-                            <input id="User" type="checkbox" name="field" value="option" placeholder="User_1">
-                            <label for="User">User_1</label>
-                        </div>
-
-                        <div class="form-group">
-                            <input id="User" type="checkbox" name="field" value="option" placeholder="User_2">
-                            <label for="User">User_2</label>
-                        </div>
-
-                        <div class="form-group">
-                            <input id="User" type="checkbox" name="field" value="option" placeholder="User_3">
-                            <label for="User">User_3</label>
-                        </div>
-
-                        <div class="form-group">
-                            <input id="User" type="checkbox" name="field" value="option" placeholder="User_4">
-                            <label for="User">User_4</label>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="submit" name="setInactive" value="Set Inactive">
-                        </div>
-                    </form>
 
 
 
-            </div>
+</div>
 
-        </div>
-    </div>
+<div class="client-list">
+    <ul>
+        @foreach ($clients as $client)
+            <li><a href="/finance?clientId={{$client->id}}">{{$client->firstname}} {{$client->lastname}}</a></li>
+        @endforeach
 
-
+    </ul>
+    
 </div>
 </body>
 </html>

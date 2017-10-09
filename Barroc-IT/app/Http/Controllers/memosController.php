@@ -13,7 +13,6 @@ class memosController extends Controller
      */
     public function index()
     {
-        //
     }
 
     /**
