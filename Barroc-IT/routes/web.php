@@ -340,8 +340,10 @@ Route::resource("/project", "projectsController");
 Route::post("/updateClient/{id}", "clientsController@update");
 
 //Finance
-Route::resource("/invoice", "invoicesController");
+Route::get("/invoice", "invoicesController@invoice");
 Route::get("/finance", "financesController@index");
+
+
 
 //Admin
 

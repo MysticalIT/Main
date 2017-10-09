@@ -11,7 +11,8 @@ class financesController extends Controller
         $department = "finance";
         if(session()->has("department")){
             if(session()->get("department") === $department){
-                return view("/finance/financeMain");
+                $clients = \App\Client::all();
+                return view("/finance/financeMain")->with("clients", $clients);
             }
             return redirect("/" . session()->get("department"));
         }

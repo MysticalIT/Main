@@ -16,7 +16,7 @@ class salesController extends Controller
         $department = "sales";
         if(session()->has("department")){
             if(session()->get("department") === $department){
-                $clients = \App\Client::all();
+                $clients = \App\Client::all()->sortBy("firstname");
                 return view("/sales/salesMain")->with("clients", $clients);
             }
             return redirect("/" . session()->get("department"));
@@ -32,7 +32,7 @@ class salesController extends Controller
         $department = "sales";
         if(session()->has("department")){
             if(session()->get("department") === $department){
-                $clients = \App\Client::all()->where("bkrapproved", "=", "1");
+                $clients = \App\Client::all()->where("bkrapproved", "=", "1")->sortBy("firstname");
                 $projects = \App\Project::all();
                 return view("/sales/salesContactClientsList ")->with(["clients" => $clients, "projects" => $projects]);
             }
