@@ -52,9 +52,10 @@
             </div>-->
 
             <div class="form-group help-btn">
-                <input type="submit" name="type" value="Login" class="btn btn-primary">
-
-                <div class="help-btn">
+                <div class="login-btn">
+                    <input type="submit" name="type" value="Login" class="btn btn-primary">
+                </div>
+                <div class="help-btn ltr">
                     <a href="/index?showhelp=true">Help</a>
                 </div>
             </div>
