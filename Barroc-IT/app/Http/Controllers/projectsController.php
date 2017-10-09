@@ -23,7 +23,17 @@ class projectsController extends Controller
      */
     public function create()
     {
-        return view("/sales/salesAddProject");
+        $department = "sales";
+        if(session()->has("department")){
+            if(session()->get("department") === $department){
+                return view("/sales/salesAddProject");
+            }
+            return redirect("/" . session()->get("department"));
+        }
+        else{
+            return redirect("/");
+        }
+
     }
 
     /**
@@ -68,8 +78,18 @@ class projectsController extends Controller
      */
     public function edit($id)
     {
-        $project = \App\Client::find($id);
-        return view("/sales/salesEditProject")->with("project", $project);
+        $department = "sales";
+        if(session()->has("department")){
+            if(session()->get("department") === $department){
+                $project = \App\Client::find($id);
+                return view("/sales/salesEditProject")->with("project", $project);
+            }
+            return redirect("/" . session()->get("department"));
+        }
+        else{
+            return redirect("/");
+        }
+
     }
 
     /**
@@ -87,7 +107,7 @@ class projectsController extends Controller
             "projectDetails" => "required|string|filled",
         ]);
 
-        $project = new \App\Project();
+        $project = \App\Project::find($id);
         $project->projectName = $request->projectName;
         $project->projectDetails = $request->projectDetails;
         $project->save();
