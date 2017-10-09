@@ -406,7 +406,26 @@ admin - Clients
     height: 98%;
 }
 
+.add-client{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.4);
+    margin-top: 50px;
+    max-width: 100%;
+    color: #CFC1B5;
+    margin-bottom: 20px;
+}
 
+
+
+form.add-client{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
 
 
 /*==========================================================
