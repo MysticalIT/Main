@@ -60,7 +60,7 @@
         </table>
     @endif
 
-        
+
     @if(isset($_GET["showClients"]))
         <div class='client-list-contact'>
             <a href="/contact?showClients=true">View clients</a>

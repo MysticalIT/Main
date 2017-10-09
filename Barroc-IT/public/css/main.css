@@ -257,6 +257,7 @@ admin - Clients
 ==========================================================*/
 
 .btn-primary {
+
     background: #CFC1B5;
     border: 0px;
     border-radius: 0px;
@@ -264,7 +265,7 @@ admin - Clients
     margin-top: 5px;
     margin-bottom: 5px;
 
-    font: bold 11px Arial;
+    font: bold 16px Arial;
     text-decoration: none;
     padding: 2px 6px 2px 6px;
     border-top: 1px solid #CFC1B5;
