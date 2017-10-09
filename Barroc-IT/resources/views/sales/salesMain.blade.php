@@ -15,8 +15,9 @@
     <div class="links">
         <div class="wrapper">
             <ul class="mainNav">
-               <li> <a href="/sales?showHelp=true">Help</a></li>
                 <a href="/logout">Logout</a>
+               <li> <a href="/sales?showHelp=true">Help</a></li>
+
             </ul>
 
         </div>
@@ -44,20 +45,31 @@
                     <li><a href='/client/create'>Add Client here</a></li>
                     <li><a href="/contact">Call list for clients</a></li>
                     <li><a href="/memo">Show memo's</a></li>
-                    @if(isset($_GET["showclients"]))
-                        <li><a href="/sales">Hide Clients</a></li>
-                    @else
-                        <li><a href="/sales?showclients=true">Show Clients</a></li>
-                    @endif
+                        <div class="showHideClients">
+                            <ul>
+                                @if(isset($_GET["showclients"]))
+
+                                    <li><a href="/sales">Hide Clients</a></li>
+                                @else
+                                    <li><a href="/sales?showclients=true">Show Clients</a></li>
+                                @endif
+                            </ul>
+                        </div>
                 @endif
             </ul>
+
+
         </div>
+
+
 </container>
 
 @if(isset($_GET["showclients"]))
     @php($showclient = $_GET["showclients"])
     @if ($showclient === "true")
+
         <div class='client-list'>
+
             <ul>
                 @foreach ($clients as $client)
                     <li><a href='/sales?clientId={{$client->id}}'>{{$client->firstname}} {{$client->lastname}}</a></li>

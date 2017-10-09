@@ -24,6 +24,8 @@ body {
     height: 68%;
     max-width: 100%;
     margin-bottom: 0px;
+
+    overflow: hidden;
 }
 
 .logo{
@@ -112,7 +114,7 @@ input.form-control, textarea.form-control {
 .mainNav{
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
@@ -329,13 +331,28 @@ admin - Clients
     margin-bottom: 20px
 }
 
+.sales-nav{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+
+
+.showHideClients {
+    z-index: 10;
+    position: absolute;
+    right: 4.6%;
+    top: 20%;
+    float: right;
+}
 .client-list {
     height: 100%;
     /* overflow: auto; */
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
     max-width: 200px;
     overflow-y: scroll;
-    direction: rtl;
+    float: right;
 }
 
 .client-list::-webkit-scrollbar {
@@ -350,8 +367,8 @@ admin - Clients
     background: rgba(0,0,0,0.4)
 }
 .client-list ul {
-    direction: ltr;
     padding-left: 28px;
+    background: rgba(1,1,1,0.5);
 
 }
 
