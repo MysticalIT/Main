@@ -24,8 +24,6 @@
 <form action="/projects/create" method="post">
 
 {{csrf_field()}}
-
-
     <label for="projectName">Project name</label>
     <input type="text" id="projectName" name="projectName">
 

@@ -45,9 +45,9 @@ class projectsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            "" => "required|string|filled",
             "projectName" => "required|string|filled",
             "projectDetails" => "required|string|filled",
+            "setInvoice" => "required|numeric"
         ]);
 
         $project = new \App\Project();
@@ -55,7 +55,7 @@ class projectsController extends Controller
         $project->projectDetails = $request->projectDetails;
         $project->save();
 
-        session(["message" => "Project is added with the selected client!"]);
+        session(["message" => "Project is added!"]);
         return redirect("/sales");
     }
 
@@ -102,15 +102,18 @@ class projectsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            "" => "required|string|filled",
             "projectName" => "required|string|filled",
             "projectDetails" => "required|string|filled",
+            "setInvoice" => "required|numeric"
         ]);
 
         $project = \App\Project::find($id);
         $project->projectName = $request->projectName;
         $project->projectDetails = $request->projectDetails;
         $project->save();
+
+        session(["message" => "Project is edited!"]);
+        return redirect("/sales");
     }
 
     /**
