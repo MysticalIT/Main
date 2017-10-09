@@ -22,7 +22,17 @@ class clientsController extends Controller
      */
     public function create()
     {
-        return view("/sales/salesAddClients");
+        $department = "sales";
+        if(session()->has("department")){
+            if(session()->get("department") === $department){
+                return view("/sales/salesAddClients");
+            }
+            return redirect("/" . session()->get("department"));
+        }
+        else{
+            return redirect("/");
+        }
+
     }
 
     /**
@@ -81,8 +91,17 @@ class clientsController extends Controller
      */
     public function edit($id)
     {
-        $client = \App\Client::find($id);
-        return view("/sales/salesEditClients")->with("client", $client);
+        $department = "sales";
+        if(session()->has("department")){
+            if(session()->get("department") === $department){
+                $client = \App\Client::find($id);
+                return view("/sales/salesEditClients")->with("client", $client);
+            }
+            return redirect("/" . session()->get("department"));
+        }
+        else{
+            return redirect("/");
+        }
     }
 
     /**

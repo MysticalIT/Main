@@ -33,7 +33,7 @@
 
     <div class="container-fluid">
 
-        <form class="login-form col-md-4 col-md-offset-4" action="" method="post">
+        <form class="login-form col-md-4 col-md-offset-4" action="/login" method="post">
             {{csrf_field()}}
             <h4>Please enter your credentials</h4>
 

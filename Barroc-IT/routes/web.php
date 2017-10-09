@@ -327,13 +327,14 @@
 //    return redirect("/");
 //
 //});
-Route::get("/", function (){
-    return view("index");
-});
-
-
+Route::get("/", "usersController@index");
+Route::post("/login", "usersController@login");
 Route::get("/sales", "salesController@index");
+Route::get("/client", "clientsController@index");
 Route::get("/contact", "salesController@contact");
+Route::get("/project", "projectsController@create");
+Route::get("/memo", "memosController@index");
+Route::get("/invoice", "invoicesController@index");
 Route::get("/faker", function(){
 	return view("admin/adminFaker");
 });
