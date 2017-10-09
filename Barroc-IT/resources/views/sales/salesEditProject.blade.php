@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <form action="/projects/{{$project->id}}/update" method="post">
+    <form action="/projects/{{$project->id}}" method="post">
         <label for="projectName">Project name</label>
         <input type="text" name="projectName" id="projectName" value="{{$project->name}}">
 
