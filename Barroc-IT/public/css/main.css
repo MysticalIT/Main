@@ -7,7 +7,7 @@ html{
 
 body {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.42857143;
     color: #333;
     background-color: #CFC1B5;
@@ -139,7 +139,7 @@ table, td, th {
 
 a{
 
-    font: bold 11px Arial;
+    font: bold 16px Arial;
     text-decoration: none;
     background-color: #CFC1B5;
     color: #444;
@@ -151,7 +151,7 @@ a{
 
 }
 input{
-    font: bold 11px Arial;
+    font: bold 16px Arial;
     text-decoration: none;
     background-color: #fff;
     padding: 2px 6px 2px 6px;
@@ -306,7 +306,8 @@ admin - Clients
 
 .columnRight{float: right; width: 50%; }
 
-.clientsFinance{    display: flex;
+.clientsFinance{
+    display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
@@ -334,7 +335,7 @@ admin - Clients
 .sales-nav{
     display: flex;
     justify-content: center;
-    align-self: center;
+    margin: 0 auto;
 }
 
 
@@ -342,8 +343,8 @@ admin - Clients
 .showHideClients {
     z-index: 10;
     position: absolute;
-    right: 4.6%;
-    top: 20%;
+    right: 3.3%;
+    top: 14%;
     float: right;
 }
 .client-list {
@@ -367,6 +368,34 @@ admin - Clients
     background: rgba(0,0,0,0.4)
 }
 .client-list ul {
+    padding-left: 28px;
+    background: rgba(1,1,1,0.5);
+
+}
+
+
+.client-list-contact{
+    height: 100%;
+    /* overflow: auto; */
+    overflow-x: hidden;
+    max-width: 200px;
+    overflow-y: scroll;
+    right: 90%;
+
+}
+
+.client-list-contact::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+.client-list-contact::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.4);
+    border-radius: 6px;
+}
+.client-list-contact::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.4)
+}
+.client-list-contact ul {
     padding-left: 28px;
     background: rgba(1,1,1,0.5);
 

@@ -14,14 +14,14 @@
 <header>
     <div class="links">
         <div class="wrapper">
-            <ul class="headerButtons">
-                <li><a href="/contact?showClients=true">View clients</a></li>
-                <li><a href="/sales">Back</a></li>
+            <ul class="mainNav">
+                <a href="/logout">Logout</a>
+                <li> <a href="/sales?showHelp=true">Help</a></li>
 
             </ul>
+
         </div>
     </div>
-
 </header>
 
 <container class="main-content">
@@ -59,8 +59,11 @@
             @endforeach
         </table>
     @endif
+
+        
     @if(isset($_GET["showClients"]))
-        <div class='client-list'>
+        <div class='client-list-contact'>
+            <a href="/contact?showClients=true">View clients</a>
             <ul>
                 @php($showclient = $_GET["showClients"])
                 @if ($showclient)
