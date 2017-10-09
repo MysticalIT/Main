@@ -40,7 +40,7 @@
         @endforeach
 
     </ul>
-    
+
 </div>
 </body>
 </html>

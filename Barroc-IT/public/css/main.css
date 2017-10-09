@@ -395,7 +395,7 @@ admin - Clients
 }
 .client-list-contact::-webkit-scrollbar-thumb {
     background: rgba(0,0,0,0.4);
-    border-radius: 6px;
+    border-radius: 5px;
 }
 .client-list-contact::-webkit-scrollbar-track {
     background: rgba(0,0,0,0.4)
@@ -414,9 +414,9 @@ admin - Clients
     justify-content: center;
     background: rgba(0,0,0,0.4);
     margin-top: 50px;
-    max-width: 100%;
+    max-width: 50%;
     color: #CFC1B5;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 
