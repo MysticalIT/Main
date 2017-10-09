@@ -12,7 +12,7 @@
 </head>
 <body>
 <a href="/sales">Back</a>
-<form method="post" action="/clients/create">
+<form method="post" action="../client">
     {{csrf_field()}}
 
     <label for="companyName">Client company name:</label>

@@ -64,7 +64,7 @@ class clientsController extends Controller
         $client->zip_code = $request->zip_code;
         $client->city = $request->city;
         $client->email = $request->email;
-        $client->companyName = $request->companyName;
+        $client->company_name = $request->companyName;
         $client->phonenumber = $request->phoneNumber;
         $client->save();
 
@@ -134,7 +134,7 @@ class clientsController extends Controller
         $client->zip_code = $request->zip_code;
         $client->city = $request->city;
         $client->email = $request->email;
-        $client->companyName = $request->companyName;
+        $client->company_name = $request->companyName;
         $client->phonenumber = $request->phoneNumber;
         $client->save();
         session(["message" => "Client edited!"]);
