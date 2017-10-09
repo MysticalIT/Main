@@ -61,9 +61,11 @@
     @endif
 
 
-    <div class="show-clients">
-        <a href="/contact?showClients=true">View clients</a>
-    </div>
+    @if(isset($_GET["showClients"]))
+        <li><a href="/sales">Hide Clients</a></li>
+    @else
+        <li><a href="/sales?showclients=true">Show Clients</a></li>
+    @endif
 
         
     @if(isset($_GET["showClients"]))
