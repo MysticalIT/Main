@@ -28,22 +28,19 @@
 
 <div class="main-content">
 
-    <div class="clientsFinance">
-        <div class="client-list">
-            <ul>
-                @foreach ($clients as $client)
-                    <li><a href="/finance?clientId={{$client->id}}">{{$client->firstname}} {{$client->lastname}}</a></li>
-                @endforeach
-
-            </ul>
-            @if($_GET["clientId"])
 
 
-            @endif
-        </div>
-    </div>
 
+</div>
 
+<div class="client-list">
+    <ul>
+        @foreach ($clients as $client)
+            <li><a href="/finance?clientId={{$client->id}}">{{$client->firstname}} {{$client->lastname}}</a></li>
+        @endforeach
+
+    </ul>
+    
 </div>
 </body>
 </html>
