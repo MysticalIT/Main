@@ -60,12 +60,13 @@
         </table>
     @endif
 
-
+    <ul>
     @if(isset($_GET["showClients"]))
         <li><a href="/contact">Hide Clients</a></li>
     @else
         <li><a href="/contact?showClients=true">Show Clients</a></li>
     @endif
+    </ul>
 
         
     @if(isset($_GET["showClients"]))
