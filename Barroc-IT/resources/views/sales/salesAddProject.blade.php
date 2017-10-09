@@ -24,7 +24,7 @@
 <form action="/projects/create" method="post">
 
 {{csrf_field()}}
-
+    <input type="hidden" name="id" value="{{$_GET["clientId"]}}">
 
     <label for="projectName">Project name</label>
     <input type="text" id="projectName" name="projectName">

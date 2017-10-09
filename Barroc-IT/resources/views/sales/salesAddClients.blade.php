@@ -11,6 +11,9 @@
     <title>Add client</title>
 </head>
 <body>
+<a href="/sales">Back</a>
+<form method="post" action="../client">
+    {{csrf_field()}}
 
 <header>
     <div class="links">

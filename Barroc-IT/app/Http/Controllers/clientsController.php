@@ -64,7 +64,7 @@ class clientsController extends Controller
         $client->zip_code = $request->zip_code;
         $client->city = $request->city;
         $client->email = $request->email;
-        $client->companyName = $request->companyName;
+        $client->company_name = $request->companyName;
         $client->phonenumber = $request->phoneNumber;
         $client->save();
 
@@ -113,7 +113,33 @@ class clientsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $this->validate($request, [
+            "clientFirstName" => "required|string|filled",
+            "clientLastName" => "required|string|filled",
+            "street" => "required|string|filled",
+            "house_number" => "required|filled",
+            "zip_code" => "required|string|filled",
+            "city" => "required|string|filled",
+            "email" => "required|string|filled|email",
+            "companyName" => "required|string|filled",
+            "phoneNumber" => "required|string|filled",
+        ]);
+
+        $client = \App\Client::find($id);
+        $client->firstname = $request->clientFirstName;
+        $client->lastname = $request->clientLastName;
+        $client->street = $request->street;
+        $client->house_number = $request->house_number;
+        $client->zip_code = $request->zip_code;
+        $client->city = $request->city;
+        $client->email = $request->email;
+        $client->company_name = $request->companyName;
+        $client->phonenumber = $request->phoneNumber;
+        $client->save();
+        session(["message" => "Client edited!"]);
+
+        return redirect("/sales");
     }
 
     /**
