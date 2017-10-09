@@ -42,7 +42,7 @@
                 <input type="text" class="form-control  col-md-3" name="department" id="department">
             </div>
 
-            <div class="form-group">
+            <div class="form-group login-password">
                 <label for="password" class="form-control  col-md-3">Password</label>
                 <input type="password" class="form-control  col-md-3" name="password" id="password">
             </div>
