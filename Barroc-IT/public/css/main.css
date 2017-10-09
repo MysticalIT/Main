@@ -83,6 +83,10 @@ input.form-control, textarea.form-control {
     width:97.99%;
 }
 
+.login-password input{
+    letter-spacing: 1.5px;
+}
+
 
 
 
