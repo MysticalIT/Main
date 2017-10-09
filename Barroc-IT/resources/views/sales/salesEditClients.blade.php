@@ -29,9 +29,8 @@
     $companyName = $client->company_name;
     $phoneNumber = $client->phonenumber;
 @endphp
-    <form method="post" action="">
+    <form method="post" action="/clients/{{$client->id}}}/update">
         {{csrf_field()}}
-        <input type="hidden" value="$clientid">
 
         <label for="companyName">Client company name:</label>
         <input type="text" name="companyName" id="companyName" value="{{$companyName}}">

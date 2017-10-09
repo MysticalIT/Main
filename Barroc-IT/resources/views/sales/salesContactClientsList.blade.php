@@ -24,79 +24,63 @@
 
 </header>
 
-<div class="main-content">
+<container class="main-content">
+    @if(isset($_GET["clientId"]))
         <table class="table table-striped">
-            <?php
-            if(isset($_GET["clientId"]))
-            {
-                $clientId = $_GET["clientId"];
-                $users = DB::table('tbl_clients')->where("id", $clientId)->get();
-                foreach ($users as $user)
-                {
-                    echo"
-
-                            <tr>
-                                <th>Name:</th>
-                                <td>$user->firstname $user->lastname</td>
-                            </tr>
-                            <tr>
-                                <th>Phone-number:</th>
-                                <td>$user->phonenumber</td>
-                            </tr>
-                            <tr>
-                                <th>Company name:</th>
-                                <td>$user->company_name</td>
-                            </tr>
-                            <tr>
-                                <th>Street:</th>
-                                <td>$user->street</td>
-                            </tr>
-                            <tr>
-                                <th>City:</th>
-                                <td>$user->city</td>
-                            </tr>
-                            <tr>
-                                <th>Zip-code:</th>
-                                <td>$user->zip_code</td>
-                            </tr>
-                            ";
-                }
-            }
-            ?>
+            @php
+            $clientId = $_GET["clientId"];
+            $users = $clients->where("id", "=", $clientId);
+            @endphp
+            @foreach ($users as $user)
+                <tr>
+                    <th>Name:</th>
+                    <td>{{$user->firstname}} {{$user->lastname}}</td>
+                </tr>
+                <tr>
+                    <th>Phone-number:</th>
+                    <td>{{$user->phonenumber}}</td>
+                </tr>
+                <tr>
+                    <th>Company name:</th>
+                    <td>{{$user->company_name}}</td>
+                </tr>
+                <tr>
+                    <th>Street:</th>
+                    <td>{{$user->street}}</td>
+                </tr>
+                <tr>
+                    <th>City:</th>
+                    <td>{{$user->city}}</td>
+                </tr>
+                <tr>
+                    <th>Zip-code:</th>
+                    <td>{{$user->zip_code}}</td>
+                </tr>
+            @endforeach
         </table>
-    <?php
-    echo"<div class='client-list'>";
-    error_reporting(0);
-    echo "<ul>";
-    $showclient = $_GET["showClients"];
-    if ($showclient)
-    {
-        $users = DB::table('tbl_clients')->where("bkrapproved", true)->get();
-        foreach ($users as $user)
-        {
-            $clientid = $user->id;
+    @endif
+    @if(isset($_GET["showClients"]))
+        <div class='client-list'>
+            <ul>
+                @php($showclient = $_GET["showClients"])
+                @if ($showclient)
+                    @foreach ($clients as $client)
+                        <li><a href='/contact?clientId={{$client->id}}'>{{$client->firstname}} {{$client->lastname}}</a></li>
+                    @endforeach
+                @endif
+            </ul>
+        </div>
+    @endif
+    @if (isset($_GET["clientId"]))
+        <ul>
+            @php($projectsById = $projects->where("client_id", "=", $_GET["clientId"]))
+            <li><a href='/project/create?clientId={{$_GET["clientId"]}}'>Add Project</a></li>
+            @foreach ($projectsById as $project)
+                <li><a href='/project/{{$project->id}}/edit'>Edit: {{$projectsById->name}}</a></li>
+            @endforeach
+        </ul>
+    @endif
 
-            echo"<li><a href='/callclient?clientId=$clientid'>$user->firstname $user->lastname</a></li>";
-        }
-    }
-    echo "</ul>";
-
-    echo"</div>";
-    if (isset($_GET["clientId"]))
-    {
-        echo "<ul>";
-        $projects = DB::table("tbl_projects")->where("client_id", $_GET["clientId"])->get();
-        echo "<li><a href='/project/create?clientId=$clientid'>Add Project</a></li>";
-        foreach ($projects as $project)
-        {
-            echo "<li><a href='/project/$project->id/edit'>Edit: $project->name</a></li>";
-
-
-        }
-        echo "</ul>";
-    }
-    ?>
-
-</div>
+</container>
 </body>
 </html>

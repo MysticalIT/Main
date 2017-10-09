@@ -332,9 +332,13 @@ Route::get("/", function (){
 });
 
 
-Route::resource("/sales", "salesController");
-Route::resource("/client", "clientsController");
-Route::resource("/project", "projectsController");
-Route::resource("/memo", "memosController");
-Route::resource("/user", "usersController");
-Route::resource("/invoice", "invoiceController");
+Route::get("/sales", "salesController@index");
+Route::get("/contact", "salesController@contact");
+Route::get("/faker", function(){
+	return view("admin/adminFaker");
+});
+//Route::resource("/client", "clientsController");
+//Route::resource("/project", "projectsController");
+//Route::resource("/memo", "memosController");
+//Route::resource("/user", "usersController");
+//Route::resource("/invoice", "invoiceController");
