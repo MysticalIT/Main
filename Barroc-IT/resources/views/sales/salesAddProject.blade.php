@@ -35,7 +35,7 @@
     <label for="setInvoice">Set invoice limit</label>
     <input type="text" id="setInvoice" name="setInvoice">
 
-    <input type="submit" value="add project">
+    <input type="submit" class="btn-primary" value="add project">
 
 
 </form>

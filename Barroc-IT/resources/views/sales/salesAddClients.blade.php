@@ -42,7 +42,7 @@
     <label for="email">Client email:</label>
     <input type="text" name="email" id="email">
 
-    <input type="submit" value="Add client">
+    <input type="submit" class="btn-primary" value="Add client">
 </form>
 
 

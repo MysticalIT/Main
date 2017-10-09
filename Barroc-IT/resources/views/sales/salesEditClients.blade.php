@@ -59,7 +59,7 @@
         <label for="email">Client email:</label>
         <input type="text" name="email" id="email" value="{{$email}}">
 
-        <input type="submit" value="Edit {{$client->firstname}} {{$client->lastname}}'s info">
+        <input class="btn-primary" type="submit" value="Edit {{$client->firstname}} {{$client->lastname}}'s info">
     </form>
 </body>
 </html>

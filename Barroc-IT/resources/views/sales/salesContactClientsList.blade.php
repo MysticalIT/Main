@@ -16,7 +16,7 @@
         <div class="wrapper">
             <ul class="mainNav">
                 <a href="/logout">Logout</a>
-                <li> <a href="/sales?showHelp=true">Help</a></li>
+                <li> <a href="/contact?showHelp=true">Help</a></li>
 
             </ul>
 
@@ -64,7 +64,7 @@
     @if(isset($_GET["showClients"]))
         <li><a href="/sales">Hide Clients</a></li>
     @else
-        <li><a href="/sales?showclients=true">Show Clients</a></li>
+        <li><a href="/contact?showclients=true">Show Clients</a></li>
     @endif
 
         
