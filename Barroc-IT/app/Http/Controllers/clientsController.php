@@ -22,7 +22,7 @@ class clientsController extends Controller
      */
     public function create()
     {
-        return view("/sales/salesAddClients");
+        return redirect("/sales/salesAddClients");
     }
 
     /**
