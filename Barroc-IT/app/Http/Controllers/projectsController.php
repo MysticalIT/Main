@@ -51,8 +51,10 @@ class projectsController extends Controller
         ]);
 
         $project = new \App\Project();
+        $project->client_id = $request->id;
         $project->projectName = $request->projectName;
         $project->projectDetails = $request->projectDetails;
+        $project->limit = $request->setInvoice;
         $project->save();
 
         session(["message" => "Project is added!"]);
@@ -110,6 +112,7 @@ class projectsController extends Controller
         $project = \App\Project::find($id);
         $project->projectName = $request->projectName;
         $project->projectDetails = $request->projectDetails;
+        $project->limit = $request->setInvoice;
         $project->save();
 
         session(["message" => "Project is edited!"]);
