@@ -327,14 +327,24 @@
 //    return redirect("/");
 //
 //});
+//User
 Route::get("/", "usersController@index");
 Route::post("/login", "usersController@login");
+Route::get("/logout", "usersController@logout");
+
+//Sales
 Route::get("/sales", "salesController@index");
 Route::get("/client", "clientsController@index");
 Route::get("/contact", "salesController@contact");
 Route::get("/project", "projectsController@create");
-Route::get("/memo", "memosController@index");
+
+//Finance
 Route::get("/invoice", "invoicesController@index");
+Route::get("/finance", "financesController@index");
+
+//IDK
+Route::get("/memo", "memosController@index");
+
 Route::get("/faker", function(){
 	return view("admin/adminFaker");
 });

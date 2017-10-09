@@ -22,13 +22,20 @@ class usersController extends Controller
             "department" => "required|string",
             "password" => "required|string"
         ]);
-        $user = \App\User::all()->where("username", "=", $request["department"]);
-        if($user[0]->password === $request["password"]){
+
+        $user = \App\User::all()->where("username", "=", $request["department"])->first();
+        if($user->password === $request["password"]){
             session(["department" => $request["department"]]);
             return redirect("/" . session()->get("department"));
         }
         else{
             return redirect("/");
         }
+    }
+
+    public function logout()
+    {
+        session()->remove("department");
+        return redirect("/");
     }
 }
