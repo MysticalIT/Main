@@ -26,11 +26,7 @@
 
 <div class="main-content">
 
-    <ul>
-        <li><a href="/bkrcheck">BKR Check</a></li>
-        <li><a href="/invoices">Invoices</a></li>
-        <li><a href="/memo">Memo's</a></li>
-    </ul>
+
     <div class="client-list">
         <ul>
             @foreach ($clients as $client)
@@ -46,10 +42,18 @@
 
         @endif
     </div>
-
+    <ul>
+        <li><a href="/bkrCheck">BKR Check</a></li>
+        <li><a href="/invoices">Invoices</a></li>
+        <li><a href="/memo">Memo's</a></li>
+    </ul>
 
 </div>
 
-
+@if(session()->has("message"))
+    @php($msg = session()->get("message"))
+    <script> window.alert('{{$msg}}'); </script>
+    @php(session()->remove("message"))
+@endif
 </body>
 </html>

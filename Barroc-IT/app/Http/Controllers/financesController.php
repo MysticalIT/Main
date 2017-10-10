@@ -24,4 +24,39 @@ class financesController extends Controller
     {
         return redirect("/");
     }
+    public function bkrCheckPage()
+    {
+        $clients = \App\Client::all()->where("bkrchecked", "=", "0");
+        return view("/finance/financeBkrcheck")->with("clients", $clients);
+    }
+    public function bkrCheckStore(Request $request)
+    {
+        $clients = \App\Client::all()->where("id", $id)->first();
+        $client = $clients;
+        $checked = $request->checked;
+        $approved = $request->approved;
+        if(isset($id))
+        {
+            if (isset($checked))
+            {
+                $checked = 1;
+                $client->bkrchecked = $checked;
+                $client->save();
+            }
+
+            if (isset($approved))
+            {
+                $approved = 1;
+                $client->bkrapproved = $approved;
+                $client->save();
+            }
+            session(["message" => "BKR settings SET"]);
+            return redirect("/finance");
+
+        }
+        else
+        {
+            return redirect("/");
+        }
+    }
 }
