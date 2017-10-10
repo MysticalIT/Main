@@ -29,6 +29,10 @@
 <div class="main-content">
 
 
+            </ul>
+            @if(isset($_GET["clientId"]))
+                <a href="/finance/{{$client->id}}/inactive">Set inactive</a>
+            @endif
 
 
 </div>
@@ -40,7 +44,7 @@
         @endforeach
 
     </ul>
-    
+
 </div>
 </body>
 </html>

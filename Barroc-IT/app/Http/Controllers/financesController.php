@@ -20,4 +20,8 @@ class financesController extends Controller
             return redirect("/");
         }
     }
+    public function inactive($id)
+    {
+        return redirect("/");
+    }
 }
