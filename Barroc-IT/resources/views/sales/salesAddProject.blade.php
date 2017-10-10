@@ -11,29 +11,49 @@
     <title>Add project</title>
 </head>
 <body>
-<div class="links">
-    <a href="/sales">Back</a>
+<header>
+    <div class="links">
+        <div class="wrapper">
+            <ul class="mainNav">
+                <li><a href="/sales">Back</a></li>
+                <li><a href="/add?showHelp=true">Help</a></li>
+
+            </ul>
+
+        </div>
+    </div>
+</header>
+<div class="main-content">
+    <div class="container-fluid">
+        <form action="/projects/create" method="post" class="add-client">
+
+        {{csrf_field()}}
+            <div class="form-group">
+                <input type="hidden" name="id" value="{{$_GET["clientId"]}}">
+            </div>
+
+            <div class="form-group">
+                <label for="projectName">Project name</label>
+                <input type="text" id="projectName" name="projectName">
+            </div>
+
+            <div class="form-group">
+                <label for="projectDetails">Project details</label>
+                <textarea id="projectDetails" name="projectDetails"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="setInvoice">Set invoice limit</label>
+                <input type="text" id="setInvoice" name="setInvoice">
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" class="btn-primary" value="add project">
+            </div>
+
+        </form>
+    </div>
 </div>
-
-<form action="/projects/create" method="post">
-
-{{csrf_field()}}
-    <input type="hidden" name="id" value="{{$_GET["clientId"]}}">
-
-    <label for="projectName">Project name</label>
-    <input type="text" id="projectName" name="projectName">
-
-    <label for="projectDetails">Project details</label>
-    <textarea id="projectDetails" name="projectDetails"></textarea>
-
-    <label for="setInvoice">Set invoice limit</label>
-    <input type="text" id="setInvoice" name="setInvoice">
-
-    <input type="submit" class="btn-primary" value="add project">
-
-
-</form>
-
-
 </body>
 </html>

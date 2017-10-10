@@ -11,20 +11,45 @@
     <title>Edit Project</title>
 </head>
 <body>
+<header>
+    <div class="links">
+        <div class="wrapper">
+            <ul class="mainNav">
+                <li><a href="/sales">Back</a></li>
+                <li><a href="/add?showHelp=true">Help</a></li>
 
-    <form action="/projects/{{$project->id}}" method="post">
-		{{csrf_field()}}
-		{{method_field('PUT')}}
-        <label for="projectName">Project name</label>
-        <input type="text" name="projectName" id="projectName" value="{{$project->name}}">
+            </ul>
 
-        <label for="projectDetails">Project details</label>
-        <textarea name="projectDetails" id="projectDetails" value="{{$project->description}}"></textarea>
+        </div>
+    </div>
+</header>
 
-        <label for="setInvoice">Set invoice limit</label>
-        <input type="text" name="limit" id="setInvoice" value="{{$project->limit}}">
+<div class="main-content">
+    <div class="container-fluid">
+        <form action="/projects/{{$project->id}}" method="post" class="add-client">
+            {{csrf_field()}}
+            {{method_field('PUT')}}
+            <div class="form-group">
+                <label for="projectName">Project name</label>
+                <input type="text" name="projectName" id="projectName" value="{{$project->name}}">
+            </div>
 
-        <input type="submit" class="btn-primary" value="Edit Project">
-    </form>
+            <div class="form-group">
+                <label for="projectDetails">Project details</label>
+                <textarea name="projectDetails" id="projectDetails" value="{{$project->description}}"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="setInvoice">Set invoice limit</label>
+                <input type="text" name="limit" id="setInvoice" value="{{$project->limit}}">
+            </div>
+
+            <div class="form-group">
+                <input type="submit" class="btn-primary" value="Edit Project">
+            </div>
+
+        </form>
+    </div>
+</div>
 </body>
 </html>
