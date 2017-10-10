@@ -37,12 +37,12 @@
                         <li><a href="/sales?showclients=true">Show Clients</a></li>
                     @endif
                     <div class="spacer"></div>
-                    <li><a href='/client/{{$clientid}}/edit'>Edit {{$clients->find($clientid)->firstname}} {{$clients->find($clientid)->lastname}}'s info</a></li>
+                    <li><a href='/clients/{{$clientid}}/edit'>Edit {{$clients->find($clientid)->firstname}} {{$clients->find($clientid)->lastname}}'s info</a></li>
                 @else
                     @if(session()->has("clientId"))
                         @php(session()->remove("clientId"))
                     @endif
-                    <li><a href='/client/create'>Add Client here</a></li>
+                    <li><a href='/clients/create'>Add Client here</a></li>
                     <li><a href="/contact">Call list for clients</a></li>
                     <li><a href="/memo">Show memo's</a></li>
                         <div class="showHideClients">
@@ -81,7 +81,7 @@
 
 @if(session()->has("message"))
     @php($msg = session()->get("message"))
-    <script> window.alert('$msg'); </script>
+    <script> window.alert('{{$msg}}'); </script>
     @php(session()->remove("message"))
 @endif
 </body>

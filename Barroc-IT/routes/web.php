@@ -334,15 +334,16 @@ Route::get("/logout", "usersController@logout");
 
 //Sales
 Route::get("/sales", "salesController@index");
-Route::resource("/client", "clientsController");
+Route::resource("/clients", "clientsController");
 Route::get("/contact", "salesController@contact");
-Route::resource("/project", "projectsController");
-Route::post("/updateClient/{id}", "clientsController@update");
+Route::resource("/projects", "projectsController");
+
 
 //Finance
 Route::get("/invoice", "invoicesController@invoice");
 Route::get("/finance", "financesController@index");
-
+Route::get("/bkrCheck", "financesController@bkrCheck");
+Route::get("/setInactive", "financeController@inactive");
 
 
 //Admin

@@ -16,9 +16,7 @@
     <div class="links">
         <div class="wrapper">
             <ul class="mainNav">
-                <li><a href="/bkrcheck">BKR Check</a></li>
-                <li><a href="/invoices">Invoices</a></li>
-                <li><a href="/memo">Memo's</a></li>
+
                 <a href="/finance?showHelp=true">Help</a>
                 <li><a href="/logout">Logout</a></li>
             </ul>
@@ -28,23 +26,30 @@
 
 <div class="main-content">
 
+    <ul>
+        <li><a href="/bkrcheck">BKR Check</a></li>
+        <li><a href="/invoices">Invoices</a></li>
+        <li><a href="/memo">Memo's</a></li>
+    </ul>
+    <div class="client-list">
+        <ul>
+            @foreach ($clients as $client)
+                <li><a href="/finance?clientId={{$client->id}}">{{$client->firstname}} {{$client->lastname}}</a></li>
+            @endforeach
+
+        </ul>
+        @if(isset($_GET["clientId"]))
+            <ul>
+                <li><a href="/finance/{{$client->id}}/inactive">Set inactive</a></li>
 
             </ul>
-            @if(isset($_GET["clientId"]))
-                <a href="/finance/{{$client->id}}/inactive">Set inactive</a>
-            @endif
+
+        @endif
+    </div>
 
 
 </div>
 
-<div class="client-list">
-    <ul>
-        @foreach ($clients as $client)
-            <li><a href="/finance?clientId={{$client->id}}">{{$client->firstname}} {{$client->lastname}}</a></li>
-        @endforeach
 
-    </ul>
-
-</div>
 </body>
 </html>

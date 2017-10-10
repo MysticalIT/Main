@@ -84,9 +84,9 @@
     @if (isset($_GET["clientId"]))
         <ul>
             @php($projectsById = $projects->where("client_id", "=", $_GET["clientId"]))
-            <li><a href='/project/create?clientId={{$_GET["clientId"]}}'>Add Project</a></li>
+            <li><a href='/projects/create?clientId={{$_GET["clientId"]}}'>Add Project</a></li>
             @foreach ($projectsById as $project)
-                <li><a href='/project/{{$project->id}}/edit'>Edit: {{$projectsById->name}}</a></li>
+                <li><a href='/projects/{{$project->id}}/edit'>Edit: {{$projectsById->name}}</a></li>
             @endforeach
         </ul>
     @endif
