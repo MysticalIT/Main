@@ -83,7 +83,7 @@
     @endif
     @if (isset($_GET["clientId"]))
         <ul>
-            @php($projectsById = $projects->where("client_id", "=", $_GET["clientId"]))
+            @php($projectsById = $projects->where("client_id", "=", $_GET["clientId"])->first())
             <li><a href='/projects/create?clientId={{$_GET["clientId"]}}'>Add Project</a></li>
             @foreach ($projectsById as $project)
                 <li><a href='/projects/{{$project->id}}/edit'>Edit: {{$projectsById->name}}</a></li>
