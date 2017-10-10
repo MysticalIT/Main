@@ -26,20 +26,23 @@
     <container class="main-content">
         <div class="sales-nav">
             <ul>
+                @php($department = "sales")
                 @if (isset($_GET["clientId"]))
+
                     @php(session(["clientId" => $_GET["clientId"]]))
                     @php($clientid = $_GET["clientId"])
                     <li><a href="/contact">Call list for clients</a></li>
-                    <li><a href="/memo">Show memos</a></li>
+                    <li><a href="/memo/{{$department}}">Show memos</a></li>
                     <div class="spacer"></div>
                     <li><a href='/clients/{{$clientid}}/edit'>Edit {{$clients->find($clientid)->firstname}} {{$clients->find($clientid)->lastname}}'s info</a></li>
                 @else
                     @if(session()->has("clientId"))
                         @php(session()->remove("clientId"))
                     @endif
+
                     <li><a href='/clients/create'>Add Client here</a></li>
                     <li><a href="/contact">Call list for clients</a></li>
-                    <li><a href="/memo">Show memos</a></li>
+                    <li><a href="/memo/{{$department}}">Show memos</a></li>
                 @endif
             </ul>
 

@@ -342,7 +342,8 @@ Route::resource("/projects", "projectsController");
 //Finance
 Route::get("/invoice", "invoicesController@invoice");
 Route::get("/finance", "financesController@index");
-Route::get("/bkrCheck", "financesController@bkrCheck");
+Route::get("/bkrCheck", "financesController@bkrCheckPage");
+Route::post("/bkrCheck/{id}", "financesController@bkrCheckStore");
 Route::get("/setInactive", "financeController@inactive");
 
 
@@ -350,7 +351,7 @@ Route::get("/setInactive", "financeController@inactive");
 
 
 //IDK
-Route::get("/memo", "memosController@index");
+Route::get("/memo/{department}", "memosController@index");
 
 Route::get("/faker", function(){
 	return view("admin/adminFaker");
