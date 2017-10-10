@@ -15,12 +15,6 @@
     <a href="/sales">Back</a>
 </div>
 
-@foreach($projectName as $item)
-        <a href="project/{{$item->id}}/edit">{{$item->name}}</a>
-
-@endforeach
-
-
 <form action="/projects/create" method="post">
 
 {{csrf_field()}}
