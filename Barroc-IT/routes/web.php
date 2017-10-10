@@ -340,7 +340,7 @@ Route::resource("/projects", "projectsController");
 
 
 //Finance
-Route::get("/invoice", "invoicesController@invoice");
+Route::resource("/invoices", "invoicesController");
 Route::get("/finance", "financesController@index");
 Route::get("/bkrCheck", "financesController@bkrCheck");
 Route::get("/setInactive", "financeController@inactive");

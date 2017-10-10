@@ -13,7 +13,32 @@ class invoicesController extends Controller
      */
     public function index()
     {
-        //
+        $department = "finance";
+        if(session()->has("department")){
+            if(session()->get("department") === $department){
+                $clients = \App\Client::all();
+                $invoices = \App\Invoice::all();
+                $projects = \App\Project::all();
+                $clientsWithProject = array();
+
+                foreach ($projects as $project){
+                    $resultClient = \App\Client::all()->where("id", "=", "$project->client_id")->first();
+                    if(!in_array("$resultClient->id", $clientsWithProject)){
+                        array_push($clientsWithProject, "$resultClient->id");
+                    }
+                }
+                return view("/finance/financeInvoices")->with([
+                    "invoices" => $invoices,
+                    "clients" =>$clients,
+                    "clientIdsWithProject" => $clientsWithProject
+
+                ]);
+            }
+            return redirect("/" . session()->get("department"));
+        }
+        else{
+            return redirect("/");
+        }
     }
 
     /**

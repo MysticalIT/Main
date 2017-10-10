@@ -27,37 +27,52 @@
 
     <div class="clientsFinance col-md-4">
         <div class="wrapper">
-            <a href="/invoices?showClients=true">All clients with invoice or project</a>
-            <div class="list">
-                <ul>
-                    <?php
-                        //$testjoin = DB::table("tbl_clients")->leftJoin("tbl_projects", "tbl_clients.id", "=", "tbl_projects.client_id")->get();
-                        //dd($testjoin);
-                    ?>
-                    <li><a href=""> ♥ </a></li>
-                    <li><a href=""> ♥ </a></li>
-                    <li><a href=""> ♥ </a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="invoices col-md-4">
-        <div class="wrapper">
+            <div class="spacer"></div>
             <ul>
-                <li><a href="">100</a></li>
-                <li><a href="">200</a></li>
-                <li><a href="">300</a></li>
+                <li class="text-center"><a href="/invoices?showClients=true">Show all clients with a project</a></li>
             </ul>
-            <div class="invoiceCheck col-md-4">
-                <form action="" method="post">
-                    <label for="hasPaid">Client paid?</label>
-                    <input type="checkbox" id="hasPaid" name="hasPaid">
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
-            <a href="">Create invoice</a>
+                @if(isset($_GET["clientId"]))
+                    <div class="invoice-add text-center">
+                        <ul>
+                            <li class="text-center"><a href="">Create invoice</a></li>
+                        </ul>
+                    </div>
+                @elseif(isset($_GET["showClients"]))
+                    <div class="list">
+                        <ul>
+                            @foreach($clientIdsWithProject as $clientIdWithProject)
+                                @php($client = $clients->where("id", "=", "$clientIdWithProject")->first())
+                                <li class="text-center"><a href="/invoices?clientId={{$client->id}}">{{$client->firstname}} {{$client->lastname}}</a></li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
         </div>
     </div>
+    @if(isset($_GET["clientId"]))
+        <div class="invoices">
+            <div class="wrapper">
+                @php($clientInvoices = $invoices->where("client_id", "=", $_GET["clientId"]))
+                @if(count($clientInvoices) > 0)
+                    <h3 class="text-center bold">Open Invoices:</h3>
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Invoice Subject:</th>
+                            <th>Invoice Price:</th>
+                            <th>Invoice Paid:</th>
+                        </tr>
+                        @foreach($clientInvoices as $clientInvoice)
+                            <tr>
+                                <td>{{$clientInvoice->subject}}</td>
+                                <td>&euro;{{$clientInvoice->price}}</td>
+                                <td class="text-center"><a href="/invoices/{{$clientInvoice->id}}/paid">PAID</a></td>
+                            </tr>
+                        @endforeach
+                    </table>
+                @endif
+            </div>
+        </div>
+    @endif
 </div>
 </body>
 </html>
