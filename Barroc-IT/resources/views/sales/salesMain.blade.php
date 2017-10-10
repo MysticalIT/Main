@@ -30,12 +30,7 @@
                     @php(session(["clientId" => $_GET["clientId"]]))
                     @php($clientid = $_GET["clientId"])
                     <li><a href="/contact">Call list for clients</a></li>
-                    <li><a href="/memo">Show memo's</a></li>
-                    @if(isset($_GET["showclients"]))
-                        <li><a href="/sales">Hide Clients</a></li>
-                    @else
-                        <li><a href="/sales?showclients=true">Show Clients</a></li>
-                    @endif
+                    <li><a href="/memo">Show memos</a></li>
                     <div class="spacer"></div>
                     <li><a href='/clients/{{$clientid}}/edit'>Edit {{$clients->find($clientid)->firstname}} {{$clients->find($clientid)->lastname}}'s info</a></li>
                 @else
@@ -44,17 +39,7 @@
                     @endif
                     <li><a href='/clients/create'>Add Client here</a></li>
                     <li><a href="/contact">Call list for clients</a></li>
-                    <li><a href="/memo">Show memo's</a></li>
-                        <div class="showHideClients">
-                            <ul>
-                                @if(isset($_GET["showclients"]))
-
-                                    <li><a href="/sales">Hide Clients</a></li>
-                                @else
-                                    <li><a href="/sales?showclients=true">Show Clients</a></li>
-                                @endif
-                            </ul>
-                        </div>
+                    <li><a href="/memo">Show memos</a></li>
                 @endif
             </ul>
 
@@ -63,11 +48,14 @@
 
 
 </container>
-
 @if(isset($_GET["showclients"]))
     @php($showclient = $_GET["showclients"])
     @if ($showclient === "true")
-
+        <div class="showHideClients">
+            <ul>
+                <li><a href="/sales">Hide Clients</a></li>
+            </ul>
+        </div>
         <div class='client-list'>
 
             <ul>
@@ -77,6 +65,12 @@
             </ul>
         </div>
     @endif
+@else
+    <div class="showHideClients">
+        <ul>
+            <li><a href="/sales?showclients=true">Show Clients</a></li>
+        </ul>
+    </div>
 @endif
 
 @if(session()->has("message"))

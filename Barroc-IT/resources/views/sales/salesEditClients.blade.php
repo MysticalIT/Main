@@ -11,13 +11,18 @@
     <title>Edit client</title>
 </head>
 <body>
-<div class="links">
-    <div class="wrapper">
-        <ul class="headerButtons">
-            <a href="/sales">Back</a>
-        </ul>
+<header>
+    <div class="links">
+        <div class="wrapper">
+            <ul class="mainNav">
+                <li><a href="/sales">Back</a></li>
+                <li><a href="/add?showHelp=true">Help</a></li>
+
+            </ul>
+
+        </div>
     </div>
-</div>
+</header>
 @php
     $firstName = $client->firstname;
     $lastName = $client->lastname;
@@ -29,38 +34,67 @@
     $companyName = $client->company_name;
     $phoneNumber = $client->phonenumber;
 @endphp
-    <form method="post" action="/clients/{{$client->id}}">
-        {{csrf_field()}}
-		{{method_field('PUT')}}
 
-        <label for="companyName">Client company name:</label>
-        <input type="text" name="companyName" id="companyName" value="{{$companyName}}">
+<div class="main-content">
+    <div class="container-fluid">
+        <form method="post" action="/clients/{{$client->id}}" class="add-client">
+            {{csrf_field()}}
+            {{method_field('PUT')}}
 
-        <label for="street">Client street:</label>
-        <input type="text" name="street" id="street" value="{{$street}}">
+            <div class="form-group">
+                <label for="companyName">Client company name:</label>
+                <input type="text" name="companyName" id="companyName" value="{{$companyName}}">
+            </div>
 
-        <label for="house-number">Client house number:</label>
-        <input type="text" name="house_number" id="house-number" value="{{$houseNumber}}">
+            <div class="form-group">
+                <label for="street">Client street:</label>
+                <input type="text" name="street" id="street" value="{{$street}}">
+            </div>
 
-        <label for="city">Client city:</label>
-        <input type="text" name="city" id="city" value="{{$city}}">
+            <div class="form-group">
+                <label for="house-number">Client house number:</label>
+                <input type="text" name="house_number" id="house-number" value="{{$houseNumber}}">
+            </div>
 
-        <label for="zip-code">Client zip-code</label>
-        <input type="text" name="zip_code" id="zip-code" value="{{$zipCode}}">
+            <div class="form-group">
+                <label for="city">Client city:</label>
+                <input type="text" name="city" id="city" value="{{$city}}">
+            </div>
 
-        <label for="clientFirstName">Client first name</label>
-        <input type="text" name="clientFirstName" id="clientFirstName" value="{{$firstName}}">
+            <div class="form-group">
+                <label for="zip-code">Client zip-code</label>
+                <input type="text" name="zip_code" id="zip-code" value="{{$zipCode}}">
+            </div>
 
-        <label for="clientLastName">Client last name</label>
-        <input type="text" name="clientLastName" id="clientLastName" value="{{$lastName}}">
+            <div class="form-group">
+                <label for="clientFirstName">Client first name</label>
+                <input type="text" name="clientFirstName" id="clientFirstName" value="{{$firstName}}">
+            </div>
 
-        <label for="phoneNumber">Client phone number</label>
-        <input type="text" name="phoneNumber" id="phoneNumber" value="{{$phoneNumber}}">
+            <div class="form-group">
+                <label for="clientLastName">Client last name</label>
+                <input type="text" name="clientLastName" id="clientLastName" value="{{$lastName}}">
+            </div>
 
-        <label for="email">Client email:</label>
-        <input type="text" name="email" id="email" value="{{$email}}">
+            <div class="form-group">
+                <label for="phoneNumber">Client phone number</label>
+                <input type="text" name="phoneNumber" id="phoneNumber" value="{{$phoneNumber}}">
+            </div>
 
-        <input class="btn-primary" type="submit" value="Edit {{$client->firstname}} {{$client->lastname}}'s info">
-    </form>
+            <div class="form-group">
+                <label for="email">Client email:</label>
+                <input type="text" name="email" id="email" value="{{$email}}">
+            </div>
+
+            <div class="form-group">
+                <input class="btn-primary" type="submit" value="Edit {{$client->firstname}} {{$client->lastname}}'s info">
+            </div>
+
+        </form>
+
+
+
+    </div>
+</div>
 </body>
 </html>
