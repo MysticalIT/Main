@@ -110,6 +110,10 @@ input.form-control, textarea.form-control {
 
 }
 
+.bold{
+    font-weight:bold;
+}
+
 .navigation ul li{
     display: inline;
     justify-content: space-between;
