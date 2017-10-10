@@ -356,9 +356,13 @@ admin - Clients
     height: 100%;
     /* overflow: auto; */
     /*overflow-x: hidden;*/
-    max-width: 200px;
+    min-width: 300px;
     overflow-y: scroll;
     float: right;
+}
+
+.client-list ul{
+    margin-bottom: 0;
 }
 
 .client-list::-webkit-scrollbar {
