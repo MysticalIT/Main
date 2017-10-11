@@ -351,7 +351,7 @@ Route::get("/setInactive", "financeController@inactive");
 
 
 //IDK
-Route::get("/memo/{department}", "memosController@index");
+Route::resource("/memo", "memosController");
 
 Route::get("/faker", function(){
 	return view("admin/adminFaker");

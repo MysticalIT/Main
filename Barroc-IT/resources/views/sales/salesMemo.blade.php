@@ -12,45 +12,49 @@
 </head>
 <body>
 
-
 <header>
-    <div class="wrapper">
-        <ul class="headerButtons">
-            <li><a href="/sales">Back</a></li>
-            <li><a href="/memo?showhelp=true">Help</a></li>
-        </ul>
+    <div class="page-title">
+        <h1>Sales - Memos</h1>
+    </div>
+    <div class="links">
+        <div class="wrapper">
+            <ul class="mainNav">
+                <li><a href="/sales">Back</a></li>
+                <li><a href="/memo?showhelp=true">Help</a></li>
+            </ul>
+        </div>
     </div>
 </header>
 
-<container class="main-content">
+<div class="main-content">
     <div class="wrapper">
-
-        <div class="memo">
-            <div class="listprojects">
-                <ul>
+        <div class="memo set-flex space-between">
+            <div class="list-projects-memo">
+                <ul class="unset-mp">
                     @foreach($projects as $project)
-
-                        <li><a href='/memo?$project->id'>{{$project->name}}</a></li>
-
+                        <li><a href='/memo?projectId={{$project->id}}'>{{$project->name}}</a></li>
                     @endforeach
                 </ul>
             </div>
-            <div class="editmemo">
-                <form action='' method='post'>
-                    <label for="memo">Memo:</label>
-                    <textarea name='memo' id='memo' cols='30' rows='10'>{{$memos->where('project_id', $_GET["$projects->id"])->memo}}</textarea>
-                    <input type='submit' value='Update Memo'>
-
-                </form>"
-            </div>
+            @if(isset($_GET["projectId"]))
+                @php($projectId = $_GET["projectId"])
+                @php($currentMemo = $memos->where('project_id', "=", $projectId)->first())
+                <div class="editmemo">
+                    <form action='/memo/{{$currentMemo->id}}' method='post'>
+                        {{csrf_field()}}
+                        {{method_field('PUT')}}
+                        <div class="form-group form-group-text-memo">
+                            <label for="memo">Memo:</label>
+                            <textarea name='memo' id='memo' cols='30' rows='10'>{{$currentMemo->memo}}</textarea>
+                        </div>
+                        <div class="form-group sumit-form-memo">
+                            <input type='submit' class="btn-primary" value='Update Memo'>
+                        </div>
+                    </form>
+                </div>
+            @endif
         </div>
     </div>
-</container>
-
-
-
-
-
-
+</div>
 </body>
 </html>

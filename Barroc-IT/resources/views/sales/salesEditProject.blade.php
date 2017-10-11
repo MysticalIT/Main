@@ -12,6 +12,9 @@
 </head>
 <body>
 <header>
+    <div class="page-title">
+        <h1>Sales - Edit Project</h1>
+    </div>
     <div class="links">
         <div class="wrapper">
             <ul class="mainNav">

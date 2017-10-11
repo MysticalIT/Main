@@ -25,7 +25,7 @@ body {
     max-width: 100%;
     margin-bottom: 0px;
 
-    overflow: hidden;
+
 }
 
 .logo{
@@ -66,14 +66,8 @@ input[type=checkbox]{
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-    background: rgba(0,0,0,0.4);
-    margin-top: 50px;
     max-width: 100%;
     color: #CFC1B5;
-    margin-bottom: 20px;
-
-
-
 }
 input.form-control, textarea.form-control {
     border-radius: 1px;
@@ -110,6 +104,11 @@ input.form-control, textarea.form-control {
 
 }
 
+.unset-mp{
+    margin: 0;
+    padding: 0;
+}
+
 .bold{
     font-weight:bold;
 }
@@ -127,17 +126,38 @@ input.form-control, textarea.form-control {
     align-items: center;
     justify-content: space-around;
     background: rgba(0,0,0,0.4);
-    margin-top: 50px;
     max-width: 100%;
     color: #CFC1B5;
     margin-bottom: 20px;
 }
 
+.page-title{
+    margin: 10px 0;
+    text-align: center;
+    font-weight: bolder;
+}
 
 table, td, th {
     width: 100%;
-    border: 1.5px solid black;
+    border: 2px solid black;
     table-layout: fixed;
+}
+
+tr{
+    background: rgba(1,1,1,0.5);
+    color: #ffffff;
+}
+.tableflex{
+    display: flex;
+    justify-content: center;
+}
+
+.clients-show-hide-contact{
+    margin-bottom: 20px;
+}
+
+.table-contact{
+    max-width: 1000px;
 }
 
 .wrapper a{
@@ -249,16 +269,61 @@ admin - Clients
 ==========================================================*/
 .memo{
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
     align-content: center;
     align-self: center;
 }
 
-.memo textarea {
-    width: 100%;
+.editmemo{
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 100px;
+    background: rgba(1,1,1,0.4);
 }
 
+.editmemo form{
+    display: table-caption;
+}
+
+.editmemo label{
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+}
+
+.editmemo textarea{
+    min-width: 900px;
+}
+
+.list-projects-memo{
+    max-width: 200px;
+    max-height: 150px;
+    overflow-y: auto;
+    text-align: center;
+}
+.list-projects-memo ul li{
+    background: rgba(1,1,1,0.5);
+    padding: 0 10px;
+}
+
+.list-projects-memo::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+.list-projects-memo::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.4);
+    border-radius: 6px;
+}
+.list-projects-memo::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.4)
+}
+
+.sumit-form-memo{
+    margin-bottom: 0;
+}
+
+.form-group-text-memo{
+    margin-bottom: 5px;
+}
 
 /*==========================================================
     Button styles
@@ -345,6 +410,14 @@ admin - Clients
     display: flex;
     justify-content: center;
     margin: 0 auto;
+
+}
+
+.sales-nav ul{
+    padding: 20px;
+    text-align: center;
+    background: rgba(1,1,1,0.5);
+    border-radius: 10px;
 }
 
 
@@ -352,19 +425,20 @@ admin - Clients
 .showHideClients {
     display: flex;
     justify-content: flex-end;
-    margin-right: 90px;
+    margin-right: 80px;
 }
+
 .client-list {
     height: 80%;
     /* overflow: auto; */
     /*overflow-x: hidden;*/
-    overflow-y: scroll;
+    overflow-y: auto;
     display: flex;
     justify-content: flex-end;
 }
 
 .client-list ul{
-    min-width: 300px;
+    max-width: 300px;
     margin-bottom: 0;
 }
 
@@ -381,19 +455,57 @@ admin - Clients
 }
 
 .client-list ul li{
-    padding-left: 28px;
+    padding: 0 28px;
     background: rgba(1,1,1,0.5);
 }
+.form-group-add{
+    margin: 5px 0;
+}
 
+.form-group-add label{
+    color: #ffffff;
+}
 
+.clients-show-hide ul{
+    margin-left: 45px;
+}
 .client-list-contact{
     height: 100%;
     /* overflow: auto; */
     overflow-x: hidden;
-    max-width: 200px;
-    overflow-y: scroll;
-    right: 90%;
+    max-width: 300px;
+    overflow-y: auto;
 
+}
+.client-list-contact ul{
+    margin: 0;
+    padding: 0;
+}
+
+.listprojects{
+    background: rgba(1,1,1,0.5);
+    max-width: 300px;
+    height: 150px;
+    overflow-y: auto;
+    text-align: center;
+    padding: 10px;
+}
+
+.set-flex{
+    display: flex;
+}
+.space-between{
+    justify-content: space-between;
+}
+
+.listprojects h3{
+    color: #ffffff;
+    font-size: 18px;
+    letter-spacing: 0.7px;
+}
+
+.client-list-contact ul li{
+    background: rgba(1,1,1,0.5);
 }
 
 .client-list-contact::-webkit-scrollbar {
@@ -408,22 +520,26 @@ admin - Clients
     background: rgba(0,0,0,0.4)
 }
 .client-list-contact ul {
-    padding-left: 28px;
-    background: rgba(1,1,1,0.5);
-    height: 98%;
+
 }
 
 .add-client{
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     background: rgba(0,0,0,0.4);
-    margin-top: 50px;
+    margin-top: 20px;
     max-width: 100%;
     color: #CFC1B5;
     margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.add-client textarea{
+    height: 200px;
+    width: 227px;
 }
 
 
