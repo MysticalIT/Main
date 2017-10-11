@@ -14,6 +14,9 @@
 
 
 <header>
+    <div class="page-title">
+        <h1>Sales - Add Client</h1>
+    </div>
     <div class="links">
         <div class="wrapper">
             <ul class="mainNav">
@@ -28,55 +31,54 @@
 
 <div class="main-content">
     <div class="container-fluid">
-        <h4>Add Client</h4>
             <form method="post" action="../clients" class="add-client">
                 {{csrf_field()}}
-                <div class="form-group">
+                <div class="form-group form-group-add">
                     <label for="companyName">Client company name:</label>
                     <input type="text" name="companyName" id="companyName">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group form-group-add">
                     <label for="street">Client street:</label>
                     <input type="text" name="street" id="street">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group form-group-add">
                     <label for="house-number">Client house number:</label>
                     <input type="text" name="house_number" id="house-number">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group form-group-add">
                     <label for="city">Client city:</label>
                     <input type="text" name="city" id="city">
                 </div>
 
-                <div class="form-group">
-                    <label for="zip-code">Client zip-code</label>
+                <div class="form-group form-group-add">
+                    <label for="zip-code">Client zip-code:</label>
                     <input type="text" name="zip_code" id="zip-code">
                 </div>
 
-                <div class="form-group">
-                    <label for="clientFirstName">Client first name</label>
+                <div class="form-group form-group-add">
+                    <label for="clientFirstName">Client first name:</label>
                     <input type="text" name="clientFirstName" id="clientFirstName">
                 </div>
 
-                <div class="form-group">
-                    <label for="clientLastName">Client last name</label>
+                <div class="form-group form-group-add">
+                    <label for="clientLastName">Client last name:</label>
                     <input type="text" name="clientLastName" id="clientLastName">
                 </div>
 
-                <div class="form-group">
-                    <label for="phoneNumber">Client phone number</label>
+                <div class="form-group form-group-add">
+                    <label for="phoneNumber">Client phone number:</label>
                     <input type="text" name="phoneNumber" id="phoneNumber">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group form-group-add">
                     <label for="email">Client email:</label>
                     <input type="text" name="email" id="email">
                 </div>
 
-                <div class="form-group help-btn">
+                <div class="form-group help-btn form-group-add">
                     <input type="submit" class="btn-primary" value="Add client">
                 </div>
 

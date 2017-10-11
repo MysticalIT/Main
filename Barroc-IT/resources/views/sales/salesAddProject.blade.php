@@ -12,6 +12,9 @@
 </head>
 <body>
 <header>
+    <div class="page-title">
+        <h1>Sales - Add Project</h1>
+    </div>
     <div class="links">
         <div class="wrapper">
             <ul class="mainNav">
@@ -25,7 +28,7 @@
 </header>
 <div class="main-content">
     <div class="container-fluid">
-        <form action="/projects/create" method="post" class="add-client">
+        <form action="../projects" method="post" class="add-client">
 
         {{csrf_field()}}
             <div class="form-group">
@@ -37,7 +40,7 @@
                 <input type="text" id="projectName" name="projectName">
             </div>
 
-            <div class="form-group">
+            <div class="form-group pr-details">
                 <label for="projectDetails">Project details</label>
                 <textarea id="projectDetails" name="projectDetails"></textarea>
             </div>

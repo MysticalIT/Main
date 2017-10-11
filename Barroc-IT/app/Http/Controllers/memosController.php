@@ -11,17 +11,22 @@ class memosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($department)
+    public function index()
     {
-            if($department == "sales")
+        if(session()->has("department"))
+        {
+            $department = session()->get("department");
+            if ($department == "sales")
             {
-                return redirect("/sales/salesMemo");
+                $projects = \App\Project::all();
+                $memos = \App\Memo::all();
+                return view("/sales/salesMemo")->with(["projects" => $projects, "memos" => $memos]);
             }
             if ($department == "finance")
             {
 
             }
-            if($department == "development")
+            if ($department == "development")
             {
 
             }
@@ -29,6 +34,7 @@ class memosController extends Controller
             {
 
             }
+        }
     }
 
     /**
@@ -83,7 +89,19 @@ class memosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $memo = \App\Memo::find($id);
+        if (preg_match("/Owner Project:/",$memo->memo)) {
+            $memo->memo = $request->memo;
+            $memo->save();
+
+            session(["message" => "Memo updated"]);
+            return redirect("/".session()->get("department"));
+        }
+        else{
+            session(["message" => "Dont remove the pre-made part."]);
+            return redirect("/memo");
+        }
+
     }
 
     /**

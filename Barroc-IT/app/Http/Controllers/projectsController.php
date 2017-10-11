@@ -52,10 +52,20 @@ class projectsController extends Controller
 
         $project = new \App\Project();
         $project->client_id = $request->id;
-        $project->projectName = $request->projectName;
-        $project->projectDetails = $request->projectDetails;
+        $project->name = $request->projectName;
+        $project->description = $request->projectDetails;
         $project->limit = $request->setInvoice;
         $project->save();
+
+        $clientInfo = \App\Client::find($request->id)->first();
+
+        $memo = new \App\Memo();
+        $memo->project_id = $project->id;
+        $memo->memo = "Owner Project:
+Project Name: {$project->name},
+Owner Name: {$clientInfo->firstname} {$clientInfo->lastname},
+";
+        $memo->save();
 
         session(["message" => "Project is added!"]);
         return redirect("/sales");
@@ -110,8 +120,8 @@ class projectsController extends Controller
         ]);
 
         $project = \App\Project::find($id);
-        $project->projectName = $request->projectName;
-        $project->projectDetails = $request->projectDetails;
+        $project->name = $request->projectName;
+        $project->description = $request->projectDetails;
         $project->limit = $request->setInvoice;
         $project->save();
 

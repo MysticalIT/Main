@@ -344,14 +344,14 @@ Route::resource("/invoices", "invoicesController");
 Route::get("/finance", "financesController@index");
 Route::get("/bkrCheck", "financesController@bkrCheckPage");
 Route::post("/bkrCheck/{id}", "financesController@bkrCheckStore");
-Route::get("/setInactive", "financeController@inactive");
+Route::get("/setInactive", "financesController@inactive");
 
 
 //Admin
 
 
 //IDK
-Route::get("/memo/{department}", "memosController@index");
+Route::resource("/memo", "memosController");
 
 Route::get("/faker", function(){
 	return view("admin/adminFaker");
