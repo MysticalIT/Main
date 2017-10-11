@@ -29,7 +29,7 @@
 <div class="main-content">
     <div class="container-fluid">
         <h4>Add Client</h4>
-            <form method="post" action="/clients/create" class="add-client">
+            <form method="post" action="../clients" class="add-client">
                 {{csrf_field()}}
                 <div class="form-group">
                     <label for="companyName">Client company name:</label>
