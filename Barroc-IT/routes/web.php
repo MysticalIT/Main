@@ -343,7 +343,7 @@ Route::resource("/projects", "projectsController");
 Route::resource("/invoices", "invoicesController");
 Route::get("/finance", "financesController@index");
 Route::get("/bkrCheck", "financesController@bkrCheckPage");
-Route::post("/bkrCheck/{id}", "financesController@bkrCheckStore");
+Route::post("/bkrCheck", "financesController@bkrCheckStore");
 Route::get("/setInactive", "financeController@inactive");
 
 
