@@ -30,11 +30,15 @@
     <div class="clientsFinance">
         <div class="wrapper">
            <div class="list">
+               @if(!isset($_GET["clientId"]))
                <ul>
                    @foreach($clients as $client)
-                       <li><a href="/financeBkrcheck?clientId={{$client->id}}">{{$client->firstname}} {{$client->lastname}}</a></li>
-                       @endforeach
+                       @if(!$client->bkrchecked || !$client->bkrapproved)
+                       <li><a href="/bkrCheck?clientId={{$client->id}}">{{$client->firstname}} {{$client->lastname}}</a></li>
+                       @endif
+                           @endforeach
                </ul>
+                   @endif
            </div>
         </div>
     </div>
@@ -46,10 +50,14 @@
             <div class="clientDetailsFinance">
                 <table class="table table-striped">
                     @if(isset($_GET["clientId"]))
-                        @php($client = $clients->all()->where("id", "=", $_GET["clientId"]))
+                        @php
+                        $clientId = $_GET["clientId"];
+                        $client = $clients->where("id", $clientId)->first();
+
+                        @endphp
                             <tr>
                                 <th>Name:</th>
-                                <td>{{$client->firstname->where("id", "=", "$client->id")}} {{$client->lastname}}</td>
+                                <td>{{$client->firstname}} {{$client->lastname}}</td>
                             </tr>
                             <tr>
                                 <th>Phone-number:</th>

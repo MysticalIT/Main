@@ -31,6 +31,7 @@ class financesController extends Controller
     }
     public function bkrCheckStore(Request $request)
     {
+        $id = $_GET["clientId"];
         $clients = \App\Client::all()->where("id", $id)->first();
         $client = $clients;
         $checked = $request->checked;
@@ -50,7 +51,7 @@ class financesController extends Controller
                 $client->bkrapproved = $approved;
                 $client->save();
             }
-            session(["message" => "BKR settings SET"]);
+            //session(["message" => "BKR settings SET"]);
             return redirect("/finance");
 
         }
@@ -58,5 +59,9 @@ class financesController extends Controller
         {
             return redirect("/");
         }
+    }
+    public function setInactive()
+    {
+
     }
 }
