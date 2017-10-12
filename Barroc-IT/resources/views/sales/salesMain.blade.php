@@ -12,8 +12,8 @@
 </head>
 <body>
 <header>
-    <div class="page-title">
-        <h1>Sales - Home</h1>
+    <div class="page-title logo">
+        <h1 class="text_main text-center">Sales - Home</h1>
     </div>
     <div class="links">
         <div class="wrapper">
@@ -28,7 +28,7 @@
 </header>
     <container class="main-content">
         <div class="sales-nav">
-            <ul>
+            <ul class="sales-nav-clients">
                 @php($department = "sales")
                 @if (isset($_GET["clientId"]))
 
@@ -47,38 +47,31 @@
                     <li><a href='/clients/create'>Add Client</a></li>
                     <li><a href="/contact">Clients to Contact</a></li>
                     <li><a href="/memo">Show memos</a></li>
+                        @if(isset($_GET["showclients"]))
+                            <li><a href="/sales">Hide Clients</a></li>
+                        @else
+                            <li><a href="/sales?showclients=true">Show Clients</a></li>
+                        @endif
                 @endif
             </ul>
-
-
         </div>
+        @if(isset($_GET["showclients"]))
+            @php($showclient = $_GET["showclients"])
+            @if ($showclient === "true")
+
+                <div class='client-list'>
+                    <ul class="client-list-ul unset-mp text-center">
+                        @foreach ($clients as $client)
+                            <li><a href='/sales?clientId={{$client->id}}'>{{$client->firstname}} {{$client->lastname}}</a></li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+        @endif
 
 
 </container>
-@if(isset($_GET["showclients"]))
-    @php($showclient = $_GET["showclients"])
-    @if ($showclient === "true")
-        <div class="showHideClients">
-            <ul>
-                <li><a href="/sales">Hide Clients</a></li>
-            </ul>
-        </div>
-        <div class='client-list'>
 
-            <ul>
-                @foreach ($clients as $client)
-                    <li><a href='/sales?clientId={{$client->id}}'>{{$client->firstname}} {{$client->lastname}}</a></li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-@else
-    <div class="showHideClients">
-        <ul>
-            <li><a href="/sales?showclients=true">Show Clients</a></li>
-        </ul>
-    </div>
-@endif
 
 @if(session()->has("message"))
     @php($msg = session()->get("message"))

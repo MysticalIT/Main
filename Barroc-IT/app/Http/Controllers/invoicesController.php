@@ -46,9 +46,19 @@ class invoicesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $department = "finance";
+        if(session()->has("department")){
+            if(session()->get("department") === $department){
+                $clientId = $id;
+                return view("finance/financeCreateInvoice")->with("clientId", $clientId);
+            }
+            return redirect("/" . session()->get("department"));
+        }
+        else{
+            return redirect("/");
+        }
     }
 
     /**
@@ -59,7 +69,20 @@ class invoicesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $invoice = new \App\Invoice();
+        $invoice->client_id = $request->client_id;
+        $invoice->subject = $request->subject;
+        $invoice->price = $request->price;
+        $invoice->save();
+
+        return redirect("/invoices");
+    }
+
+    public function paid($id){
+        $invoice = \App\Invoice::find($id);
+        $invoice->paid = 1;
+        $invoice->save();
+        return back();
     }
 
     /**

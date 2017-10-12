@@ -34,7 +34,7 @@
                 @if(isset($_GET["clientId"]))
                     <div class="invoice-add text-center">
                         <ul>
-                            <li class="text-center"><a href="">Create invoice</a></li>
+                            <li class="text-center"><a href="/invoices/{{$_GET["clientId"]}}/create">Create invoice</a></li>
                         </ul>
                     </div>
                 @elseif(isset($_GET["showClients"]))
@@ -53,20 +53,23 @@
         <div class="invoices">
             <div class="wrapper">
                 @php($clientInvoices = $invoices->where("client_id", "=", $_GET["clientId"]))
+                @php($client = $clients->where("id", "=", $_GET["clientId"])->first())
                 @if(count($clientInvoices) > 0)
-                    <h3 class="text-center bold">Open Invoices:</h3>
-                    <table class="table table-striped">
+                    <h3 class="text-center bold">Open Invoices {{$client->firstname}} {{$client->lastname}}:</h3>
+                    <table class="table">
                         <tr>
                             <th>Invoice Subject:</th>
                             <th>Invoice Price:</th>
                             <th>Invoice Paid:</th>
                         </tr>
                         @foreach($clientInvoices as $clientInvoice)
-                            <tr>
-                                <td>{{$clientInvoice->subject}}</td>
-                                <td>&euro;{{$clientInvoice->price}}</td>
-                                <td class="text-center"><a href="/invoices/{{$clientInvoice->id}}/paid">PAID</a></td>
-                            </tr>
+                            @if($clientInvoice->paid == false)
+                                <tr>
+                                    <td>{{$clientInvoice->subject}}</td>
+                                    <td>&euro;{{$clientInvoice->price}}</td>
+                                    <td class="text-center"><a href="/invoices/{{$clientInvoice->id}}/paid">PAID</a></td>
+                                </tr>
+                            @endif
                         @endforeach
                     </table>
                 @endif

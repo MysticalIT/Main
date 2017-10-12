@@ -340,12 +340,13 @@ Route::resource("/projects", "projectsController");
 
 
 //Finance
+Route::get("/invoices/{id}/create", "invoicesController@create");
 Route::resource("/invoices", "invoicesController");
 Route::get("/finance", "financesController@index");
 Route::get("/bkrCheck", "financesController@bkrCheckPage");
 Route::post("/bkrCheck", "financesController@bkrCheckStore");
-Route::get("/setInactive", "financeController@inactive");
-
+Route::get("/setInactive", "financesController@inactive");
+Route::get("/invoices/{id}/paid", "invoicesController@paid");
 
 //Admin
 

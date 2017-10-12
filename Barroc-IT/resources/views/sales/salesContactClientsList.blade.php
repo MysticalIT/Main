@@ -12,8 +12,8 @@
 </head>
 <body>
 <header>
-    <div class="page-title">
-        <h1>Sales - Contact Clients</h1>
+    <div class="page-title logo">
+        <h1 class="text_main text-center">Sales - Contact Clients</h1>
     </div>
     <div class="links">
         <div class="wrapper">

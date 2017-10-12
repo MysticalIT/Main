@@ -13,8 +13,8 @@
 <body>
 
 <header>
-    <div class="page-title">
-        <h1>Sales - Memos</h1>
+    <div class="page-title logo">
+        <h1 class="text_main text-center">Sales - Memos</h1>
     </div>
     <div class="links">
         <div class="wrapper">
