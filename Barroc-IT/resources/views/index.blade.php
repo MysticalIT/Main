@@ -31,7 +31,7 @@
 
 <div class="main-content">
 
-    <div class="container-fluid">
+    <div class="container-fluid login">
 
         <form class="login-form col-md-4 col-md-offset-4" action="/login" method="post">
             {{csrf_field()}}

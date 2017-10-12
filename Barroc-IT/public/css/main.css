@@ -69,6 +69,11 @@ input[type=checkbox]{
     max-width: 100%;
     color: #CFC1B5;
 }
+
+.login{
+    background: rgba(0,0,0,0.4);
+}
+
 input.form-control, textarea.form-control {
     border-radius: 1px;
     border-color: #CFC1B5;
