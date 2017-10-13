@@ -94,7 +94,7 @@ class memosController extends Controller
     public function update(Request $request, $id)
     {
         $memo = \App\Memo::find($id);
-        if (preg_match("/Owner Project:/",$memo->memo)) {
+        if (preg_match("/Project Name: /",$memo->memo) && preg_match("/Owner Name: /",$memo->memo)) {
             $memo->memo = $request->memo;
             $memo->save();
 

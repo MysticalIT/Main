@@ -87,8 +87,11 @@
                 <ul class="client-list-ul unset-mp text-center">
                     @php($showclient = $_GET["showClients"])
                     @if ($showclient)
+
                         @foreach ($clients as $client)
+                            @if($client->active)
                             <li><a href='/contact?clientId={{$client->id}}'>{{$client->firstname}} {{$client->lastname}}</a></li>
+                            @endif
                         @endforeach
                     @endif
                 </ul>

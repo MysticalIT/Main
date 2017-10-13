@@ -67,7 +67,9 @@
                 <div class='client-list'>
                     <ul class="client-list-ul unset-mp text-center">
                         @foreach ($clients as $client)
-                            <li><a href='/sales?clientId={{$client->id}}'>{{$client->firstname}} {{$client->lastname}}</a></li>
+                            @if($client->active)
+                                <li><a href='/sales?clientId={{$client->id}}'>{{$client->firstname}} {{$client->lastname}}</a></li>
+                            @endif
                         @endforeach
                     </ul>
                 </div>

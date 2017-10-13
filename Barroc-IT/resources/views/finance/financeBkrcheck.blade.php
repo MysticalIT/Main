@@ -34,8 +34,10 @@
 
                <ul class="unset-mp text-center client-list-ul ">
                    @foreach($clients as $client)
+                       @if($client->active)
                        @if(!$client->bkrchecked || !$client->bkrapproved)
                        <li><a href="/bkrCheck?clientId={{$client->id}}">{{$client->firstname}} {{$client->lastname}}</a></li>
+                       @endif
                        @endif
                            @endforeach
                </ul>

@@ -22,7 +22,12 @@ class financesController extends Controller
     }
     public function inactive($id)
     {
-        return redirect("/");
+        $clients = \App\Client::find($id);
+        $client = $clients;
+
+        $client->active = 0;
+        $client->save();
+        return back();
     }
     public function bkrCheckPage()
     {

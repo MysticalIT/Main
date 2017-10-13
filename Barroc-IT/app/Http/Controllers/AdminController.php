@@ -18,4 +18,21 @@ class AdminController extends Controller
             return redirect("/");
         }
     }
+
+    public function setactive($id){
+        $department = "admin";
+        if(session()->has("department")){
+            if(session()->get("department") === $department){
+                $client = \App\Client::find($id);
+                $client->active = 1;
+                $client->save;
+
+                return view("/admin/adminMain");
+            }
+            return redirect("/" . session()->get("department"));
+        }
+        else{
+            return redirect("/");
+        }
+    }
 }
