@@ -29,45 +29,44 @@
         <div class="wrapper">
             <div class="spacer"></div>
             <ul>
-                <li class="text-center"><a href="/invoices?showClients=true">Show all clients with a project</a></li>
+                <li class="text-center"><a href="/invoices?showProjects=true">Show all projects</a></li>
             </ul>
-                @if(isset($_GET["clientId"]))
+                @if(isset($_GET["projectId"]))
                     <div class="invoice-add text-center">
                         <ul>
-                            <li class="text-center"><a href="/invoices/{{$_GET["clientId"]}}/create">Create invoice</a></li>
+                            <li class="text-center"><a href="/invoices/{{$_GET["projectId"]}}/create">Create invoice</a></li>
                         </ul>
                     </div>
-                @elseif(isset($_GET["showClients"]))
+                @elseif(isset($_GET["showProjects"]))
                     <div class="list">
                         <ul>
-                            @foreach($clientIdsWithProject as $clientIdWithProject)
-                                @php($client = $clients->where("id", "=", "$clientIdWithProject")->first())
-                                <li class="text-center"><a href="/invoices?clientId={{$client->id}}">{{$client->firstname}} {{$client->lastname}}</a></li>
+                            @foreach($projects as $project)
+                                <li class="text-center"><a href="/invoices?projectId={{$project->id}}">{{$project->name}}</a></li>
                             @endforeach
                         </ul>
                     </div>
                 @endif
         </div>
     </div>
-    @if(isset($_GET["clientId"]))
+    @if(isset($_GET["projectId"]))
         <div class="invoices">
             <div class="wrapper">
-                @php($clientInvoices = $invoices->where("client_id", "=", $_GET["clientId"]))
-                @php($client = $clients->where("id", "=", $_GET["clientId"])->first())
-                @if(count($clientInvoices) > 0)
-                    <h3 class="text-center bold">Open Invoices {{$client->firstname}} {{$client->lastname}}:</h3>
+                <h3 class="text-center bold">Invoices for: {{$projects->where("id", "=", $_GET["projectId"])->first()->name}}</h3>
+                @php($projectInvoices = $invoices->where("project_id", "=", $_GET["projectId"]))
+                @if(count($projectInvoices) > 0)
                     <table class="table">
                         <tr>
-                            <th>Invoice Subject:</th>
-                            <th>Invoice Price:</th>
-                            <th>Invoice Paid:</th>
+                            <th>Open Invoice Subject:</th>
+                            <th>Open Invoice Charge:</th>
+                            <th>Open Invoice Paid:</th>
                         </tr>
-                        @foreach($clientInvoices as $clientInvoice)
-                            @if($clientInvoice->paid == false)
+                        @foreach($projectInvoices as $projectInvoice)
+                            @if($projectInvoice->paid == false)
                                 <tr>
-                                    <td>{{$clientInvoice->subject}}</td>
-                                    <td>&euro;{{$clientInvoice->price}}</td>
-                                    <td class="text-center"><a href="/invoices/{{$clientInvoice->id}}/paid">PAID</a></td>
+                                    <td>{{$projectInvoice->subject}}</td>
+                                    @php($charge = str_replace(".", ",", $projectInvoice->price))
+                                    <td>&euro; {{$charge}}</td>
+                                    <td class="text-center"><a href="/invoices/{{$projectInvoice->id}}/paid">PAID</a></td>
                                 </tr>
                             @endif
                         @endforeach

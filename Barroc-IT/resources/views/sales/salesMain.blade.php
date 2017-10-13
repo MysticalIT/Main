@@ -26,9 +26,9 @@
         </div>
     </div>
 </header>
-    <container class="main-content">
-        <div class="sales-nav">
-            <ul class="sales-nav-clients">
+    <div class="main-content">
+        <div class="uni-nav">
+            <ul class="uni-nav-clients">
                 @php($department = "sales")
                 @if (isset($_GET["clientId"]))
 
@@ -75,7 +75,7 @@
         @endif
 
 
-</container>
+</div>
 
 
 @if(session()->has("message"))

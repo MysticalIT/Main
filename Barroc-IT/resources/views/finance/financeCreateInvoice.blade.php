@@ -31,7 +31,7 @@
         <div class="wrapper">
             <form action="../../invoices" method="post">
                 {{csrf_field()}}
-                <input type="hidden" name="client_id" value="{{$clientId}}">
+                <input type="hidden" name="project_id" value="{{$projectId}}">
                 <div class="form-group">
                     <label for="invoiceSubject">Subject:</label>
                     <input type="text" id="invoiceSubject" name="subject">

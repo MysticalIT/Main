@@ -355,6 +355,8 @@ Route::get("/development/{id}/project","DevelopmentController@show");
 Route::get("/development/{id}/update", "DevelopmentController@update");
 
 //Admin
+Route::get("/admin", "AdminController@index");
+
 
 
 //IDK

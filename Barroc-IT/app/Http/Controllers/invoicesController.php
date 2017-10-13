@@ -16,22 +16,12 @@ class invoicesController extends Controller
         $department = "finance";
         if(session()->has("department")){
             if(session()->get("department") === $department){
-                $clients = \App\Client::all();
                 $invoices = \App\Invoice::all();
                 $projects = \App\Project::all();
-                $clientsWithProject = array();
 
-                foreach ($projects as $project){
-                    $resultClient = \App\Client::all()->where("id", "=", "$project->client_id")->first();
-                    if(!in_array("$resultClient->id", $clientsWithProject)){
-                        array_push($clientsWithProject, "$resultClient->id");
-                    }
-                }
                 return view("/finance/financeInvoices")->with([
                     "invoices" => $invoices,
-                    "clients" =>$clients,
-                    "clientIdsWithProject" => $clientsWithProject
-
+                    "projects" => $projects
                 ]);
             }
             return redirect("/" . session()->get("department"));
@@ -51,8 +41,8 @@ class invoicesController extends Controller
         $department = "finance";
         if(session()->has("department")){
             if(session()->get("department") === $department){
-                $clientId = $id;
-                return view("finance/financeCreateInvoice")->with("clientId", $clientId);
+                $projectId = $id;
+                return view("finance/financeCreateInvoice")->with("projectId", $projectId);
             }
             return redirect("/" . session()->get("department"));
         }
@@ -70,7 +60,7 @@ class invoicesController extends Controller
     public function store(Request $request)
     {
         $invoice = new \App\Invoice();
-        $invoice->client_id = $request->client_id;
+        $invoice->project_id = $request->project_id;
         $invoice->subject = $request->subject;
         $invoice->price = $request->price;
         $invoice->save();

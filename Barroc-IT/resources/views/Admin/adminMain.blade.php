@@ -19,34 +19,36 @@
     <title>Admin Main</title>
 </head>
 <body>
-<div class="header">
-    <div class="container">
-        <div class="logo">
-            <h1>Barroc IT</h1>
+<header>
+    <div class="page-title logo">
+        <h1 class="text_main text-center">Admin - Home</h1>
+    </div>
+    <div class="links">
+        <div class="wrapper">
+            <ul class="mainNav">
+                <li><a href="/logout">Logout</a></li>
+                <li><a href="/sales?showHelp=true">Help</a></li>
+            </ul>
         </div>
     </div>
-</div>
-
-
+</header>
 
 <div class="main-content">
-    <ol class="mainNav">
-    <li class="adminClients">
-        <a href="/activateClients">Activate Clients</a>
-    </li>
+    <div class="uni-nav">
+        <ul>
+            <li class="adminClients">
+                <a href="/activateClients">Activate Clients</a>
+            </li>
 
-    <li class="adminFaker">
-        <a href='/faker'>Add clients by faker</a>
-    </li>
+            <li class="adminFaker">
+                <a href='/faker'>Add clients by faker</a>
+            </li>
 
-    <li class="adminMemos">
-        <a href="/memo">Memo's</a>
-    </li>
-
-    <li class="logout-btn">
-        <a href="/logout">Logout</a>
-    </li>
-    </ol>
+            <li class="adminMemos">
+                <a href="/memo">Memo's</a>
+            </li>
+        </ul>
+    </div>
 </div>
 </body>
 </html>
