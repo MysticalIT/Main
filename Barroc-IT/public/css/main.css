@@ -407,7 +407,7 @@ admin - Clients
 }
 
 .client-list {
-    height: 500px;
+    height: 340px;
     /* overflow: auto; */
     /*overflow-x: hidden;*/
     display: flex;
