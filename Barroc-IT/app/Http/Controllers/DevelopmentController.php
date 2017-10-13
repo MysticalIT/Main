@@ -96,7 +96,10 @@ class DevelopmentController extends Controller
         $projects= \App\Project::all()->where("id", "=", $projectid)->first();
 
         $project = $projects;
-            $project->started = 1;
+
+        $project->started = 1;
+        $project->save();
+        return back();
 
     }
     public function finish($id)
@@ -106,7 +109,11 @@ class DevelopmentController extends Controller
         $projects= \App\Project::all()->where("id", "=", $projectid)->first();
 
         $project = $projects;
+
         $project->finished = 1;
+        $project->save();
+
+        return back();
     }
     /**
      * Remove the specified resource from storage.
