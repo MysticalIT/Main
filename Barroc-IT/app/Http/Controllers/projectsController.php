@@ -62,8 +62,7 @@ class projectsController extends Controller
 
         $memo = new \App\Memo();
         $memo->project_id = $project->id;
-        $memo->memo = "Owner Project:
-Project Name: {$project->name},
+        $memo->memo = "Project Name: {$project->name},
 Owner Name: {$clientInfo->firstname} {$clientInfo->lastname},
 ";
         $memo->save();

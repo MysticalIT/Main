@@ -39,14 +39,6 @@
             <li class="adminClients">
                 <a href="/activateClients">Activate Clients</a>
             </li>
-
-            <li class="adminFaker">
-                <a href='/faker'>Add clients by faker</a>
-            </li>
-
-            <li class="adminMemos">
-                <a href="/memo">Memo's</a>
-            </li>
         </ul>
     </div>
 </div>

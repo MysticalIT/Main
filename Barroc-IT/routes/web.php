@@ -345,7 +345,7 @@ Route::resource("/invoices", "invoicesController");
 Route::get("/finance", "financesController@index");
 Route::get("/bkrCheck", "financesController@bkrCheckPage");
 Route::post("/bkrCheck", "financesController@bkrCheckStore");
-Route::get("/setInactive", "financesController@inactive");
+Route::get("/finance/{id}/inactive", "financesController@inactive");
 Route::get("/invoices/{id}/paid", "invoicesController@paid");
 
 
@@ -357,6 +357,7 @@ Route::get("/development/{id}/finish", "DevelopmentController@finish");
 
 //Admin
 Route::get("/admin", "AdminController@index");
+Route::get("/admin/{id}/active", "AdminController@setactive");
 
 
 
