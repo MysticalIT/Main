@@ -26,7 +26,7 @@
         </div>
     </div>
 </header>
-    <container class="main-content">
+    <div class="main-content">
         <div class="sales-nav">
             <ul class="sales-nav-clients">
                 @php($department = "sales")
@@ -75,7 +75,7 @@
         @endif
 
 
-</container>
+</div>
 
 
 @if(session()->has("message"))
