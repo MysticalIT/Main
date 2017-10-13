@@ -37,6 +37,11 @@
                     <li><a href='/clients/create'>Add Client</a></li>
                     <li><a href="/contact">Clients to Contact</a></li>
                     <li><a href="/memo">Show memos</a></li>
+                    @if(isset($_GET["showclients"]))
+                        <li><a href="/sales">Hide Clients</a></li>
+                    @else
+                        <li><a href="/sales?showclients=true">Show Clients</a></li>
+                    @endif
                     <div class="spacer"></div>
                     <li><a href='/clients/{{$clientid}}/edit'>Edit {{$clients->find($clientid)->firstname}} {{$clients->find($clientid)->lastname}}'s info</a></li>
                 @else
