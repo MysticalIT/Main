@@ -89,18 +89,25 @@ class DevelopmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function start($id)
     {
         $projectid= $id;
 
         $projects= \App\Project::all()->where("id", "=", $projectid)->first();
 
         $project = $projects;
-
-        $project->started = 1;
+            $project->started = 1;
 
     }
+    public function finish($id)
+    {
+        $projectid= $id;
 
+        $projects= \App\Project::all()->where("id", "=", $projectid)->first();
+
+        $project = $projects;
+        $project->finished = 1;
+    }
     /**
      * Remove the specified resource from storage.
      *

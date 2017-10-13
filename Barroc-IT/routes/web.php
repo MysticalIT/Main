@@ -352,7 +352,8 @@ Route::get("/invoices/{id}/paid", "invoicesController@paid");
 //Development
 Route::resource("/development", "DevelopmentController");
 Route::get("/development/{id}/project","DevelopmentController@show");
-Route::get("/development/{id}/update", "DevelopmentController@update");
+Route::get("/development/{id}/start", "DevelopmentController@start");
+Route::get("/development/{id}/finish", "DevelopmentController@finish");
 
 //Admin
 Route::get("/admin", "AdminController@index");

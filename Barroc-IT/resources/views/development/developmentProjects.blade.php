@@ -56,9 +56,9 @@
 
     <div class="">
         <div class="">
-            <a href="/development/{{$project->id}}/update">Start project</a>
+            <a href="/development/{{$project->id}}/start">Start project</a>
             @if($project->started)
-                <a href="">Finish project</a>
+                <a href="/development/{{$project->id}}/finish">Finish project</a>
             @endif
         </div>
     </div>
