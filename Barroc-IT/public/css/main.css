@@ -237,40 +237,12 @@ ol, ul{
 /*========
 admin - Main
  ========*/
-.adminClients{
 
-}
-
-.adminMemos{
-
-}
-
-.adminMainNav{
-
-
-}
 
 /*========
 admin - Clients
  ========*/
-.activationPrompt{
 
-}
-
-
-.adminClientSidebar{
-
-}
-
-
-.client-list{
-
-}
-
-
-.inactiveUsers{
-
-}
 
 /*==========================================================
     Memo styles
@@ -401,11 +373,6 @@ admin - Clients
     margin-bottom: 20px;}
 
 
-.detailsFinance{
-
-
-
-}
 
 /*==========================================================
     Sales styles
@@ -530,9 +497,7 @@ admin - Clients
 .client-list-contact::-webkit-scrollbar-track {
     background: rgba(0,0,0,0.4)
 }
-.client-list-contact ul {
 
-}
 
 .add-client{
     display: flex;
