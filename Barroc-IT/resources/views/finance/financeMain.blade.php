@@ -13,11 +13,13 @@
 <body>
 
 <header>
+    <div class="page-title logo">
+        <h1 class="text_main text-center">Finance - Home</h1>
+    </div>
     <div class="links">
         <div class="wrapper">
             <ul class="mainNav">
-
-                <a href="/finance?showHelp=true">Help</a>
+                <li><a href="/finance?showHelp=true">Help</a></li>
                 <li><a href="/logout">Logout</a></li>
             </ul>
         </div>
@@ -25,29 +27,33 @@
 </header>
 
 <div class="main-content">
-
-
+    <div class="uni-nav">
+        <ul class="uni-nav-clients">
+            <li><a href="/bkrCheck">BKR Check</a></li>
+            <li><a href="/invoices">Invoices</a></li>
+            <li><a href="/memo">Memo's</a></li>
+            @if(isset($_GET["showclients"]))
+                <li><a href="/finance">Hide Clients</a></li>
+            @else
+                <li><a href="/finance?showclients=true">Show Clients to set inactive</a></li>
+            @endif
+            @if(isset($_GET["clientId"]))
+                <div class="spacer"></div>
+                @php($client = $clients->where("id", "=", $_GET["clientId"])->first())
+                <li><a href="/finance/{{$client->id}}/inactive">Set {{$client->firstname}} {{$client->lastname}} inactive</a></li>
+            @endif
+        </ul>
+    </div>
+    @if(isset($_GET["showclients"]))
     <div class="client-list">
-        
-        <ul class="unset-mp text-center client-list-ul ">
+        <ul class="unset-mp text-center client-list-ul">
             @foreach ($clients as $client)
                 <li><a href="/finance?clientId={{$client->id}}">{{$client->firstname}} {{$client->lastname}}</a></li>
             @endforeach
-
         </ul>
-        @if(isset($_GET["clientId"]))
-            <ul>
-                <li><a href="/finance/{{$client->id}}/inactive">Set inactive</a></li>
-
-            </ul>
-
-        @endif
     </div>
-    <ul>
-        <li><a href="/bkrCheck">BKR Check</a></li>
-        <li><a href="/invoices">Invoices</a></li>
-        <li><a href="/memo">Memo's</a></li>
-    </ul>
+    @endif
+
 
 </div>
 

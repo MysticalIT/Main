@@ -24,28 +24,28 @@
 
 </header>
 <div class="container">
-
     <div class="clientsFinance col-md-4">
         <div class="wrapper">
-            <div class="spacer"></div>
-            <ul>
-                <li class="text-center"><a href="/invoices?showProjects=true">Show all projects</a></li>
-            </ul>
-                @if(isset($_GET["projectId"]))
-                    <div class="invoice-add text-center">
-                        <ul>
-                            <li class="text-center"><a href="/invoices/{{$_GET["projectId"]}}/create">Create invoice</a></li>
-                        </ul>
-                    </div>
-                @elseif(isset($_GET["showProjects"]))
-                    <div class="list">
-                        <ul>
-                            @foreach($projects as $project)
+            <div class="uni-nav">
+                <ul class="uni-nav-clients">
+                    <li class="text-center"><a href="/invoices?showProjects=true">Show all projects</a></li>
+                    @if(isset($_GET["projectId"]))
+                        <div class="spacer"></div>
+                        <li class="text-center"><a href="/invoices/{{$_GET["projectId"]}}/create">Create invoice</a></li>
+                    @endif
+                </ul>
+            </div>
+            @if(isset($_GET["showProjects"]))
+                <div class="client-list">
+                    <ul class="client-list-ul unset-mp text-center">
+                        @foreach($projects as $project)
+                            @if(!$project->finished)
                                 <li class="text-center"><a href="/invoices?projectId={{$project->id}}">{{$project->name}}</a></li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+                            @endif
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
         </div>
     </div>
     @if(isset($_GET["projectId"]))
@@ -54,6 +54,7 @@
                 <h3 class="text-center bold">Invoices for: {{$projects->where("id", "=", $_GET["projectId"])->first()->name}}</h3>
                 @php($projectInvoices = $invoices->where("project_id", "=", $_GET["projectId"]))
                 @if(count($projectInvoices) > 0)
+                    <h5 class="text-center bold">Open Invoices:</h5>
                     <table class="table">
                         <tr>
                             <th>Open Invoice Subject:</th>
@@ -68,9 +69,30 @@
                                     <td>&euro; {{$charge}}</td>
                                     <td class="text-center"><a href="/invoices/{{$projectInvoice->id}}/paid">PAID</a></td>
                                 </tr>
+                            @else
+                                @php($paid = true)
                             @endif
                         @endforeach
                     </table>
+                    @if($paid)
+                        <div class="spacer"></div>
+                        <h5 class="text-center bold">Paid Invoices:</h5>
+                        <table class="table">
+                            <tr>
+                                <th>Paid Invoice Subject:</th>
+                                <th>Paid Invoice Charge:</th>
+                            </tr>
+                            @foreach($projectInvoices as $projectInvoice)
+                                @if($projectInvoice->paid == true)
+                                    <tr>
+                                        <td>{{$projectInvoice->subject}}</td>
+                                        @php($charge = str_replace(".", ",", $projectInvoice->price))
+                                        <td>&euro; {{$charge}}</td>
+                                    </tr>
+                                @endif
+                            @endforeach
+                        </table>
+                    @endif
                 @endif
             </div>
         </div>

@@ -27,10 +27,11 @@
 
 
 <div class="container">
+    @if(!isset($_GET["clientId"]))
     <div class="clientsFinance">
         <div class="wrapper">
            <div class="client-list">
-               @if(!isset($_GET["clientId"]))
+
                <ul class="unset-mp text-center client-list-ul ">
                    @foreach($clients as $client)
                        @if(!$client->bkrchecked || !$client->bkrapproved)
@@ -38,11 +39,10 @@
                        @endif
                            @endforeach
                </ul>
-                   @endif
            </div>
         </div>
     </div>
-
+@endif
 
 
     <div class="detailsFinance">

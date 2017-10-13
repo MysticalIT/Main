@@ -366,7 +366,6 @@ admin - Clients
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-    background: rgba(0,0,0,0.4);
     margin-top: 50px;
     max-width: 100%;
     color: #CFC1B5;
@@ -378,7 +377,7 @@ admin - Clients
     Sales styles
 ==========================================================*/
 .spacer{
-    margin-bottom: 20px
+    padding-bottom: 20px
 }
 
 .uni-nav{
@@ -407,7 +406,7 @@ admin - Clients
 }
 
 .client-list {
-    height: 80%;
+    height: 500px;
     /* overflow: auto; */
     /*overflow-x: hidden;*/
     display: flex;
@@ -415,7 +414,7 @@ admin - Clients
 }
 
 .client-list ul{
-    max-width: 300px;
+    min-width: 260px;
     margin-bottom: 0;
     overflow-y: auto;
 }
