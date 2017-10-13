@@ -354,6 +354,8 @@ Route::resource("/development", "DevelopmentController");
 Route::get("/development/{id}/project","DevelopmentController@show");
 
 //Admin
+Route::get("/admin", "AdminController@index");
+
 
 
 //IDK

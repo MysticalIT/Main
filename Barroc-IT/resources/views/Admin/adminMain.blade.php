@@ -21,7 +21,7 @@
 <body>
 <header>
     <div class="page-title logo">
-        <h1 class="text_main text-center">Sales - Home</h1>
+        <h1 class="text_main text-center">Admin - Home</h1>
     </div>
     <div class="links">
         <div class="wrapper">
@@ -34,7 +34,7 @@
 </header>
 
 <div class="main-content">
-    <div class="admin-nav">
+    <div class="uni-nav">
         <ul>
             <li class="adminClients">
                 <a href="/activateClients">Activate Clients</a>
