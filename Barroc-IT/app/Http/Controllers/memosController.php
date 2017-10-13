@@ -24,11 +24,15 @@ class memosController extends Controller
             }
             if ($department == "finance")
             {
-
+                $projects = \App\Project::all();
+                $memos = \App\Memo::all();
+                return view("/finance/financeMemo")->with(["projects" => $projects, "memos" => $memos]);
             }
             if ($department == "development")
             {
-
+                $projects = \App\Project::all();
+                $memos = \App\Memo::all();
+                return view("/development/developmentMemo")->with(["projects" => $projects, "memos" => $memos]);
             }
             if ($department == "admin")
             {

@@ -25,21 +25,36 @@
     </div>
 </header>
 
-<div class="main-content">
-
-    <div class="wrapper">
-
-        <div class="memo">
-            <div class="editMemo">
-                <form action="" method="post">
-                    <textarea name="memo" id="memo" cols="30" rows="10"></textarea>
-                    <input type="submit" value="Save Memo">
-                </form>
+    <div class="main-content">
+        <div class="wrapper">
+            <div class="memo set-flex space-between">
+                <div class="list-projects-memo">
+                    <ul class="unset-mp">
+                        @foreach($projects as $project)
+                            <li><a href='/memo?projectId={{$project->id}}'>{{$project->name}}</a></li>
+                        @endforeach
+                    </ul>
+                </div>
+                @if(isset($_GET["projectId"]))
+                    @php($projectId = $_GET["projectId"])
+                    @php($currentMemo = $memos->where('project_id', "=", $projectId)->first())
+                    <div class="editmemo">
+                        <form action='/memo/{{$currentMemo->id}}' method='post'>
+                            {{csrf_field()}}
+                            {{method_field('PUT')}}
+                            <div class="form-group form-group-text-memo">
+                                <label for="memo">Memo:</label>
+                                <textarea name='memo' id='memo' cols='30' rows='10'>{{$currentMemo->memo}}</textarea>
+                            </div>
+                            <div class="form-group sumit-form-memo">
+                                <input type='submit' class="btn-primary" value='Update Memo'>
+                            </div>
+                        </form>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
-</div>
-</div>
 
 
 </body>

@@ -29,9 +29,9 @@
 <div class="container">
     <div class="clientsFinance">
         <div class="wrapper">
-           <div class="list">
+           <div class="client-list">
                @if(!isset($_GET["clientId"]))
-               <ul>
+               <ul class="unset-mp text-center client-list-ul ">
                    @foreach($clients as $client)
                        @if(!$client->bkrchecked || !$client->bkrapproved)
                        <li><a href="/bkrCheck?clientId={{$client->id}}">{{$client->firstname}} {{$client->lastname}}</a></li>
@@ -48,7 +48,7 @@
     <div class="detailsFinance">
         <div class="wrapper">
             <div class="clientDetailsFinance">
-                <table class="table table-striped">
+                <table class="table">
                     @if(isset($_GET["clientId"]))
                         @php
                         $clientId = $_GET["clientId"];
