@@ -23,12 +23,18 @@ class usersController extends Controller
             "password" => "required|string"
         ]);
 
-        $user = \App\User::all()->where("username", "=", $request["department"])->first();
-        if($user->password === $request["password"]){
-            session(["department" => $request["department"]]);
-            return redirect("/" . session()->get("department"));
+        $user = \App\User::all()->where("username", "=", $request["department"]);
+        if($user != null){
+            if($user->first()->password === $request["password"]){
+                session(["department" => $request["department"]]);
+                return redirect("/" . session()->get("department"));
+            }
+            else{
+                return redirect("/");
+            }
         }
-        else{
+        else
+        {
             return redirect("/");
         }
     }
