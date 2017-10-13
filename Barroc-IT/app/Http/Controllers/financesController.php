@@ -22,7 +22,7 @@ class financesController extends Controller
     }
     public function inactive($id)
     {
-        $clients = \App\Client::all()->where("id", "=", $id)->first();
+        $clients = \App\Client::find($id);
         $client = $clients;
 
         $client->active = 0;
