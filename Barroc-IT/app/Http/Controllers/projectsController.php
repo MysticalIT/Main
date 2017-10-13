@@ -55,6 +55,7 @@ class projectsController extends Controller
         $project->name = $request->projectName;
         $project->description = $request->projectDetails;
         $project->limit = $request->setInvoice;
+        $project->started = 1;
         $project->save();
 
         $clientInfo = \App\Client::find($request->id)->first();
