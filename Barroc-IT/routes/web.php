@@ -351,7 +351,7 @@ Route::get("/invoices/{id}/paid", "invoicesController@paid");
 
 //Development
 Route::resource("/development", "DevelopmentController");
-//Route::get("","");
+Route::get("/development/{id}/project","DevelopmentController@show");
 
 //Admin
 
