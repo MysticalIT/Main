@@ -348,6 +348,11 @@ Route::post("/bkrCheck", "financesController@bkrCheckStore");
 Route::get("/setInactive", "financesController@inactive");
 Route::get("/invoices/{id}/paid", "invoicesController@paid");
 
+
+//Development
+Route::resource("/development", "DevelopmentController");
+Route::get("/development/{id}/project","DevelopmentController@show");
+
 //Admin
 
 
