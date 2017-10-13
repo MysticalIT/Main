@@ -34,13 +34,31 @@
 </header>
 
 <div class="main-content">
+    @php($inactiveClients = $clients->where("active", "=", "0"))
     <div class="uni-nav">
-        <ul>
-            <li class="adminClients">
-                <a href="/activateClients">Activate Clients</a>
-            </li>
+        <ul class="uni-nav-clients">
+            @if(isset($_GET["showclients"]))
+                <li><a href="/admin">Hide Clients</a></li>
+            @else
+                <li><a href="/admin?showclients=true">Show Clients that are inactive</a></li>
+            @endif
+
+            @if(isset($_GET["clientId"]))
+                <div class="spacer"></div>
+                @php($client = $inactiveClients->where("id", "=", $_GET["clientId"])->first())
+                <li><a href="/admin/{{$_GET["clientId"]}}/active">Set {{$client->firstname}} {{$client->lastname}} Active</a></li>
+            @endif
         </ul>
     </div>
+    @if(isset($_GET["showclients"]))
+        <div class="client-list">
+            <ul class="client-list-ul unset-mp text-center">
+                @foreach($inactiveClients as $inactiveClient)
+                <li><a href="/admin?clientId={{$inactiveClient->id}}">{{$inactiveClient->firstname}} {{$inactiveClient->lastname}}</a></li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 </div>
 </body>
 </html>
