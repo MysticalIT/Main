@@ -27,7 +27,7 @@ class financesController extends Controller
 
         $client->active = 0;
         $client->save();
-        return back();
+        return redirect("/finance");
     }
     public function bkrCheckPage()
     {

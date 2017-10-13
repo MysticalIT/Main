@@ -10,7 +10,8 @@ class AdminController extends Controller
         $department = "admin";
         if(session()->has("department")){
             if(session()->get("department") === $department){
-                return view("/admin/adminMain");
+                $clients = \App\Client::all();
+                return view("/admin/adminMain")->with("clients", $clients);
             }
             return redirect("/" . session()->get("department"));
         }
@@ -25,9 +26,9 @@ class AdminController extends Controller
             if(session()->get("department") === $department){
                 $client = \App\Client::find($id);
                 $client->active = 1;
-                $client->save;
+                $client->save();
 
-                return view("/admin/adminMain");
+                return redirect("/admin");
             }
             return redirect("/" . session()->get("department"));
         }
