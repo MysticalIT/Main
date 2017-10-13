@@ -13,10 +13,11 @@ class DevelopmentController extends Controller
      */
     public function index()
     {
+        $projects = \App\Project::all();
         $department = "development";
         if(session()->has("department")){
             if(session()->get("department") === $department){
-                return view("/development/developmentMain");
+                return view("/development/developmentMain")->with("projects", $projects);
             }
             return redirect("/" . session()->get("department"));
         }
@@ -54,7 +55,20 @@ class DevelopmentController extends Controller
      */
     public function show($id)
     {
-        //
+        $projects = \App\Project::all()->where("id", "=", $id)->first();
+        $clients = \App\client::all()->where("id", "=", $projects->client_id)->first();
+
+        $client = $clients;
+        $project = $projects;
+
+
+        if(isset($id))
+        {
+            return view("/development/developmentProjects")->with("project",$project)->with("client", $client);
+        }
+        else{
+            return back();
+        }
     }
 
     /**
@@ -63,7 +77,7 @@ class DevelopmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
         //
     }
@@ -75,9 +89,16 @@ class DevelopmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        //
+        $projectid= $id;
+
+        $projects= \App\Project::all()->where("id", "=", $projectid)->first();
+
+        $project = $projects;
+
+        $project->started = 1;
+
     }
 
     /**

@@ -14,17 +14,15 @@
 
 
 
-
 <div class="container">
     <header>
 
 
-        <div class="wrapper">
-            <nav class="navigation">
-                <ul>
+        <div class='client-list'>
+            <ul class="client-list-ul unset-mp text-center">
                     <li></li>
                     <li><a href="/development">Back</a></li>
-                    <li><a href="/projects?showhelp=true">Help</a></li>
+                    <li><a href="/development/project?showhelp=true">Help</a></li>
                 </ul>
             </nav>
         </div>
@@ -32,43 +30,38 @@
 
 
 
+@php
+
+        @endphp
 
     <div class="listProjects">
-
-
         <div class="wrapper">
-            <a href="/project?loadprojects=true">Show Projects</a>
-
-
             <div class="projectList">
                 <table>
-
                     <tr>
-                        <th>Project</th>
-                        <th>Name:</th>
+                        <th>Project:</th>
+                        <th>Client name:</th>
                         <th>Description:</th>
                     </tr>
 
                     <tr>
-                        <th>Project</th>
-                        <th>Name:</th>
-                        <th>Description:</th>
-                    </tr>
-
-                    <tr>
-                        <th>Project</th>
-                        <th>Name:</th>
-                        <th>Description:</th>
+                        <th>{{$project->name}}</th>
+                        <th>{{$client->firstname}} {{$client->lastname}}</th>
+                        <th>{{$project->description}}</th>
                     </tr>
                 </table>
             </div>
         </div>
-
     </div>
 
-
-
+    <div class="">
+        <div class="">
+            <a href="/development/{{$project->id}}/update">Start project</a>
+            @if($project->started)
+                <a href="">Finish project</a>
+            @endif
+        </div>
+    </div>
 </div>
-
 </body>
 </html>

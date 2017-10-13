@@ -32,7 +32,9 @@
             <div class="list-projects-memo">
                 <ul class="unset-mp">
                     @foreach($projects as $project)
-                        <li><a href='/memo?projectId={{$project->id}}'>{{$project->name}}</a></li>
+                        @if(!$project->finished)
+                             <li><a href='/memo?projectId={{$project->id}}'>{{$project->name}}</a></li>
+                        @endif
                     @endforeach
                 </ul>
             </div>

@@ -12,18 +12,24 @@
 </head>
 <body>
 <header>
+    <div class="page-title logo">
+        <h1 class="text_main text-center">Development - Home</h1>
+    </div>
     <div class="tophelp">
-        <a href="">Help</a>
+        <a href="/development?showHelp=true">Help</a>
     </div>
 </header>
     <container class="main-content">
-        <div class="wrapper">
-            <ul class="mainNav">
-                <li><a href="/projects">Projects</a></li>
-                <li><a href="/memo">Memo's</a></li>
-                <li><a href="/logout">Logout</a></li>
+            <div class='client-list'>
+                <h2 class=>Projects:</h2>
+                <ul class="client-list-ul unset-mp text-center">
+                @foreach ($projects as $project)
+                        @if(!$project->finished)
+                            <li><a href='/development/{{$project->id}}/project'>{{$project->name}}</a></li>
+                        @endif
+                @endforeach
             </ul>
-        </div>
+            </div>
     </container>
 
 </body>
