@@ -84,13 +84,14 @@
 
         @if(isset($_GET["showClients"]))
             <div class='client-list'>
-                <ul class="client-list-ul unset-mp text-center">
+                <ul id="myUL" class="client-list-ul unset-mp text-center">
                     @php($showclient = $_GET["showClients"])
                     @if ($showclient)
+                        <input type="text" id="myInput" onkeyup="search()" placeholder="Search for names.." title="Type in a name">
 
-                        @foreach ($clients as $client)
+                    @foreach ($clients as $client)
                             @if($client->active)
-                            <li><a href='/contact?clientId={{$client->id}}'>{{$client->firstname}} {{$client->lastname}}</a></li>
+                                <li><a href='/contact?clientId={{$client->id}}'>{{$client->firstname}} {{$client->lastname}}</a></li>
                             @endif
                         @endforeach
                     @endif
@@ -106,6 +107,7 @@
                     <li><a href='/projects/create?clientId={{$_GET["clientId"]}}'>Add Project</a></li>
                     @foreach ($projectsById as $project)
                         @if(!$project->finished)
+
                             <li><a href='/projects/{{$project->id}}/edit'>Edit: {{$project->name}}</a></li>
                         @endif
                     @endforeach
@@ -114,5 +116,23 @@
         @endif
     </div>
 </div>
+<script>
+    function search() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+
+            }
+        }
+    }
+</script>
 </body>
 </html>
