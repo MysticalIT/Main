@@ -15,25 +15,31 @@
     <div class="page-title logo">
         <h1 class="text_main text-center">Development - Home</h1>
     </div>
-    <ul class="mainNav">
-        <a href="/logout">Logout</a>
-        <a href="/development?showHelp=true">Help</a>
-
-    </ul>
-
-</header>
-    <container class="main-content">
-            <div class='client-list'>
-                <h2 class=>Projects:</h2>
-                <ul class="client-list-ul unset-mp text-center">
-                @foreach ($projects as $project)
-                        @if(!$project->finished)
-                            <li><a href='/development/{{$project->id}}/project'>{{$project->name}}</a></li>
-                        @endif
-                @endforeach
+    <div class="links">
+        <div class="wrapper">
+            <ul class="mainNav">
+                <li><a href="/logout">Logout</a></li>
+                <li><a href="/development?showHelp=true">Help</a></li>
             </ul>
-            </div>
-    </container>
+        </div>
+    </div>
+</header>
+<div class="main-content">
+    <div class="uni-nav">
+        <ul class="uni-nav-clients">
+            <li><a href="">Show Projects</a></li>
+        </ul>
+    </div>
+    <div class="client-list">
+        <ul class="client-list-ul unset-mp text-center">
+            @foreach ($projects as $project)
+                @if(!$project->finished)
+                    <li><a href='/development/{{$project->id}}/project'>{{$project->name}}</a></li>
+                @endif
+            @endforeach
+        </ul>
+    </div>
+</div>
 
 </body>
 </html>

@@ -8,52 +8,37 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset("css/main.css") }}">
-    <title>Development - Projects</title>
+    <title>Development - Project</title>
 </head>
 <body>
-
-
-
-<div class="container">
-    <header>
-
-
-        <div class='client-list'>
-            <ul class="client-list-ul unset-mp text-center">
-                    <li></li>
-                    <li><a href="/development">Back</a></li>
-                    <li><a href="/development/project?showhelp=true">Help</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-
-
-@php
-
-        @endphp
-
-    <div class="listProjects">
+<header>
+    <div class="page-title logo">
+        <h1 class="text_main text-center">Development - Project</h1>
+    </div>
+    <div class="links">
         <div class="wrapper">
-            <div class="projectList">
-                <table>
-                    <tr>
-                        <th>Project:</th>
-                        <th>Client name:</th>
-                        <th>Description:</th>
-                    </tr>
-
-                    <tr>
-                        <th>{{$project->name}}</th>
-                        <th>{{$client->firstname}} {{$client->lastname}}</th>
-                        <th>{{$project->description}}</th>
-                    </tr>
-                </table>
-            </div>
+            <ul class="mainNav">
+                <li><a href="/development">Back</a></li>
+                <li><a href="/development/project?showhelp=true">Help</a></li>
+            </ul>
         </div>
     </div>
-
+</header>
+<div class="container">
+    <div class="wrapper">
+        <table class="table">
+            <tr>
+                <th>Client name:</th>
+                <th>Project:</th>
+                <th>Details:</th>
+            </tr>
+            <tr>
+                <td>{{$client->firstname}} {{$client->lastname}}</td>
+                <td>{{$project->name}}</td>
+                <td>{{$project->description}}</td>
+            </tr>
+        </table>
+    </div>
     <div class="">
         <div class="">
             <a href="/development/{{$project->id}}/start">Start project</a>
