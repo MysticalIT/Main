@@ -95,6 +95,7 @@
             </div>
         @endif
         @if (isset($_GET["clientId"]))
+            <div class="spacer"></div>
             <div class="listprojects">
                 <h3 class="bold">Projects:</h3>
                 <ul class="unset-mp">

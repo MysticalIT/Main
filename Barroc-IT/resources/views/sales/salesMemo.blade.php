@@ -27,10 +27,11 @@
 </header>
 
 <div class="main-content">
+    <div class="spacer"></div>
     <div class="wrapper">
         <div class="memo set-flex space-between">
-            <div class="list-projects-memo">
-                <ul class="unset-mp">
+            <div class="client-list">
+                <ul class="client-list-ul unset-mp text-center">
                     @foreach($projects as $project)
                         @if(!$project->finished)
                              <li><a href='/memo?projectId={{$project->id}}'>{{$project->name}}</a></li>
@@ -49,7 +50,7 @@
                             <label for="memo">Memo:</label>
                             <textarea name='memo' id='memo' cols='30' rows='10'>{{$currentMemo->memo}}</textarea>
                         </div>
-                        <div class="form-group sumit-form-memo">
+                        <div class="form-group submit-form-memo">
                             <input type='submit' class="btn-primary" value='Update Memo'>
                         </div>
                     </form>
