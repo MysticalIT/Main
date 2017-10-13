@@ -15,9 +15,12 @@
     <div class="page-title logo">
         <h1 class="text_main text-center">Development - Home</h1>
     </div>
-    <div class="tophelp">
+    <ul class="mainNav">
+        <a href="/logout">Logout</a>
         <a href="/development?showHelp=true">Help</a>
-    </div>
+
+    </ul>
+
 </header>
     <container class="main-content">
             <div class='client-list'>
