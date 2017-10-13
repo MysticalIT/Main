@@ -251,6 +251,7 @@ admin - Clients
     display: flex;
     align-content: center;
     align-self: center;
+    height: 360px;
 }
 
 .editmemo{
@@ -297,7 +298,7 @@ admin - Clients
     background: rgba(0,0,0,0.4)
 }
 
-.sumit-form-memo{
+.submit-form-memo{
     margin-bottom: 0;
 }
 
