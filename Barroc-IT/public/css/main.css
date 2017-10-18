@@ -234,13 +234,18 @@ ol, ul{
     admin styles
 ==========================================================*/
 #myInput {
-    background-image: url('searchicon.png'); /* Add a search icon to input */
-    background-position: 10px 12px; /* Position the search icon */
-    background-repeat: no-repeat; /* Do not repeat the icon image */
+    /*background-image: url('searchicon.png'); /* Add a search icon to input */
+    /*background-position: 10px 12px; /* Position the search icon */
+    /*background-repeat: no-repeat; /* Do not repeat the icon image */
+    background-color: #d8c9ba;
+
+    border-color: #444;
+    border-style:outset;
+    color: #444;
     width: 100%; /* Full-width */
     font-size: 16px; /* Increase font-size */
     padding: 12px 20px 12px 40px; /* Add some padding */
-    border: 1px solid #ddd; /* Add a grey border */
+    /*border: 1px solid #ddd; /* Add a grey border */
     margin-bottom: 12px; /* Add some space below the input */
 }
 /*========
@@ -264,7 +269,7 @@ admin - Clients
 }
 
 .editmemo{
-    padding: 20px;
+    padding: 20px 20px 23em 20px;
     border-radius: 10px;
     margin-right: 100px;
     background: rgba(1,1,1,0.4);
@@ -282,6 +287,9 @@ admin - Clients
 
 .editmemo textarea{
     min-width: 900px;
+    background-color: #d8c9ba;
+    border-color: #444;
+    border-style: outset;
 }
 
 .list-projects-memo{
@@ -291,7 +299,7 @@ admin - Clients
     text-align: center;
 }
 .list-projects-memo ul li{
-    background: rgba(1,1,1,0.5);
+    background: rgba(1,1,1,0.4);
     padding: 0 10px;
 }
 

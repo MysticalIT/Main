@@ -13,6 +13,9 @@
 <body>
 
 <header>
+    <div class="page-title logo">
+        <h1 class="text_main text-center">Finance - Create invoice</h1>
+    </div>
     <div class="links">
         <div class="wrapper">
             <ul class="mainNav">

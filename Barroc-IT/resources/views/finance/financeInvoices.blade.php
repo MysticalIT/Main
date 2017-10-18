@@ -11,7 +11,9 @@
     <title>Finance - Invoices</title>
 </head>
 <body>
-
+<div class="page-title logo">
+    <h1 class="text_main text-center">Finance - Invoices</h1>
+</div>
 <header>
     <div class="links">
         <div class="wrapper">

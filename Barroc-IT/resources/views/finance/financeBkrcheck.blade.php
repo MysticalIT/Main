@@ -14,7 +14,9 @@
 
 
 <header>
-
+    <div class="page-title logo">
+        <h1 class="text_main text-center">Finance - BKRCheck</h1>
+    </div>
     <div class="links">
         <div class="wrapper">
             <ul class="mainNav">
@@ -33,6 +35,7 @@
            <div class="client-list">
 
                <ul class="unset-mp text-center client-list-ul ">
+                   <input type="text" id="myInput" onkeyup="search()" placeholder="Search for projects.." title="Type in a name">
                    @foreach($clients as $client)
                        @if($client->active)
                        @if(!$client->bkrchecked || !$client->bkrapproved)
@@ -99,6 +102,23 @@
         </div>
     </div>
 </div>
+<script>
+    function search() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
 
+            }
+        }
+    }
+</script>
 </body>
 </html>
