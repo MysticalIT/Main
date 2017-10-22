@@ -19,36 +19,122 @@
     </div>
 </div>
 <div class="main-content">
-    <form action="" method="get">
-        <label for="amount">How many fake people do you want?</label>
-        <input type="text" name="amount" id="amount">
-
-        <input type="submit" value="Add">
-    </form>
+    <div class="container-fluid">
+        <form action="" method="post" class="add-client">
+            {{csrf_field()}}
+            <div class="form-group form-group-add">
+                <label for="firstName">First Name</label>
+                <input type="text" name="firstName" id="firstName">
+            </div>
+            <div class="form-group form-group-add">
+                <label for="lastName">Last Name</label>
+                <input type="text" name="lastName" id="lastName">
+            </div>
+            <div class="form-group form-group-add">
+                <label for="street">Street</label>
+                <input type="text" name="street" id="street">
+            </div>
+            <div class="form-group form-group-add">
+                <label for="house_number">House Number</label>
+                <input type="text" name="house_number" id="house_number">
+            </div>
+            <div class="form-group form-group-add">
+                <label for="city">City</label>
+                <input type="text" name="city" id="city">
+            </div>
+            <div class="form-group form-group-add">
+                <label for="zip_code">Zip Code</label>
+                <input type="text" name="zip_code" id="zip_code">
+            </div>
+            <div class="form-group form-group-add">
+                <label for="company_name">Company Name</label>
+                <input type="text" name="company_name" id="company_name">
+            </div>
+            <div class="form-group form-group-add">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email">
+            </div>
+            <div class="form-group form-group-add">
+                <label for="phonenumber">Phone Number</label>
+                <input type="text" name="phonenumber" id="phonenumber">
+            </div>
+            <div class="form-group form-group-add">
+                <label for="amount">How many fake people do you want?</label>
+                <input type="text" name="amount" id="amount">
+            </div>
+            <div class="form-group form-group-add">
+                <input type="submit" value="Add">
+            </div>
+        </form>
+    </div>
 </div>
 </body>
 </html>
 
 <?php
-    if(isset($_GET["amount"]) && $_GET["amount"] > 0)
+    if(isset($_POST["amount"]) && $_POST["amount"] > 0)
     {
-        $amount = $_GET["amount"];
+
+        $amount = $_POST["amount"];
         for($i = 0; $i < $amount; $i++)
         {
             $faker = Faker\Factory::create();
-            DB::table("tbl_clients")->insert(
-                [
-                    "firstName" => $faker->firstName,
-                    "lastName" => $faker->lastName,
-                    "street" => $faker->streetName,
-                    "house_number" => $faker->buildingNumber,
-                    "city" => $faker->city,
-                    "zip_code" => $faker->postcode,
-                    "company_name" => $faker->company,
-                    "email" => $faker->companyEmail,
-                    "phonenumber" => $faker->phoneNumber
-                ]
-            );
+            if (isset($_POST["firstName"]) && $_POST["firstName"] != "")
+                $firstName = $_POST["firstName"];
+            else
+                $firstName = $faker->firstName;
+
+            if (isset($_POST["lastName"]) && $_POST["lastName"] != "")
+                $lastName = $_POST["lastName"];
+            else
+                $lastName = $faker->lastName;
+
+            if (isset($_POST["street"]) && $_POST["street"] != "")
+                $street = $_POST["street"];
+            else
+                $street = $faker->streetName;
+
+            if (isset($_POST["house_number"]) && $_POST["house_number"] != "")
+                $house_number = $_POST["house_number"];
+            else
+                $house_number = $faker->buildingNumber;
+
+            if (isset($_POST["city"]) && $_POST["city"] != "")
+                $city = $_POST["city"];
+            else
+                $city = $faker->city;
+
+            if (isset($_POST["zip_code"]) && $_POST["zip_code"] != "")
+                $zip_code = $_POST["zip_code"];
+            else
+                $zip_code = $faker->postcode;
+
+            if (isset($_POST["company_name"]) && $_POST["company_name"] != "")
+                $company_name = $_POST["company_name"];
+            else
+                $company_name = $faker->company;
+
+            if (isset($_POST["email"]) && $_POST["email"] != "")
+                $email = $_POST["email"];
+            else
+                $email = $faker->companyEmail;
+
+            if (isset($_POST["phonenumber"]) && $_POST["phonenumber"] != "")
+                $phonenumber = $_POST["phonenumber"];
+            else
+                $phonenumber = $faker->phoneNumber;
+
+            $client = new App\Client();
+            $client->firstName = $firstName;
+            $client->lastName = $lastName;
+            $client->street = $street;
+            $client->house_number = $house_number;
+            $client->city = $city;
+            $client->zip_code = $zip_code;
+            $client->company_name = $company_name;
+            $client->email = $email;
+            $client->phonenumber = $phonenumber;
+            $client->save();
         }
         session(["message" => "Faker added $amount people!"]);
         echo "<script> window.location.href = '/admin';</script>";
