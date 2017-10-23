@@ -82,6 +82,7 @@ input.form-control, textarea.form-control {
     width:97.99%;
 }
 
+
 .login-password input{
     letter-spacing: 1.5px;
 }
@@ -189,12 +190,17 @@ a{
 input{
     font: bold 16px Arial;
     text-decoration: none;
-    background-color: #fff;
+    background-color: #d8c9ba;
+
     padding: 2px 6px 2px 6px;
     border-top: 1px solid #CFC1B5;
     border-right: 1px solid #333333;
     border-bottom: 1px solid #333333;
     border-left: 1px solid #CFC1B5;
+}
+
+textarea{
+    background-color: #d8c9ba;
 }
 
 ol, ul{
