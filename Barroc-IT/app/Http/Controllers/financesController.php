@@ -27,6 +27,7 @@ class financesController extends Controller
 
         $client->active = 0;
         $client->save();
+        session(["message" => "Client has been set inactive"]);
         return redirect("/finance");
     }
     public function bkrCheckPage()
@@ -57,11 +58,13 @@ class financesController extends Controller
                 $client->save();
             }
             //session(["message" => "BKR settings SET"]);
+            session(["message" => "This person is either checked or approved!"]);
             return redirect("/finance");
 
         }
         else
         {
+            session(["message" => "Something went wrong here :/"]);
             return redirect("/");
         }
     }

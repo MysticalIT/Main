@@ -70,12 +70,10 @@
 </div>
 
 
-<?php
-if(session()->has("message")){
-    $msg = session()->get("message");
-    echo "<script> window.alert('$msg'); </script>";
-    session()->remove("message");
-}
-?>
+@if(session()->has("message"))
+    @php($msg = session()->get("message"))
+    <script> window.alert('{{$msg}}'); </script>
+    @php(session()->remove("message"))
+@endif
 </body>
 </html>

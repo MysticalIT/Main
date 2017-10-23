@@ -42,11 +42,13 @@ class invoicesController extends Controller
         if(session()->has("department")){
             if(session()->get("department") === $department){
                 $projectId = $id;
+                session(["message" => "Invoice has been created!"]);
                 return view("finance/financeCreateInvoice")->with("projectId", $projectId);
             }
             return redirect("/" . session()->get("department"));
         }
         else{
+            session(["message" => "Something went wrong here :/"]);
             return redirect("/");
         }
     }

@@ -27,7 +27,7 @@ class AdminController extends Controller
                 $client = \App\Client::find($id);
                 $client->active = 1;
                 $client->save();
-
+                session(["message" => "Client has been set active"]);
                 return redirect("/admin");
             }
             return redirect("/" . session()->get("department"));
