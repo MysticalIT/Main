@@ -40,6 +40,10 @@
         </ul>
     </div>
 </div>
-
+@if(session()->has("message"))
+    @php($msg = session()->get("message"))
+    <script> window.alert('{{$msg}}'); </script>
+    @php(session()->remove("message"))
+@endif
 </body>
 </html>

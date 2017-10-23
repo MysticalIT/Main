@@ -17,11 +17,14 @@ class DevelopmentController extends Controller
         $department = "development";
         if(session()->has("department")){
             if(session()->get("department") === $department){
+
                 return view("/development/developmentMain")->with("projects", $projects);
             }
+            session(["message" => "Something went wrong here :/"]);
             return redirect("/" . session()->get("department"));
         }
         else{
+            session(["message" => "Something went wrong here :/"]);
             return redirect("/");
         }
     }
