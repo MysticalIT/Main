@@ -31,7 +31,7 @@
         <ul class="uni-nav-clients">
             <li><a href="/bkrCheck">BKR Check</a></li>
             <li><a href="/invoices">Invoices</a></li>
-            <li><a href="/memo">Memo's</a></li>
+            <li><a href="/memo">Memos</a></li>
             @if(isset($_GET["showclients"]))
                 <li><a href="/finance">Hide Clients</a></li>
             @else
