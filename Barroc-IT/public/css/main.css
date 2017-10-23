@@ -266,7 +266,11 @@ admin - Clients
     align-content: center;
     align-self: center;
     height: 360px;
+    position: absolute;
+    left: 42%;
+    right: 78%;
 }
+
 
 .editmemo{
     padding: 20px 20px 23em 20px;
