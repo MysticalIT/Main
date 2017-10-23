@@ -371,6 +371,14 @@ Route::get("/faker", function(){
 Route::POST("/faker", function(){
     return view("admin/adminFaker");
 });
+
+Route::get("/fakerproject", function(){
+    return view("admin/adminFakerProjects");
+});
+
+Route::POST("/fakerproject", function(){
+    return view("admin/adminFakerProjects");
+});
 //Route::resource("/client", "clientsController");
 //Route::resource("/project", "projectsController");
 //Route::resource("/memo", "memosController");
