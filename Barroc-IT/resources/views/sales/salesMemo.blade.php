@@ -20,7 +20,7 @@
         <div class="wrapper">
             <ul class="mainNav">
                 <li><a href="/sales">Back</a></li>
-                <li><a href="/memo?showhelp=true">Help</a></li>
+                <li><a href="/memo?showHelp=true">Help</a></li>
             </ul>
         </div>
     </div>
@@ -32,7 +32,14 @@
         <div class="memo set-flex space-between">
             <div class="client-list">
                 <ul id="myUL" class="client-list-ul unset-mp text-center">
-                    <input type="text" id="myInput" onkeyup="search()" placeholder="Search for projects.." title="Type in a name">
+                    @if(isset($_GET["showHelp"]))
+                        <span>Search project-><input type="text" id="myInput" onkeyup="search()" placeholder="Search for projects.." title="Type in a name"><-Zoekt een project</span>
+
+                    @else
+                        <input type="text" id="myInput" onkeyup="search()" placeholder="Search for projects.." title="Type in a name">
+
+
+                    @endif
                     @foreach($projects as $project)
                         @if(!$project->finished)
                              <li><a href='/memo?projectId={{$project->id}}'>{{$project->name}}</a></li>

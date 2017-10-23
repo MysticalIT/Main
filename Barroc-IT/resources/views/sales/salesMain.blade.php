@@ -23,7 +23,11 @@
     <div class="links">
         <div class="wrapper">
             <ul class="mainNav">
-                <a href="/logout">Logout</a>
+                @if(isset($_GET["showHelp"]))
+                    <li><span>logout-></span><a href="/logout">Logout</a><span><-uitloggen</span></li>
+                @else
+                    <a href="/logout">Logout</a>
+                @endif
                <li> <a href="/sales?showHelp=true">Help</a></li>
 
             </ul>
@@ -53,13 +57,21 @@
                     @if(session()->has("clientId"))
                         @php(session()->remove("clientId"))
                     @endif
+                        @if(isset($_GET["showHelp"]))
+                            <li><span>Create client here-></span><a href='/clients/create'>Add Client</a><span><- maak hier een klant aan</span></li>
+                            <li><span>See clients to call here-></span><a href="/contact">Clients to Contact</a><span><-Zie hier alle klanten om te bellen</span></li>
+                            <li><span>Show memos here-></span><a href="/memo">Show memos</a><span><-Zie hier all uw memos</span></li>
+                            @else
+                            <li><a href='/clients/create'>Add Client</a></li>
+                            <li><a href="/contact">Clients to Contact</a></li>
+                            <li><a href="/memo">Show memos</a></li>
+                        @endif
 
-                    <li><a href='/clients/create'>Add Client</a></li>
-                    <li><a href="/contact">Clients to Contact</a></li>
-                    <li><a href="/memo">Show memos</a></li>
                         @if(isset($_GET["showclients"]))
                             <li><a href="/sales">Hide Clients</a></li>
-                        @else
+                        @elseif(isset($_GET["showHelp"]))
+                            <li><span>Show all active clients here-></span><a href="/sales?showclients=true">Show Clients</a><span><-Zie hier alle actieve klanten</span></li>
+                            @else
                             <li><a href="/sales?showclients=true">Show Clients</a></li>
                         @endif
                 @endif
