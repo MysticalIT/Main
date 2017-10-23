@@ -59,6 +59,14 @@
                 <input type="text" name="phonenumber" id="phonenumber">
             </div>
             <div class="form-group form-group-add">
+                <label for="bkrchecked">BKR Checked</label>
+                <input type="number" name="bkrchecked" id="bkrchecked">
+            </div>
+            <div class="form-group form-group-add">
+                <label for="bkrapproved">BKR Approved</label>
+                <input type="number" name="bkrapproved" id="bkrapproved">
+            </div>
+            <div class="form-group form-group-add">
                 <label for="amount">How many fake people do you want?</label>
                 <input type="text" name="amount" id="amount">
             </div>
@@ -124,6 +132,16 @@
             else
                 $phonenumber = $faker->phoneNumber;
 
+            if (isset($_POST["bkrchecked"]) && $_POST["bkrchecked"] != "")
+                $bkrchecked = $_POST["bkrchecked"];
+            else
+                $bkrchecked = 0;
+
+            if (isset($_POST["bkrapproved"]) && $_POST["bkrapproved"] != "")
+                $bkrapproved = $_POST["bkrapproved"];
+            else
+                $bkrapproved = 0;
+
             $client = new App\Client();
             $client->firstName = $firstName;
             $client->lastName = $lastName;
@@ -134,8 +152,9 @@
             $client->company_name = $company_name;
             $client->email = $email;
             $client->phonenumber = $phonenumber;
+            $client->bkrchecked = $bkrchecked;
+            $client->bkrapproved = $bkrapproved;
             $client->save();
         }
-        session(["message" => "Faker added $amount people!"]);
-        echo "<script> window.location.href = '/admin';</script>";
+        echo "<script>window.alert('Faker added $amount people!');</script>";
     }
