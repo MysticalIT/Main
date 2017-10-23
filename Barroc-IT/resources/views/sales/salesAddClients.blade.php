@@ -11,7 +11,11 @@
     <title>Add client</title>
 </head>
 <body>
-
+@if(isset($_GET["showHelp"]) && $_GET["showHelp"] == true)
+    @php($help = true)
+@else
+    @php($help = false)
+@endif
 
 <header>
     <div class="page-title logo">
@@ -21,7 +25,7 @@
         <div class="wrapper">
             <ul class="mainNav">
                 <li><a href="/sales">Back</a></li>
-                <li><a href="/add?showHelp=true">Help</a></li>
+                <li><a href="/clients/create?showHelp=true">Help</a></li>
 
             </ul>
 
@@ -35,47 +39,47 @@
                 {{csrf_field()}}
                 <div class="form-group form-group-add">
                     <label for="companyName">Client company name:</label>
-                    <input type="text" name="companyName" id="companyName">
+                    <input type="text" name="companyName" id="companyName" @if($help) placeholder="Barroc-IT" @endif>
                 </div>
 
                 <div class="form-group form-group-add">
                     <label for="street">Client street:</label>
-                    <input type="text" name="street" id="street">
+                    <input type="text" name="street" id="street" @if($help) placeholder="Jefferson's Street" @endif>
                 </div>
 
                 <div class="form-group form-group-add">
                     <label for="house-number">Client house number:</label>
-                    <input type="text" name="house_number" id="house-number">
+                    <input type="text" name="house_number" id="house-number" @if($help) placeholder="8A" @endif>
                 </div>
 
                 <div class="form-group form-group-add">
                     <label for="city">Client city:</label>
-                    <input type="text" name="city" id="city">
+                    <input type="text" name="city" id="city" @if($help) placeholder="Amsterdam" @endif>
                 </div>
 
                 <div class="form-group form-group-add">
                     <label for="zip-code">Client zip-code:</label>
-                    <input type="text" name="zip_code" id="zip-code">
+                    <input type="text" name="zip_code" id="zip-code" @if($help) placeholder="4433PA" @endif>
                 </div>
 
                 <div class="form-group form-group-add">
                     <label for="clientFirstName">Client first name:</label>
-                    <input type="text" name="clientFirstName" id="clientFirstName">
+                    <input type="text" name="clientFirstName" id="clientFirstName" @if($help) placeholder="Jonas" @endif>
                 </div>
 
                 <div class="form-group form-group-add">
                     <label for="clientLastName">Client last name:</label>
-                    <input type="text" name="clientLastName" id="clientLastName">
+                    <input type="text" name="clientLastName" id="clientLastName" @if($help) placeholder="Quinn" @endif>
                 </div>
 
                 <div class="form-group form-group-add">
                     <label for="phoneNumber">Client phone number:</label>
-                    <input type="text" name="phoneNumber" id="phoneNumber">
+                    <input type="text" name="phoneNumber" id="phoneNumber" @if($help) placeholder="0655225522" @endif>
                 </div>
 
                 <div class="form-group form-group-add">
                     <label for="email">Client email:</label>
-                    <input type="text" name="email" id="email">
+                    <input type="text" name="email" id="email" @if($help) placeholder="JonasQuinn@gmail.com" @endif>
                 </div>
 
                 <div class="form-group help-btn form-group-add">
