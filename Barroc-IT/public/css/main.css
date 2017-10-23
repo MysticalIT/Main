@@ -485,6 +485,9 @@ admin - Clients
     overflow-y: auto;
     text-align: center;
     padding: 10px;
+    position: relative;
+    left: 42%;
+    right: 78%;
 }
 
 .set-flex{
