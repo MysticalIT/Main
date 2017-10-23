@@ -46,5 +46,13 @@ if((isset($_POST["from"]) && $_POST["from"] > 0) && (isset($_POST["to"]) && $_PO
         $project->description = $faker->text();
         $project->limit = $faker->randomFloat(2, 0, null);
         $project->save();
+
+        $clientInfo = \App\Client::find($i);
+        $memo = new \App\Memo();
+        $memo->project_id = $project->id;
+        $memo->memo = "Project Name: {$project->name},
+Owner Name: {$clientInfo->firstname} {$clientInfo->lastname},
+";
+        $memo->save();
     }
 }
