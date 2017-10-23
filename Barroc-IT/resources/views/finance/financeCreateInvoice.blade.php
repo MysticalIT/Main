@@ -19,7 +19,7 @@
     <div class="links">
         <div class="wrapper">
             <ul class="mainNav">
-                <li><a href="/finance/invoices">Back</a></li>
+                <li><a href="/invoices">Back</a></li>
                 <li><a href="/createInvoices?showHelp=true">Help</a></li>
             </ul>
         </div>
