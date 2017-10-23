@@ -414,6 +414,12 @@ admin - Clients
     border-radius: 6px;
 }
 
+.invoiceForm input{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
 /*==========================================================
     Sales styles
 ==========================================================*/
