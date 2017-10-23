@@ -65,37 +65,32 @@
                         </tr>
                         @foreach($projectInvoices as $projectInvoice)
                             @if($projectInvoice->paid == false)
-                                @php($paid = false)
                                 <tr>
                                     <td>{{$projectInvoice->subject}}</td>
                                     @php($charge = str_replace(".", ",", $projectInvoice->price))
                                     <td>&euro; {{$charge}}</td>
                                     <td class="text-center"><a href="/invoices/{{$projectInvoice->id}}/paid">PAID</a></td>
                                 </tr>
-                            @else
-                                @php($paid = true)
                             @endif
                         @endforeach
                     </table>
-                    @if($paid)
-                        <div class="spacer"></div>
-                        <h5 class="text-center bold">Paid Invoices:</h5>
-                        <table class="table">
-                            <tr>
-                                <th>Paid Invoice Subject:</th>
-                                <th>Paid Invoice Charge:</th>
-                            </tr>
-                            @foreach($projectInvoices as $projectInvoice)
-                                @if($projectInvoice->paid == true)
-                                    <tr>
-                                        <td>{{$projectInvoice->subject}}</td>
-                                        @php($charge = str_replace(".", ",", $projectInvoice->price))
-                                        <td>&euro; {{$charge}}</td>
-                                    </tr>
-                                @endif
-                            @endforeach
-                        </table>
-                    @endif
+                    <div class="spacer"></div>
+                    <h5 class="text-center bold">Paid Invoices:</h5>
+                    <table class="table">
+                        <tr>
+                            <th>Paid Invoice Subject:</th>
+                            <th>Paid Invoice Charge:</th>
+                        </tr>
+                        @foreach($projectInvoices as $projectInvoice)
+                            @if($projectInvoice->paid == true)
+                                <tr>
+                                    <td>{{$projectInvoice->subject}}</td>
+                                    @php($charge = str_replace(".", ",", $projectInvoice->price))
+                                    <td>&euro; {{$charge}}</td>
+                                </tr>
+                            @endif
+                        @endforeach
+                    </table>
                 @endif
             </div>
         </div>
