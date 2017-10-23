@@ -20,18 +20,20 @@
 </head>
 <body>
 <header>
-<div class="wrapper">
-        <div class="logo">
-            <h1>Barroc IT</h1>
-        </div>
+    <div class="links">
+        <div class="wrapper">
+                <div class="page-title logo">
+                    <h1 class="text_main text-center">Barroc IT</h1>
+                </div>
 
-        <nav class="navigation">
-            <ul>
-                <li><a href="/admin">Back</a></li>
-                <li><a href="/memo?showhelp=true">Help</a></li>
-            </ul>
-        </nav>
-</div>
+                <div class="wrapper">
+                    <ul class="MainNav">
+                        <li><a href="/admin">Back</a></li>
+                        <li><a href="/memo?showhelp=true">Help</a></li>
+                    </ul>
+                </div>
+        </div>
+    </div>
 </header>
 
  <container class="main-content">
