@@ -94,11 +94,13 @@ Owner Name: {$clientInfo->firstname} {$clientInfo->lastname},
         if(session()->has("department")){
             if(session()->get("department") === $department){
                 $project = \App\Client::find($id);
+                session(["message" => "Project has been edited!"]);
                 return view("/sales/salesEditProject")->with("project", $project);
             }
             return redirect("/" . session()->get("department"));
         }
         else{
+            session(["message" => "Something went wrong here :/"]);
             return redirect("/");
         }
 
