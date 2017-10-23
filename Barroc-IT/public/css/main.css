@@ -266,9 +266,9 @@ admin - Clients
     align-content: center;
     align-self: center;
     height: 360px;
-    position: absolute;
+  /*  position: absolute;
     left: 42%;
-    right: 78%;
+    right: 78%; */
 }
 
 
