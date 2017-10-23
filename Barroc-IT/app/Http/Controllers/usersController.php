@@ -42,7 +42,7 @@ class usersController extends Controller
     public function logout()
     {
         session()->remove("department");
-        session(["message" => "Something went wrong here :/"]);
+        session(["message" => "You have been logged out!"]);
         return redirect("/");
     }
 }
