@@ -14,11 +14,13 @@ class DevelopmentController extends Controller
     public function index()
     {
         $projects = \App\Project::all();
+        $invoices = \App\Invoice::all()->where("paid", "=", false);
+
         $department = "development";
         if(session()->has("department")){
             if(session()->get("department") === $department){
 
-                return view("/development/developmentMain")->with("projects", $projects);
+                return view("/development/developmentMain")->with(["projects" => $projects, "invoices" => $invoices]);
             }
             session(["message" => "Something went wrong here :/"]);
             return redirect("/" . session()->get("department"));

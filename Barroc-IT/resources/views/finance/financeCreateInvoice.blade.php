@@ -41,7 +41,7 @@
                 </div>
                 <div class="form-group">
                     <label for="invoicePrice">Charge:</label>
-                    <input type="text" id="invoicePrice" name="price">
+                    <input type="number" id="invoicePrice" name="price" step=".01" min="0">
                 </div>
                 <input type="submit" value="Create Invoice">
             </form>

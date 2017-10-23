@@ -33,7 +33,11 @@
     <div class="client-list">
         <ul class="client-list-ul unset-mp text-center">
             @foreach ($projects as $project)
-                @if(!$project->finished)
+                @php($value = 0)
+                @foreach($invoices->where("project_id", "=", $project->id) as $invoice)
+                    @php($value += $invoice->price)
+                @endforeach
+                @if(!$project->finished && !$project->limit >= $value)
                     <li><a href='/development/{{$project->id}}/project'>{{$project->name}}</a></li>
                 @endif
             @endforeach

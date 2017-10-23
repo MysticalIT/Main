@@ -11,6 +11,11 @@
     <title>Sales Homepage</title>
 </head>
 <body>
+@if(isset($_GET["showHelp"]) && $_GET["showHelp"] == true)
+    @php($help = true)
+@else
+    @php($help = false)
+@endif
 <header>
     <div class="page-title logo">
         <h1 class="text_main text-center">Sales - Home</h1>
@@ -66,9 +71,8 @@
 
                 <div class='client-list'>
                     <ul id="myUL" class="client-list-ul unset-mp text-center">
-                        <input type="text" id="myInput" onkeyup="search()" placeholder="Search for names.." title="Type in a name">
-
-                    @foreach ($clients as $client)
+                        <input type="text" id="myInput" onkeyup="search()" placeholder="Filter names..." title="Type in a name">
+                        @foreach ($clients as $client)
                             @if($client->active)
                                 <li><a href='/sales?clientId={{$client->id}}'>{{$client->firstname}} {{$client->lastname}}</a></li>
                             @endif

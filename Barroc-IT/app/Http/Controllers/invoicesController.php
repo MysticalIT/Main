@@ -61,6 +61,12 @@ class invoicesController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            "project_id" => "required|numeric",
+            "subject" => "required|string",
+            "price" => "required|numeric"
+        ]);
+
         $invoice = new \App\Invoice();
         $invoice->project_id = $request->project_id;
         $invoice->subject = $request->subject;
