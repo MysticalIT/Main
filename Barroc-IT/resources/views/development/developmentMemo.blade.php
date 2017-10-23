@@ -13,15 +13,30 @@
 <body>
 
 <div class="container">
+
+    <header>
+        <div class="page-title logo">
+            <h1 class="text_main text-center">Finance - Home</h1>
+        </div>
+        <div class="links">
+            <div class="wrapper">
+                <ul class="mainNav">
+                    <li><a href="/finance?showHelp=true">Help</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
 <header>
+
+    <div class="page-title logo">
+        <h1 class="text_main text-center">Development - memo</h1>
+    </div>
     <div class="wrapper">
-        <nav class="navigation">
-            <ul>
-                <li></li>
+            <ul class="mainNav">
                 <li><a href="/development">Back</a></li>
                 <li><a href="/memo?showhelp=true">Help</a></li>
             </ul>
-        </nav>
     </div>
 </header>
 
