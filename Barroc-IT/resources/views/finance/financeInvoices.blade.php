@@ -65,6 +65,7 @@
                         </tr>
                         @foreach($projectInvoices as $projectInvoice)
                             @if($projectInvoice->paid == false)
+                                @php($paid = false)
                                 <tr>
                                     <td>{{$projectInvoice->subject}}</td>
                                     @php($charge = str_replace(".", ",", $projectInvoice->price))
