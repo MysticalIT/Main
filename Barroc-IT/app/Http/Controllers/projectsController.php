@@ -58,8 +58,7 @@ class projectsController extends Controller
         $project->started = 1;
         $project->save();
 
-        $clientInfo = \App\Client::find($request->id)->first();
-
+        $clientInfo = \App\Client::find($request->id);
         $memo = new \App\Memo();
         $memo->project_id = $project->id;
         $memo->memo = "Project Name: {$project->name},
