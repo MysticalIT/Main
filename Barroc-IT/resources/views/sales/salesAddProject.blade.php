@@ -18,7 +18,7 @@
     <div class="links">
         <div class="wrapper">
             <ul class="mainNav">
-                <li><a href="/sales">Back</a></li>
+                <li title="Go back // Ga terug"><a href="/sales">Back</a></li>
                 <li><a href="/add?showHelp=true">Help</a></li>
 
             </ul>
@@ -58,5 +58,9 @@
         </form>
     </div>
 </div>
+@if(isset($_GET["showHelp"]))
+    @php($msg = "Hover over the button for information!")
+    <script> window.alert('{{$msg}}'); </script>
+@endif
 </body>
 </html>

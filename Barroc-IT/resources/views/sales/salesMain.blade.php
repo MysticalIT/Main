@@ -23,12 +23,8 @@
     <div class="links">
         <div class="wrapper">
             <ul class="mainNav">
-                @if(isset($_GET["showHelp"]))
-                    <li><span>logout-></span><a href="/logout">Logout</a><span><-uitloggen</span></li>
-                @else
-                    <a href="/logout">Logout</a>
-                @endif
-               <li> <a href="/sales?showHelp=true">Help</a></li>
+                <li title="Logout/Uitloggen"><a href="/logout">Logout</a></li>
+                <li> <a href="/sales?showHelp=true">Help</a></li>
 
             </ul>
 
@@ -43,9 +39,9 @@
 
                     @php(session(["clientId" => $_GET["clientId"]]))
                     @php($clientid = $_GET["clientId"])
-                    <li><a href='/clients/create'>Add Client</a></li>
-                    <li><a href="/contact">Clients to Contact</a></li>
-                    <li><a href="/memo">Show memos</a></li>
+                    <li title="Add a client here // Voeg hier een klant toe"><a href='/clients/create'>Add Client</a></li>
+                    <li title="See all clients who need to be contacted // Zie hier alle klanten die contact moeten"><a href="/contact">Clients to Contact</a></li>
+                    <li title="See here all memos // Zie hier alle memos"><a href="/memo">Show memos</a></li>
                     @if(isset($_GET["showclients"]))
                         <li><a href="/sales">Hide Clients</a></li>
                     @else
@@ -57,22 +53,15 @@
                     @if(session()->has("clientId"))
                         @php(session()->remove("clientId"))
                     @endif
-                        @if(isset($_GET["showHelp"]))
-                            <li><span>Create client here-></span><a href='/clients/create'>Add Client</a><span><- maak hier een klant aan</span></li>
-                            <li><span>See clients to call here-></span><a href="/contact">Clients to Contact</a><span><-Zie hier alle klanten om te bellen</span></li>
-                            <li><span>Show memos here-></span><a href="/memo">Show memos</a><span><-Zie hier all uw memos</span></li>
-                            @else
-                            <li><a href='/clients/create'>Add Client</a></li>
-                            <li><a href="/contact">Clients to Contact</a></li>
-                            <li><a href="/memo">Show memos</a></li>
-                        @endif
+                            <li title="Add a client here // Voeg hier een klant toe"><a href='/clients/create'>Add Client</a></li>
+                            <li title="See all clients who need to be contacted // Zie hier alle klanten die contact moeten"><a href="/contact">Clients to Contact</a></li>
+                            <li title="See here all memos // Zie hier alle memos"><a href="/memo">Show memos</a></li>
 
                         @if(isset($_GET["showclients"]))
-                            <li><a href="/sales">Hide Clients</a></li>
-                        @elseif(isset($_GET["showHelp"]))
-                            <li><span>Show all active clients here-></span><a href="/sales?showclients=true">Show Clients</a><span><-Zie hier alle actieve klanten</span></li>
+                            <li title="Hide all client // Verbergt alle klanten"><a href="/sales">Hide Clients</a></li>
+
                             @else
-                            <li><a href="/sales?showclients=true">Show Clients</a></li>
+                            <li title="See active clients // Zie active klanten"><a href="/sales?showclients=true">Show Clients</a></li>
                         @endif
                 @endif
             </ul>
@@ -86,7 +75,7 @@
                         <input type="text" id="myInput" onkeyup="search()" placeholder="Filter names..." title="Type in a name">
                         @foreach ($clients as $client)
                             @if($client->active)
-                                <li><a href='/sales?clientId={{$client->id}}'>{{$client->firstname}} {{$client->lastname}}</a></li>
+                                <li title="This is the client: {{$client->firstname}} // Dit is de klant: {{$client->firstname}}"><a href='/sales?clientId={{$client->id}}'>{{$client->firstname}} {{$client->lastname}}</a></li>
                             @endif
                         @endforeach
                     </ul>
@@ -97,6 +86,10 @@
 
 </div>
 
+@if(isset($_GET["showHelp"]))
+    @php($msg = "Hover over the button for information!")
+    <script> window.alert('{{$msg}}'); </script>
+@endif
 
 @if(session()->has("message"))
     @php($msg = session()->get("message"))

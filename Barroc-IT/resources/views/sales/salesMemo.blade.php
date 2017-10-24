@@ -19,7 +19,7 @@
     <div class="links">
         <div class="wrapper">
             <ul class="mainNav">
-                <li><a href="/sales">Back</a></li>
+                <li title="Go back // Ga terug"><a href="/sales">Back</a></li>
                 <li><a href="/memo?showHelp=true">Help</a></li>
             </ul>
         </div>
@@ -32,17 +32,13 @@
         <div class="memo set-flex space-between">
             <div class="client-list">
                 <ul id="myUL" class="client-list-ul unset-mp text-center">
-                    @if(isset($_GET["showHelp"]))
-                        <span>Search project-><input type="text" id="myInput" onkeyup="search()" placeholder="Search for projects.." title="Type in a name"><-Zoekt een project</span>
 
-                    @else
-                        <input type="text" id="myInput" onkeyup="search()" placeholder="Search for projects.." title="Type in a name">
+                    <input type="text" id="myInput" onkeyup="search()" placeholder="Search for projects.." title="Type in a project">
 
 
-                    @endif
                     @foreach($projects as $project)
                         @if(!$project->finished)
-                             <li><a href='/memo?projectId={{$project->id}}'>{{$project->name}}</a></li>
+                             <li title="This projects name: {{$project->name}} // Dit projects naam is: {{$project->name}}"><a href='/memo?projectId={{$project->id}}'>{{$project->name}}</a></li>
                         @endif
                     @endforeach
                 </ul>
@@ -55,7 +51,7 @@
                         {{csrf_field()}}
                         {{method_field('PUT')}}
                         <div class="form-group form-group-text-memo">
-                            <label for="memo">Memo:</label>
+                            <label title="This is where you put details in // Dit is waar u details invoert" for="memo">Memo:</label>
                             <textarea name='memo' id='memo' cols='30' rows='10'>{{$currentMemo->memo}}</textarea>
                         </div>
                         <div class="form-group submit-form-memo">
@@ -85,5 +81,9 @@
         }
     }
 </script>
+@if(isset($_GET["showHelp"]))
+    @php($msg = "Hover over the button for information!")
+    <script> window.alert('{{$msg}}'); </script>
+@endif
 </body>
 </html>

@@ -18,7 +18,7 @@
     <div class="links">
         <div class="wrapper">
             <ul class="mainNav">
-                <li><a href="/sales">Back</a></li>
+                <li title="Go back // Ga terug"><a href="/sales">Back</a></li>
                 <li><a href="/contact?showHelp=true">Help</a></li>
 
             </ul>
@@ -33,9 +33,9 @@
         <div class="uni-nav">
             <ul class="text-center unset-mp uni-nav-clients">
                 @if(isset($_GET["showClients"]))
-                    <li><a href="/contact">Hide Clients to Contact</a></li>
+                    <li title="Hide all clients // Verberg alle klanten"><a href="/contact">Hide Clients to Contact</a></li>
                 @else
-                    <li><a href="/contact?showClients=true">Show Clients to Contact</a></li>
+                    <li title="Show all clients // Laat alle klanten zien"><a href="/contact?showClients=true">Show Clients to Contact</a></li>
                 @endif
             </ul>
         </div>
@@ -91,7 +91,7 @@
 
                     @foreach ($clients as $client)
                             @if($client->active)
-                                <li><a href='/contact?clientId={{$client->id}}'>{{$client->firstname}} {{$client->lastname}}</a></li>
+                                <li title="This clients name is: {{$client->firstname}} // Deze klants naam is: {{$client->firstname}}"><a href='/contact?clientId={{$client->id}}'>{{$client->firstname}} {{$client->lastname}}</a></li>
                             @endif
                         @endforeach
                     @endif
@@ -104,11 +104,11 @@
                 <h3 class="bold">Projects:</h3>
                 <ul class="unset-mp">
                     @php($projectsById = $projects->where("client_id", "=", $_GET["clientId"]))
-                    <li><a href='/projects/create?clientId={{$_GET["clientId"]}}'>Add Project</a></li>
+                    <li title="Add a project // Voeg een project toe"><a href='/projects/create?clientId={{$_GET["clientId"]}}'>Add Project</a></li>
                     @foreach ($projectsById as $project)
                         @if(!$project->finished)
 
-                            <li><a href='/projects/{{$project->id}}/edit'>Edit: {{$project->name}}</a></li>
+                            <li title="Edit project // Wijzig project"><a href='/projects/{{$project->id}}/edit'>Edit: {{$project->name}}</a></li>
                         @endif
                     @endforeach
                 </ul>
@@ -116,6 +116,10 @@
         @endif
     </div>
 </div>
+@if(isset($_GET["showHelp"]))
+    @php($msg = "Hover over the button for information!")
+    <script> window.alert('{{$msg}}'); </script>
+@endif
 <script>
     function search() {
         var input, filter, ul, li, a, i;
