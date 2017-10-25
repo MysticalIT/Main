@@ -47,7 +47,7 @@ class projectsController extends Controller
         $this->validate($request, [
             "projectName" => "required|string|filled",
             "projectDetails" => "required|string|filled",
-            "setInvoice" => "required|numeric"
+            "setInvoice" => "required|numeric|between:0,999999.99"
         ]);
 
         $project = new \App\Project();
@@ -92,8 +92,7 @@ Owner Name: {$clientInfo->firstname} {$clientInfo->lastname},
         $department = "sales";
         if(session()->has("department")){
             if(session()->get("department") === $department){
-                $project = \App\Client::find($id);
-                session(["message" => "Project has been edited!"]);
+                $project = \App\Project::find($id);
                 return view("/sales/salesEditProject")->with("project", $project);
             }
             return redirect("/" . session()->get("department"));
@@ -117,13 +116,13 @@ Owner Name: {$clientInfo->firstname} {$clientInfo->lastname},
         $this->validate($request, [
             "projectName" => "required|string|filled",
             "projectDetails" => "required|string|filled",
-            "setInvoice" => "required|numeric"
+            "limit" => "required|numeric"
         ]);
 
         $project = \App\Project::find($id);
         $project->name = $request->projectName;
         $project->description = $request->projectDetails;
-        $project->limit = $request->setInvoice;
+        $project->limit = $request->limit;
         $project->save();
 
         session(["message" => "Project is edited!"]);

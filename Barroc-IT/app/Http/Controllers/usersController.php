@@ -25,7 +25,7 @@ class usersController extends Controller
 
         $user = \App\User::all()->where("username", "=", $request["department"]);
         if(count($user) > 0){
-            if($user->first()->password === $request["password"]){
+            if(password_verify($request["password"], $user->first()->password)){
                 session(["department" => $request["department"]]);
                 return redirect("/" . session()->get("department"));
             }

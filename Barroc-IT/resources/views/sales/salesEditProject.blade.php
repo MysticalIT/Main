@@ -19,7 +19,7 @@
         <div class="wrapper">
             <ul class="mainNav">
                 <li title="Go back // Ga terug"><a href="/sales">Back</a></li>
-                <li title="Help // Halp"><a href="/add?showHelp=true">Help</a></li>
+                <li title="Help // Help"><a href="/add?showHelp=true">Help</a></li>
 
             </ul>
 
@@ -39,7 +39,7 @@
 
             <div class="form-group">
                 <label for="projectDetails">Project details</label>
-                <textarea name="projectDetails" id="projectDetails" value="{{$project->description}}"></textarea>
+                <textarea name="projectDetails" id="projectDetails">{{$project->description}}</textarea>
             </div>
 
             <div class="form-group">
