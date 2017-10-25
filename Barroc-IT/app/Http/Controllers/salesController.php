@@ -39,7 +39,6 @@ class salesController extends Controller
             return redirect("/" . session()->get("department"));
         }
         else{
-            session(["message" => "Something went wrong here :/"]);
             return redirect("/");
         }
 

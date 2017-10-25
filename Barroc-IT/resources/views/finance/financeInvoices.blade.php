@@ -56,6 +56,16 @@
                 <h3 class="text-center bold">Invoices for: {{$projects->where("id", "=", $_GET["projectId"])->first()->name}}</h3>
                 @php($projectInvoices = $invoices->where("project_id", "=", $_GET["projectId"]))
                 @if(count($projectInvoices) > 0)
+                    @php($total = 0)
+                    @foreach($projectInvoices as $projectInvoice)
+                        @if($projectInvoice->paid == false)
+                            @php($total += $projectInvoice->price)
+                        @endif
+                    @endforeach
+
+                    @if($total >= $projects->where("id", "=", $_GET["projectId"])->first()->limit)
+                        <h5 class="text-danger text-center">ON HOLD - LIMIT REACHED!</h5>
+                    @endif
                     <h5 class="text-center bold">Open Invoices:</h5>
                     <table class="table">
                         <tr>
@@ -98,3 +108,4 @@
 </div>
 </body>
 </html>
+

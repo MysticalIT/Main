@@ -15,21 +15,31 @@
         <form action="" method="post" class="add-client">
             {{csrf_field()}}
             <div class="form-group form-group-add">
-                <label for="from">From Client</label>
+                <label for="from">From Project</label>
                 <input type="number" name="from" id="from">
             </div>
             <div class="form-group form-group-add">
-                <label for="to">To Client</label>
+                <label for="to">To Project</label>
                 <input type="number" name="to" id="to">
             </div>
             <div class="form-group form-group-add">
-                <input type="submit" value="Add Projects">
+                <label for="charge">Price</label>
+                <input type="number" name="charge" id="charge" step=".01">
+            </div>
+            <div class="form-group form-group-add">
+                <label for="paid">Paid</label>
+                <input type="number" name="paid" id="paid" min="0" max="1">
+            </div>
+            <div class="form-group form-group-add">
+                <label for="amount">Amount of Invoices</label>
+                <input type="number" name="amount" id="amount" min="1">
+            </div>
+            <div class="form-group form-group-add">
+                <input type="submit" value="Add Invoices">
             </div>
         </form>
     </div>
 </div>
-
-
 </body>
 </html>
 
@@ -39,22 +49,18 @@ if((isset($_POST["from"]) && $_POST["from"] > 0) && (isset($_POST["to"]) && $_PO
     $faker = Faker\Factory::create();
     $from = $_POST["from"];
     $to = $_POST["to"];
+    $amount = $_POST["amount"];
     $count = 0;
-    for ($i = $from; $i < $to + 1; $i++){
-        $count++;
-        $project = new \App\Project();
-        $project->client_id = $i;
-        $project->name = "$i Web browser";
-        $project->description = $faker->text();
-        $project->limit = 800;
-        $project->save();
 
-        $clientInfo = \App\Client::find($i);
-        $memo = new \App\Memo();
-        $memo->project_id = $project->id;
-        $memo->memo = "Project Name: {$project->name},
-Owner Name: {$clientInfo->firstname} {$clientInfo->lastname},
-";
-        $memo->save();
+    for ($i = $from; $i < $to + 1; $i++){
+        for ($j = 0; $j < $amount; $j++){
+        $count++;
+        $invoice = new \App\Invoice();
+        $invoice->project_id = $i;
+        $invoice->subject = "Month " . $faker->numberBetween(1, 10);
+        $invoice->price = $_POST["charge"];
+        $invoice->paid = $_POST["paid"];
+        $invoice->save();
+        }
     }
 }

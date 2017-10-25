@@ -104,7 +104,8 @@ class DevelopmentController extends Controller
 
         $project->started = 1;
         $project->save();
-        return back();
+		session(["message" => "Project Started"]);
+        return redirect("/development/$id/");
 
     }
     public function finish($id)
@@ -118,7 +119,8 @@ class DevelopmentController extends Controller
         $project->finished = 1;
         $project->save();
 
-        return back();
+        session(["message" => "Project Finished"]);
+        return redirect("/development/$id/");
     }
     /**
      * Remove the specified resource from storage.

@@ -26,6 +26,9 @@
 </header>
 <div class="container">
     <div class="wrapper">
+	@if($project->finished)
+		<h2 class="text-success bold text-center">Project Finished</h2>
+	@endif
         <table class="table">
             <tr>
                 <th>Client name:</th>
@@ -41,12 +44,18 @@
     </div>
     <div class="">
         <div class="">
-            <a href="/development/{{$project->id}}/start">Start project</a>
-            @if($project->started)
+            @if(!$project->started)
+                <a href="/development/{{$project->id}}/start">Start project</a>
+            @elseif(!$project->finished)
                 <a href="/development/{{$project->id}}/finish">Finish project</a>
             @endif
         </div>
     </div>
 </div>
+@if(session()->has("message"))
+    @php($msg = session()->get("message"))
+    <script> window.alert('{{$msg}}'); </script>
+    @php(session()->remove("message"))
+@endif
 </body>
 </html>

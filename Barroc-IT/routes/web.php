@@ -364,21 +364,29 @@ Route::get("/admin/{id}/active", "AdminController@setactive");
 //IDK
 Route::resource("/memo", "memosController");
 
-Route::get("/faker", function(){
-	return view("admin/adminFaker");
-});
-
-Route::POST("/faker", function(){
-    return view("admin/adminFaker");
-});
-
-Route::get("/fakerproject", function(){
-    return view("admin/adminFakerProjects");
-});
-
-Route::POST("/fakerproject", function(){
-    return view("admin/adminFakerProjects");
-});
+//Route::get("/faker", function(){
+//	return view("admin/adminFaker");
+//});
+//
+//Route::POST("/faker", function(){
+//    return view("admin/adminFaker");
+//});
+//
+//Route::get("/fakerproject", function(){
+//    return view("admin/adminFakerProjects");
+//});
+//
+//Route::POST("/fakerproject", function(){
+//    return view("admin/adminFakerProjects");
+//});
+//
+//Route::get("/fakerinvoice", function(){
+//    return view("admin/adminInvoicesFaker");
+//});
+//
+//Route::POST("/fakerinvoice", function(){
+//    return view("admin/adminInvoicesFaker");
+//});
 //Route::resource("/client", "clientsController");
 //Route::resource("/project", "projectsController");
 //Route::resource("/memo", "memosController");
